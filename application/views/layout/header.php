@@ -130,7 +130,7 @@
 
                                 <li><a href="<?php echo site_url("/"); ?>" title="Order Now">ORDER NOW</a></li>
                                 <li><a href="<?php echo site_url("/"); ?>" title="Book Now">BOOK NOW</a></li>
-                                <li><a href="<?php echo site_url("/"); ?>" title="Contact Us">CONTACT US</a></li>
+                                <li><a href="<?php echo site_url("contact"); ?>" title="Contact Us">CONTACT US</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </nav><!-- nav /- -->

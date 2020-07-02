@@ -26,7 +26,7 @@
 								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="GALLERY">GALLERY</a></li>
 								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="LOYALTY PROGRAM">MEMBERSHIP</a></li>
 								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="ORDER NOW">ORDER NOW</a></li>
-								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="CONTACT US">CONTACT US</a></li>
+								<li class="col-md-6 col-sm-6 col-xs-6"><a href="<?php echo site_url("contact"); ?>" title="CONTACT US">CONTACT US</a></li>
 							</ul>
 						</aside><!-- Widget Link /- -->
 					</div>
@@ -35,9 +35,9 @@
 						<aside class="ftr-widget widget_link">
 							<h3 class="widget-title">resources</h3>
 							<ul>
-								<li><a href="#" title="Terms of Use">Terms of Use</a></li>
-								<li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
-								<li><a href="#" title="Sitemaps">Sitemaps</a></li>
+								<li><a href="#" title="Terms of Use">TERMS OF USE</a></li>
+								<li><a href="#" title="Privacy Policy">PRIVACY POLICY</a></li>
+								<li><a href="#" title="Sitemaps">SITEMAPS</a></li>
 							</ul>
 						</aside><!-- Widget Link /- -->
 					</div>
