@@ -17,7 +17,7 @@
 		
 	+ Fonts Settings
 		- Lora : font-family: 'Lora', serif;
-		- PTSerif : font-family: 'PT Serif', serif;
+		- PTSerif : font-family: sans-serif;
 		- Poppins : font-family: 'Poppins', sans-serif;
 		- Roboto : font-family: 'Roboto', sans-serif;
 
@@ -45,7 +45,7 @@
 /* ## Global */
 
 body {
-	font-family: 'PT Serif', serif;
+	font-family: sans-serif;
 	font-size: 14px;
 	color: #000;
 	overflow-x: hidden;
@@ -334,7 +334,7 @@ a {
 .footer-main .widget_about p {
 	color: #a5a5a5;
 	font-size: 14px;
-	font-family: 'PT Serif', serif;
+	font-family: sans-serif;
 	letter-spacing: 0.28px;
 	line-height: 26px;
 	padding-right: 35px;
@@ -404,7 +404,7 @@ a {
 }
 .footer-main .widget_link ul li a {
 	color: #909090;	
-	font-family: 'PT Serif', serif;
+	font-family: sans-serif;
 	font-size: 15px;
 	letter-spacing: 0.3px;
 	text-transform: capitalize;
@@ -421,7 +421,7 @@ a {
 	color: #8f8f8f;
 }
 .footer-main .copyright p {
-	font-family: 'PT Serif', serif;
+	font-family: sans-serif;
 	font-size: 14px;
 	margin-bottom: 0;
 	letter-spacing: 0.28px;
@@ -433,7 +433,7 @@ a {
 	box-shadow: none;
 	border-radius: 0;
 	display: inline-block;
-	font-family: 'PT Serif', serif;
+	font-family: sans-serif;
 	font-style: italic;
 	font-size: 12px;
 	height: 45px;

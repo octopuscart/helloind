@@ -221,8 +221,26 @@ They have been perfected by our experienced Chefs over decades, experts in the a
 
         </div><!-- Container /- -->
         <div class="portfolio-list">
-            <div class="portfolio-box col-md-4  col-sm-4 no-padding modern statue">
-                <a href="images/portfolio-1.jpg">
+             <div class="portfolio-box col-md-3  col-sm-3 no-padding modern statue">
+                <a href="<?php echo base_url(); ?>assets/gallery/IMG_3432.jpg">
+                    <img src="<?php echo base_url(); ?>assets/gallery/IMG_3413.jpg" alt="Portfolio" />
+                    <div class="portfolio-content">
+                        <i class="icon icon-Search"></i>
+                       
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-box col-md-3  col-sm-3 no-padding vintage">
+                <a href="<?php echo base_url(); ?>assets/gallery/IMG_3436.jpg">
+                    <img src="<?php echo base_url(); ?>assets/gallery/IMG_3388.jpg" alt="Portfolio" />
+                    <div class="portfolio-content">
+                        <i class="icon icon-Search"></i>
+                       
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-box col-md-3  col-sm-3 no-padding modern statue">
+                <a href="<?php echo base_url(); ?>assets/gallery/1.jpg">
                     <img src="<?php echo base_url(); ?>assets/gallery/1.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
@@ -230,8 +248,8 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     </div>
                 </a>
             </div>
-            <div class="portfolio-box col-md-4  col-sm-4 no-padding vintage">
-                <a href="images/portfolio-2.jpg">
+            <div class="portfolio-box col-md-3  col-sm-3 no-padding vintage">
+                <a href="<?php echo base_url(); ?>assets/gallery/2.jpg">
                     <img src="<?php echo base_url(); ?>assets/gallery/2.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
@@ -239,8 +257,8 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     </div>
                 </a>
             </div>
-            <div class="portfolio-box col-md-4  col-sm-4 no-padding statue others">
-                <a href="images/portfolio-3.jpg">
+            <div class="portfolio-box col-md-3  col-sm-3 no-padding statue others">
+                <a href="<?php echo base_url(); ?>assets/gallery/3.jpg">
                     <img src="<?php echo base_url(); ?>assets/gallery/3.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
@@ -248,8 +266,8 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     </div>
                 </a>
             </div>
-            <div class="portfolio-box col-md-4  col-sm-4 no-padding others">
-                <a href="images/portfolio-4.jpg">
+            <div class="portfolio-box col-md-3  col-sm-3 no-padding others">
+                <a href="<?php echo base_url(); ?>assets/gallery/4.jpg">
                     <img src="<?php echo base_url(); ?>assets/gallery/4.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
@@ -257,8 +275,8 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     </div>
                 </a>
             </div>
-            <div class="portfolio-box col-md-4  col-sm-4 no-padding modern">
-                <a href="images/portfolio-5.jpg">
+            <div class="portfolio-box col-md-3  col-sm-3 no-padding modern">
+                <a href="<?php echo base_url(); ?>assets/gallery/5.jpg">
                     <img src="<?php echo base_url(); ?>assets/gallery/5.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
@@ -266,8 +284,8 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     </div>
                 </a>
             </div>
-            <div class="portfolio-box col-md-4  col-sm-4 no-padding vintage modern">
-                <a href="images/portfolio-6.jpg">
+            <div class="portfolio-box col-md-3  col-sm-3 no-padding vintage modern">
+                <a href="<?php echo base_url(); ?>assets/gallery/6.jpg">
                     <img src="<?php echo base_url(); ?>assets/gallery/6.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
