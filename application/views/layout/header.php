@@ -106,7 +106,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="index.html" class="navbar-brand"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Logo" /></a>
+                            <a href="<?php echo site_url("/"); ?>" class="navbar-brand"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Logo" /></a>
                         </div>
                         <!-- Menu Icon -->
                         <div class="menu-icon">
