@@ -47,6 +47,13 @@
 }
 
 
+.onview-section .onview-content p {
+    color: #000000;
+    line-height: 26px;
+    letter-spacing: 0.28px;
+    font-size: 15px;
+}
+
 @media(min-width: 1366px) {
     .ow-navigation .navbar-brand {
         margin-top: 0px;
@@ -106,3 +113,5 @@
     position: relative;
 
 }
+
+
