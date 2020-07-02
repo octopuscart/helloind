@@ -6,26 +6,31 @@
         <?php
         meta_tags();
         ?>
-        <link href="https://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,600,700,800,900|Poppins:300,400,500,600,700|Playfair+Display:400,400i,700,700i,900" rel="stylesheet">
 
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic%7CPoppins%3A400%2C400italic%2C700%2C700italic%2C600%2C600italic%2C300%2C300italic%7COswald%3A400%2C700" rel="stylesheet">
 
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/bootstrap.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/style.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/dark.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/font-icons.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/animate.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/magnific-popup.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/swiper.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/one-page/css/et-line.css" type="text/css" />
+        <!---- Library - Google Font Familys-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|PT+Serif:400,400i,700,700i|Poppins:300,400,500,600,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"> 
 
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/res/restaurant.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/res/css/fonts.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/revolution/css/settings.css">
 
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/responsive.css" type="text/css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/colors2e70.css?color=e7272d" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/customstyle.css?color=e7272d" type="text/css" />
+        <!-- RS5.0 Layers and Navigation Styles -->
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/revolution/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/revolution/css/navigation.css">
+
+
+        <!-- Library - Bootstrap v3.3.5 -->
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/libraries/lib.css">
+
+        <!-- Custom - Theme CSS -->
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/css/plugins.css">			
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/css/navigation-menu.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/css/shortcode.css">
+
+        <!--[if lt IE 9]>
+                <script src="js/html5/respond.min.js"></script>
+    <![endif]-->
+
         <!--sweet alert-->
         <script src="<?php echo base_url(); ?>assets/theme2/sweetalert2/sweetalert2.min.js"></script>
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/sweetalert2/sweetalert2.min.css">
@@ -33,16 +38,28 @@
         <script src="<?php echo base_url(); ?>assets/theme2/angular/angular.min.js"></script>
 
         <link href="<?php echo base_url(); ?>assets/theme2/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
-
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/customstyle.css">
 
         <style>
             /* Page Loader CSS */
             .css3-spinner:before,.pizza .slice:after,.pizza .slice:before{content:''}.css3-spinner{height:100vh;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background:#FFF}.css3-spinner:before{position:absolute;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);width:15vmin;height:2vmin;background:#DDD;margin-top:17.5vmin;-webkit-filter:blur(10px);filter:blur(10px);border-radius:100%}.pizza{height:20vmin;width:20vmin;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:0 0;position:relative;-webkit-animation:rotate 13s linear infinite;animation:rotate 13s linear infinite}@-webkit-keyframes rotate{to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.pizza .slice{z-index:-1;overflow:visible;position:absolute;width:0;height:0;border-style:solid;border-width:10vmin 2.75vmin 0;border-color:#ffdc73 transparent transparent;left:7.5vmin;top:0;-webkit-transform-origin:50% 100%;transform-origin:50% 100%;-webkit-transform:rotate(0);transform:rotate(0);-webkit-animation:loading 1.8125s ease-in-out infinite;animation:loading 1.8125s ease-in-out infinite}@-webkit-keyframes loading{0%,100%,49%{opacity:1}50%,99%{opacity:0}}@keyframes loading{0%,100%,49%{opacity:1}50%,99%{opacity:0}}.pizza .slice:nth-of-type(2n):after{box-shadow:.5vmin 2.5vmin 0 #cc333f}.pizza .slice:nth-of-type(4n):after{box-shadow:.5vmin 2.5vmin 0 #cc333f,1.5vmin 5vmin 0 #cc333f}.pizza .slice:nth-of-type(1){-webkit-transform:rotate(-27.75deg);transform:rotate(-27.75deg);-webkit-animation-delay:-62.5ms;animation-delay:-62.5ms}.pizza .slice:nth-of-type(2){-webkit-transform:rotate(-55.5deg);transform:rotate(-55.5deg);-webkit-animation-delay:-125ms;animation-delay:-125ms}.pizza .slice:nth-of-type(3){-webkit-transform:rotate(-83.25deg);transform:rotate(-83.25deg);-webkit-animation-delay:-.1875s;animation-delay:-.1875s}.pizza .slice:nth-of-type(4){-webkit-transform:rotate(-111deg);transform:rotate(-111deg);-webkit-animation-delay:-.25s;animation-delay:-.25s}.pizza .slice:nth-of-type(5){-webkit-transform:rotate(-138.75deg);transform:rotate(-138.75deg);-webkit-animation-delay:-.3125s;animation-delay:-.3125s}.pizza .slice:nth-of-type(6){-webkit-transform:rotate(-166.5deg);transform:rotate(-166.5deg);-webkit-animation-delay:-375ms;animation-delay:-375ms}.pizza .slice:nth-of-type(7){-webkit-transform:rotate(-194.25deg);transform:rotate(-194.25deg);-webkit-animation-delay:-.4375s;animation-delay:-.4375s}.pizza .slice:nth-of-type(8){-webkit-transform:rotate(-222deg);transform:rotate(-222deg);-webkit-animation-delay:-.5s;animation-delay:-.5s}.pizza .slice:nth-of-type(9){-webkit-transform:rotate(-249.75deg);transform:rotate(-249.75deg);-webkit-animation-delay:-.5625s;animation-delay:-.5625s}.pizza .slice:nth-of-type(10){-webkit-transform:rotate(-277.5deg);transform:rotate(-277.5deg);-webkit-animation-delay:-625ms;animation-delay:-625ms}.pizza .slice:nth-of-type(11){-webkit-transform:rotate(-305.25deg);transform:rotate(-305.25deg);-webkit-animation-delay:-.6875s;animation-delay:-.6875s}.pizza .slice:nth-of-type(12){-webkit-transform:rotate(-333deg);transform:rotate(-333deg);-webkit-animation-delay:-.75s;animation-delay:-.75s}.pizza .slice:before{position:absolute;height:1.5vmin;width:6vmin;background:#bbb083;top:-10.5vmin;left:-3vmin;border-radius:100vmin 100vmin .5vmin .5vmin/50vmin}.pizza .slice:after{border-radius:100%;position:absolute;width:1.25vmin;height:1.25vmin;background:#cc333f;left:-1vmin;top:-7vmin;z-index:2}
         </style>
     </head>
-    <body ng-app="App" class="stretched sticky-footer" data-loader-html="<span class='loadingimage'><img src='<?php echo base_url(); ?>assets/theme2/res/images/preloader@2x.gif'>'<h2 class='font-secondary'>Loading...</h2> </span>">
 
-        <div id="wrapper" class="clearfix" ng-controller="ShopController" id="ShopController">
+    <body ng-app="App" class="stretched sticky-footer" data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+
+
+
+        <div class="main-container" ng-controller="ShopController" id="ShopController">
+            <!-- Loader -->
+            <div id="site-loader" class="load-complete">
+                <div class="loader">
+                    <div class="loader-inner ball-clip-rotate">
+                        <div></div>
+                    </div>
+                </div>
+            </div><!-- Loader /- -->
+
             <script>
 
 
@@ -56,62 +73,75 @@
                 var imageurlg = "<?php echo PRODUCTIMAGELINK; ?>";
                 var globlecurrency = "<?php echo globle_currency; ?>";
                 var avaiblecredits = 0;</script>
-            <header id="header" class="static-sticky transparent-header split-menu clearfix">
-                <div id="header-wrap" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png');">
-                    <div class="container clearfix">
-                        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-                        <div id="logo">
-                            <a href="<?php echo site_url("/"); ?>" class="standard-logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Woodlandshk Logo"></a>
-                            <a href="#" class="retina-logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Woodlandshk Logo"></a>
-                        </div>
 
-                        <nav id="primary-menu" class="with-arrows clearfix">
-                            <ul>
-                                <li><a href="<?php echo site_url("about-us"); ?>"><div>INSIGHTS</div></a></li>
-                                <!--<li><a href="<?php echo site_url("menu/0/0"); ?>"><div>Menu</div></a></li>-->
 
-                                <li><a href="<?php echo site_url("gallery"); ?>"><div>Gallery</div></a></li>
+            <header id="header" class="header-section container-fluid no-padding">
+                <!-- Top Header -->
+                <div class="top-header container-fluid no-padding">
+                    <div class="col-md-4 col-sm-12 col-xs-12 ">
 
-                                <li><a href="<?php echo site_url("loyalty-program"); ?>"><div>Loyalty Program</div></a></li>
-
-                                <li><a href="<?php echo site_url("review"); ?>"><div>Review</div></a></li>
-                                <li><a href="<?php echo site_url("blog"); ?>"><div>Blog</div></a></li>
-                            </ul>
-                            <ul>
-                                <li><a href="<?php echo site_url("annual-charity"); ?>"><div>  CHARITY</div></a></li>
-                                <li><a href="<?php echo site_url("contact"); ?>"><div>Contact</div></a></li>
-                                <li><a href="<?php echo site_url("menu/0/0"); ?>" class="reservation_buttons"><div>Order Now</div></a></li>
-                                <li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons"><div class="">Book </div></a></li>
-                                <li>
-                                    <a href="<?php echo site_url("cart") ?>" class="cartheadericon">
-                                        <i class="icon-et-basket" style="    font-size: 20px;"></i><span>{{globleCartData.total_quantity}}</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <?php
-                                    $session_data = $this->session->userdata('logged_in');
-                                    if ($session_data) {
-                                        ?>
-
-                                        <a href="<?php echo site_url("Account/profile") ?>" class="cartheadericon" style="    padding-left: 24px;">
-                                            <i class="icon-et-profile-male" style="    font-size: 20px;"></i> 
-                                        </a>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <a href="<?php echo site_url("Account/login") ?>" class="cartheadericon" style="    padding-left: 24px;">
-                                            <i class="icon-et-lock" style="    font-size: 20px;"></i> 
-                                        </a>
-                                        <?php
-                                    }
-                                    ?>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12 top-content no-padding">
+                        <a href="tel:+852 2367 7489"><i class="fa fa-phone"></i><b>+(852) 2367 7489</b></a>
+
+                        <div class="top-icons">
+
+                            <h5><span>OPENING HOURS:</span> MONDAY - SUNDAY: 12:00PM TO 03.00PM & 06:00PM TO 11:00PM</h5>
+                        </div>
+                    </div>
+
                 </div>
-            </header>
+
+                <!-- Top Header /- -->
+                <!-- Container -->
+                <div class="container">		
+                    <!-- nav -->
+                    <nav class="navbar navbar-default ow-navigation">
+                        <div class="navbar-header">
+                            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="index.html" class="navbar-brand"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+                        <!-- Menu Icon -->
+                        <div class="menu-icon">
+                            <div class="search">	
+                                <a href="#" id="search" title="Search"><i class="icon icon-Search"></i></a>
+                            </div>
+                        </div><!-- Menu Icon /- -->
+                        <div class="navbar-collapse collapse navbar-right" id="navbar">
+                            <ul class="nav navbar-nav">
+
+                                <li><a href="<?php echo site_url("/"); ?>" title="About">INSIGHTS</a></li>
+                                <li><a href="<?php echo site_url("/"); ?>" title="Gallery">GALLERY</a></li>
+                                <li><a href="" title="About">MEMBERSHIP</a></li>
+                                <li class="dropdown">
+                                    <a href="" title="EVENTS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">LOYALTY PROGRAM</a>
+                                    <i class="ddl-switch fa fa-angle-down"></i>
+                                    <ul class="dropdown-menu">				
+                                        <li><a href="" title="events 01">CLUB MEMBER</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="<?php echo site_url("/"); ?>" title="Order Now">ORDER NOW</a></li>
+                                <li><a href="<?php echo site_url("/"); ?>" title="Book Now">BOOK NOW</a></li>
+                                <li><a href="<?php echo site_url("/"); ?>" title="Contact Us">CONTACT US</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </nav><!-- nav /- -->
+                    <!-- Search Box -->
+                    <div class="search-box">
+                        <span><i class="icon_close"></i></span>
+                        <form><input type="text" class="form-control" placeholder="Enter a keyword and press enter..." /></form>
+                    </div><!-- Search Box /- -->
+                </div><!-- Container /- -->		
+            </header><!-- Header Section /- -->
+
+
 
 
 

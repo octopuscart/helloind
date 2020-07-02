@@ -321,6 +321,12 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where('order_id', $order_details->id);
             $query = $this->db->get('cart');
             $cart_items = $query->result();
+            
+            
+//            LAST ORDER DATA
+              $this->db->where('email', $order_details->id);
+            $query = $this->db->get('user_order');
+            $cart_items = $query->result();
 
             $this->db->order_by('display_index', 'asc');
             $this->db->where('order_id', $order_details->id);

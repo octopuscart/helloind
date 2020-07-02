@@ -1,410 +1,294 @@
 <?php
 $this->load->view('layout/header');
 ?>
+<main>
 
-<section id="slider" class="slider-element swiper_wrapper slider-parallax force-full-screen full-screen clearfix" data-effect="fade" data-loop="true" data-autoplay="6000" data-speed="1400">
-    <div class="slider-parallax-inner">
-        <div class="swiper-container swiper-parent">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/11.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
-                            <h2 class="font-secondary ls0 t400 nott" style="font-size: 50px;" data-animate="fadeIn">Experience the rich taste of all south Indian recipes</h2>
-                            <p class="d-none d-sm-block font-primary" style="    font-size: 18px;" data-animate="fadeIn" data-delay="400">Woodlands - Vegetarian Restaurant | Jain | Vegan Restaurant | Indian Restaurant in Hong Kong</p>
-                            <div class="static-content" style="position: relative; display: flex; justify-content: flex-start; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="800">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="">
+    <!-- Slider Section -->
+    <div id="home-revslider" class="slider-section container-fluid no-padding ">
+        <!-- START REVOLUTION SLIDER 5.0 -->
+        <div class="rev_slider_wrapper">
+            <div id="home-slider1" class="rev_slider" data-version="5.0">
+                <ul> 
+
+                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
+                        <!-- MAIN IMAGE -->
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider-5.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" id="slide-layer-5" 
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                             data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                             data-fontsize="['70','70','70','45']"
+                             data-lineheight="['100','70','70','60']"
+                             data-width="none"
+                             data-height="none"
+                             data-whitespace="nowrap"
+                             data-transform_idle="o:1;"
+                             data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;" 
+                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                             data-start="1000" 
+                             data-splitin="chars" 
+                             data-splitout="none" 
+                             data-responsive_offset="on"
+                             data-elementdelay="0.05" 
+                             style="z-index: 5; white-space: nowrap; position:relative; color:#fff; font-weight:700; letter-spacing: 3.15px; font-family: 'PT Serif', serif; text-transform: uppercase;">WELCOME TO HELLO INDIA
+
+                        </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0" id="slide-layer-6" 
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                             data-y="['middle','middle','middle','middle']" data-voffset="['90','90','90','90']" 
+                             data-fontsize="['70','70','70','45']"
+                             data-lineheight="['100','70','70','60']"
+                             data-width="none"
+                             data-height="none"
+                             data-whitespace="nowrap"
+                             data-transform_idle="o:1;"
+                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                             data-start="1500" 
+                             data-splitin="none" 
+                             data-splitout="none" 
+                             data-responsive_offset="on" 
+                             style="z-index: 6; white-space: nowrap; position:relative; color:#fff; font-weight:700; letter-spacing: 3.15px; font-family: 'PT Serif', serif; text-transform: uppercase;">BEST INDIAN RESTAURANT IN HONG KONG
+
+                        </div>
+
+
+
+
+                    </li>
+                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
+                        <!-- MAIN IMAGE -->
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider-1.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" id="slide-layer-1" 
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                             data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                             data-fontsize="['70','70','70','45']"
+                             data-lineheight="['100','70','70','60']"
+                             data-width="none"
+                             data-height="none"
+                             data-whitespace="nowrap"
+                             data-transform_idle="o:1;"
+                             data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;" 
+                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                             data-start="1000" 
+                             data-splitin="chars" 
+                             data-splitout="none" 
+                             data-responsive_offset="on"
+                             data-elementdelay="0.05" 
+                             style="z-index: 5; white-space: nowrap; position:relative; color:#fff; font-weight:700; letter-spacing: 3.15px; font-family: 'PT Serif', serif; text-transform: uppercase;">Indian cuisine consists of a variety of 
+                        </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0" id="slide-layer-2" 
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                             data-y="['middle','middle','middle','middle']" data-voffset="['90','90','90','90']" 
+                             data-fontsize="['70','70','70','30']"
+                             data-lineheight="['100','70','70','60']"
+                             data-width="none"
+                             data-height="none"
+                             data-whitespace="nowrap"
+                             data-transform_idle="o:1;"
+                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                             data-start="1500" 
+                             data-splitin="none" 
+                             data-splitout="none" 
+                             data-responsive_offset="on" 
+                             style="z-index: 6; white-space: nowrap; position:relative; color:#fff; font-weight:700; letter-spacing: 3.15px; font-family: 'PT Serif', serif; text-transform: uppercase;">regional and traditional 
+                        </div>
+
+
+
+
+
+                    </li>
+                </ul>
+            </div><!-- END REVOLUTION SLIDER -->
+        </div><!-- END OF SLIDER WRAPPER -->
+        <span class="goto-next"><a href="#welcome-section"><i class="icon icon-Mouse bounce" aria-hidden="true"></i></a></span>
+    </div><!-- Slider Section /- -->
+
+    <!-- Welcome Section -->
+    <div id="welcome-section" class="container-fluid no-padding welcome-section" style="padding-bottom: 20px;">
+        <!-- Container -->
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-title-border">
+                    <span>Welcome to</span>
+                    <h2>HELLO INDIA</h2>
+                </div>
+            </div><!-- Section Header /- -->
+            <!-- Row -->
+            <div class="row">
+                <div id="welcome-carousel" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="col-md-6 col-sm-6 content-block">
+                                <p>Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent. Given the diversity in soil, climate, culture, ethnic groups, and occupations, these cuisines vary substantially and use locally available spices, herbs, vegetables, and fruits. </p>
+                                <p>Hello India Welcomes you to a world of delicious Indian food. Signature dishes coming from our grand Indian heritage. 
+                                    We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
+
+                                    In Hello India you can experience the especially rich flavours of so many Regional Indian recipes that have evolved over the centuries. 
+                                    They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices.</p>
+                                <a href="#" title="Read More">Read More</a>
+                            </div>
+                            <div class="col-md-6 col-sm-6 img-block">
+                                <i><img src="<?php echo base_url(); ?>assets/theme2/images/welcome-1.jpg" alt="Welcome" /></i>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/3.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption slider-caption-center" style="margin-top: -30px;">
-                            <img data-animate="fadeIn" src="<?php echo base_url(); ?>assets/theme2/res/images/vegconcept.png" alt="" style="width: 260px; margin-bottom: 10px;">
-                            <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn" data-delay="400">Vegetarian Restaurant</h2>
-                            <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="800">First and Best Indian Vegetarian Restaurant <br/> in Tsim Sha Tsui, Hong Kong</p>
-                            <div class="static-content" style="position: relative; display: flex; justify-content: center; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="1000">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="">
-                            </div>
-                        </div>
+            </div><!-- Row /- -->
+        </div><!-- Container /- -->
+    </div><!-- Welcome Section /- -->
+
+    <!-- Onview Section -->
+    <div class="container-fluid no-padding onview-section" style="padding-bottom: 10px;">
+        <!-- Container -->
+        <div class="container">
+            <div class="col-md-5 col-sm-5 col-xs-12 img-block">
+                <img src="<?php echo base_url(); ?>assets/theme2/images/onview-1.png" alt="onview" />
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12 onview-content">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <div class="section-title-border">
+                        <span>About us</span>
+                        <h2>on view</h2>
                     </div>
+                </div><!-- Section Header /- -->
+                <p>
+                    Hello India Welcomes you to a world of delicious Indian food. Signature dishes coming from our grand Indian heritage. 
+We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
+ </p><p>
+In Hello India you can experience the especially rich flavours of so many Regional Indian recipes that have evolved over the centuries. 
+They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices.
+                </p>
+               
+            </div>
+        </div><!-- Container /- -->
+    </div><!-- Onview Section /- -->
+ 
+
+
+  
+
+ 
+
+
+    <!-- Portfolio Section -->
+    <div class="container-fluid no-padding portfolio-section" style="padding-top: 70px;">
+        <!-- Container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Section Header -->
+                    <div class="section-header">
+                        <div class="section-title-border">
+                            <span>Its Our Great Flows</span>
+                            <h2>our gallery</h2>
+                        </div>
+                    </div><!-- Section Header /- -->
                 </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/2.jpg'); background-position: center bottom;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption slider-caption-right">
-                            <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn">Hello &amp; Welcome.</h2>
-                            <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="400">MOST SHARED MENU ITEM OF WOODLANDS
-                                THE FIRST INDIAN RESTAURANT AND VEGETARIAN RESTAURANT IN HONG KONG</p>
-                        </div>
-                    </div>
+                <div class="col-md-7 portfolio-categories">
+                    <ul id="filters">
+                        <li><a data-filter="*" class="active" href="#">ALL</a></li>
+                        <li><a data-filter=".modern" href="#">MODERN ART</a></li>
+                        <li><a data-filter=".vintage" href="#">VINTAGE ART</a></li>
+                        <li><a data-filter=".statue" href="#">ANCIENT STATUE</a></li>
+                        <li><a data-filter=".others" href="#">OTHERS</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
-            <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
-        </div>
-    </div>
-</section>
 
-<section id="content" style="overflow: visible; margin-bottom: 192px!important;">
-    <div class="content-wrap1">
-        <div class="section nomargin clearfix" style="padding: 10px 0; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/41.jpg') center center no-repeat; background-size: 100% auto">
-            <div class="container clearfix">
-
-                <div class="row clearfix">
-                    <div class="col-lg-7 bottommargin-sm">
-                        <div class="heading-block nobottomborder bottommargin-sm">
-                            <img src="<?php echo base_url(); ?>assets/theme2/res/images/vegconcept2.png" style="height: 80px;" alt="">
-
-                        </div>
-                        <div class="feature-box media-box" style="">
-
-                            <h3>First and Best Indian Vegetarian Restaurant in Hong Kong</h3>
-                            <p> Vegetarianism is neither a fad not a passing fancy. It is a long and widely established way of life not only for whole communities in the far east And Asia but all over the world among individuals who are making an independent stand for a better healthier and more compassionate society.</p>
-                        </div>
+        </div><!-- Container /- -->
+        <div class="portfolio-list">
+            <div class="portfolio-box col-md-4  col-sm-4 no-padding modern statue">
+                <a href="images/portfolio-1.jpg">
+                    <img src="<?php echo base_url(); ?>assets/gallery/1.jpg" alt="Portfolio" />
+                    <div class="portfolio-content">
+                        <i class="icon icon-Search"></i>
+                       
                     </div>
-                </div>
+                </a>
             </div>
-        </div>
-        <div style="position: absolute; top: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-top: -40px;"></div>
-
-    </div>
-
-
-    <div class="section nomargin clearfix" style="padding: 40px 0; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/42.jpg') center center no-repeat; background-size: 100% auto">
-        <div class="container clearfix">
-
-            <div class="row clearfix">
-                <div class="col-lg-5 bottommargin-sm"></div>
-                <div class="col-lg-7 bottommargin-sm">
-                    <div class="heading-block nobottomborder bottommargin-sm">
-                        <h2 class="font-secondary color nott" style="font-size: 52px;">
-                            <div class="fbox-media" style="width: 70px; height: auto;float:left;margin-top: -13px;float: left;margin-right: 20px;">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/bowl.svg" alt="">
-                            </div>
-                            Who We Are </h2>
+            <div class="portfolio-box col-md-4  col-sm-4 no-padding vintage">
+                <a href="images/portfolio-2.jpg">
+                    <img src="<?php echo base_url(); ?>assets/gallery/2.jpg" alt="Portfolio" />
+                    <div class="portfolio-content">
+                        <i class="icon icon-Search"></i>
+                       
                     </div>
-                    <div class="feature-box media-box" style="">
-
-                        <h3>First and Best Indian Vegetarian Restaurant in Hong Kong</h3>
-                        <p> Vegetarianism is neither a fad not a passing fancy. It is a long and widely established way of life not only for whole communities in the far east And Asia but all over the world among individuals who are making an independent stand for a better healthier and more compassionate society.</p>
-                    </div>
-                </div>
-
+                </a>
             </div>
-        </div>
-    </div>
-
-    <div class="clear"></div>
-    <div class="section nobottommargin" style="background: #8cc646    url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png') no-repeat top left / cover; padding: 60px 0; padding-top: 15px;margin-top: 10px;">
-        <div class="container clearfix">
-            <div class="heading-block center nobottommargin nobottomborder">
-                <span class="font-primary" style="font-size: 16px; color: #888">Tasty &amp; Healthy</span>
-                <h3 class="nott font-secondary ls0" style="font-size: 60px;">Our Food Menu</h3>
+            <div class="portfolio-box col-md-4  col-sm-4 no-padding statue others">
+                <a href="images/portfolio-3.jpg">
+                    <img src="<?php echo base_url(); ?>assets/gallery/3.jpg" alt="Portfolio" />
+                    <div class="portfolio-content">
+                        <i class="icon icon-Search"></i>
+                       
+                    </div>
+                </a>
             </div>
-        </div>
-    </div>
-    <div class="section food-menu notopmargin nopadding">
-        <div class="container-fluid">
-            <div class="row align-items-stretch clearfix">
-                <div class="col-lg-7 clearfix">
-                    <div class="vertical-middle1" style="">
-                        <div class="col-padding clearfix">
-                            <div>
-                                <div id="item-thumb" class="item-thumb">
-
-                                    <?php
-                                    $menuitems = array(
-                                        "SOUP" => "soup.jpg",
-                                        "STARTERS" => "idly.jpg",
-                                        "CHAT CORNER" => "chat.jpg",
-                                        "DOSA" => "dosa.jpg",
-                                        "RAVA DOSA" => "ravadosa.jpg",
-                                        "UTTAPPAM" => "uttapam.jpg",
-                                        "THALI" => "thali.jpg",
-                                        "RICE" => "rice.jpg",
-                                        "BREADS" => "roti.jpg",
-                                    );
-                                    foreach ($menuitems as $key => $value) {
-                                        ?>
-                                    <a href="<?php echo site_url("menu/0/0"); ?>" role = "button" class = "owl-dot">
-                                            <span style="background: url(<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/<?php echo $value; ?>)">
-                                                <h3><?php echo $key; ?></h3>
-                                            </span>
-
-                                        </a>
-                                        <?php
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="center divcenter"><a class="button button-border button-small button-black button-dark button-circle noleftmargin" href="<?php echo site_url("menu/0/0"); ?>" style="margin-top: 0px;">See All Menu</a></div>
-                        </div>
-
-
+            <div class="portfolio-box col-md-4  col-sm-4 no-padding others">
+                <a href="images/portfolio-4.jpg">
+                    <img src="<?php echo base_url(); ?>assets/gallery/4.jpg" alt="Portfolio" />
+                    <div class="portfolio-content">
+                        <i class="icon icon-Search"></i>
+                     
                     </div>
-                </div>
-                <div class="col-lg-5" style="background-color: #FFF; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);margin: 40px 0px;">
-                    <div id="food-menu-carousel" class="menu-carousel owl-carousel image-carousel food-menu-carousel custom-js owl-loaded">
-
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage" style="padding:0">
-                                <div class="owl-item active" >
-                                    <div class="oc-item">
-                                        <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/featuremenu2.jpg" alt="Image 1" style="    margin: 0px!important;">
-                                        <div class="food-content clearfix">
-                                            <div class="heading-block nobottomborder nobottommargin">
-                                                <h3 class="font-secondary nott">Nothing brings people together <br/> like our dosa</h3>
-
-                                                <p class="nobottommargin">
-                                                    India is the home of innumerable delicious vegetarian dishes. There is so much more to Indian food than just curry. Indian food varies from region to region throughout the country. All of the Regional varieties share a common love of healthy fresh vegetables and fragrant spices.
-                                                </p>
-                                                <p class="nobottommargin"> We at Woodlands offer traditional lactovegetarian, Jain & Buddhist Food with no onion, garlic, root vegetables and 100% plant-based dishes commonly known as vegan.</p>
-
-                                                <p class="nobottommargin">All are prepared separately by our expert chefs.</p>
-
-                                                <p class="nobottommargin">We are best Indian Restaurant and Vegetarian Restaurant in Tsim Sha Tsui, Hong Kong</p>
-
-
-
-                                            </div>
-                                            <a href="<?php echo site_url("menu/0/0"); ?>" class="more-link">See More Details <i class="icon-line-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
-        </div>
-        <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="   "/>
-
-    </div>
-
-    <div class="clear"></div>
-
-    <div class="section nobottommargin" style="padding: 0px 0; background: #FFF;    margin-top: -30px;">
-        <div class="container clearfix">
-            <div class="heading-block center nobottomborder">
-                <span class="font-primary ls1" style="font-size: 14px; color: #AAA">Expert &amp; Skillful</span>
-                <h3 class="nott font-secondary ls0" style="font-size: 60px; line-height: 1.3;">Our Chefs</h3>
+            <div class="portfolio-box col-md-4  col-sm-4 no-padding modern">
+                <a href="images/portfolio-5.jpg">
+                    <img src="<?php echo base_url(); ?>assets/gallery/5.jpg" alt="Portfolio" />
+                    <div class="portfolio-content">
+                        <i class="icon icon-Search"></i>
+                      
+                    </div>
+                </a>
             </div>
-            <div class="row clearfix">
-                <div class="col-lg-2 col-md-6">
-
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="team">
-                        <div class="team-image imagescalein">
-                            <a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html"><img src="<?php echo base_url(); ?>assets/theme2/res/images/chefs/kitta.jpg" alt="Josh Clark"></a>
-                        </div>
-                        <div class="team-desc">
-                            <div class="team-title">
-                                <h4 class="font-primary t400 ls2">KITTA Moolya</h4>
-                                <span>Executive Chef</span>
-                            </div>
-                            <p>    
-                                Our chef, Kitta Moolya, was born and raised in Mangalore, close to Udupi, a famous city in South India known for its specialized and highly varied vegetarian cuisine.
-                            </p>
-                        </div>
+            <div class="portfolio-box col-md-4  col-sm-4 no-padding vintage modern">
+                <a href="images/portfolio-6.jpg">
+                    <img src="<?php echo base_url(); ?>assets/gallery/6.jpg" alt="Portfolio" />
+                    <div class="portfolio-content">
+                        <i class="icon icon-Search"></i>
+                   
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team">
-                        <div class="team-image imagescalein">
-                            <a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html"><img src="<?php echo base_url(); ?>assets/theme2/res/images/chefs/sures.jpg" alt="Suresh Pairaje Rai
-                                                                                                    "></a>
-                        </div>
-                        <div class="team-desc">
-                            <div class="team-title">
-                                <h4 class="font-primary t400 ls2">Suresh Pairaje Rai</h4>
-                                <span>Chef</span>
-                            </div>
-                            <p>I want my cooking to reflect the rugged nature and climate of the cold north. I want to create a progressive environment that has a emphasis on the outstanding produce of our region.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section nobottommargin" style="background: #fee749 url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall.jpg') no-repeat center right; background-size: cover; padding: 60px 0;">
-        <div class="heading-block center nobottommargin nobottomborder">
-
-            <h3 class="nott font-secondary ls0" style="font-size: 60px;line-height: 1.3;">Wall Of Woodland</h3>
-        </div>
-    </div>
-    <style>
-
-        <?php
-        $reviewList = array(
-            "ranikant" => array(
-                "image" => "Rajini.jpg",
-                "name" => "Rajinikanth",
-                "position" => "Indian Cine Super Star",
-                "date" => "",
-            ),
-            "ilayaraja" => array(
-                "image" => "Ilayaraja.jpg",
-                "name" => "Iilayaraja",
-                "position" => "Famous Indian Music Director",
-                "date" => "",
-            ),
-            "SPB" => array(
-                "image" => "SPB.jpg",
-                "name" => "S. P. Balasubrahmanyam",
-                "position" => "Indian playback singer",
-                "date" => "",
-            ),
-            "Sunil-Gav" => array(
-                "image" => "Sunil-Gav.jpg",
-                "name" => "Sunil Gavaskar",
-                "position" => "Indian cricketer",
-                "date" => "",
-            ),
-            "Anil-Kumble" => array(
-                "image" => "Anil-Kumble.jpg",
-                "name" => "Anil Kumble",
-                "position" => "Indian cricketer",
-                "date" => "",
-            ),
-            "Amrish" => array(
-                "image" => "Amrish.jpg",
-                "name" => "Amrish Puri",
-                "position" => "Indian bollywood actor ",
-                "date" => "",
-            ),
-            "hariharan" => array(
-                "image" => "Hari-haran.jpg",
-                "name" => "Hari Haran",
-                "position" => "Indian Cine Singar ",
-                "date" => "",
-            ),
-            "shrikanth" => array(
-                "image" => "Srikanth.jpg",
-                "name" => "Shri Kanth",
-                "position" => "Indian cricketer ",
-                "date" => "",
-            ),
-            "Narasimha" => array(
-                "image" => "Narasimrao.jpg",
-                "name" => "P. V. Narasimha Rao",
-                "position" => "Former Prime Minister of India",
-                "date" => "",
-            ),
-        );
-        $countrr = 1;
-        foreach ($reviewList as $key => $value) {
-            ?>
-
-            .dessert-menu .item-thumb .owl-dot:nth-of-type(<?php echo $countrr; ?>) span {
-                background-image: url(<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>)!important;
-                background-size: 100%!important;
-            }
-            <?php
-            $countrr ++;
-        }
-        ?>
-
-    </style>
-    <div class="section dessert-menu nomargin nopadding" style="    background: #FBB316;">
-        <div class="container-fluid">
-            <div class="row align-items-stretch clearfix">
-                <div class="col-lg-5" style="background-color: #FFF; padding: 0; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);margin: 40px 0px;">
-                    <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
-                        <?php
-                        foreach ($reviewList as $key => $value) {
-                            ?>
-                            <div class="oc-item">
-                                <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" style="margin: 26px;    width: 90%;">
-                                <div class="food-content clearfix">
-                                    <div class="heading-block nobottomborder nobottommargin">
-                                        <h3 class="font-secondary nott"><?php echo $value['name']; ?></h3>
-                                        <div class="food-info"><?php echo $value['position']; ?></div>
-                                        <p class="nobottommargin"><?php echo $value['date']; ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                        ?>
-
-                    </div>
-                </div>
-                <div class="col-lg-7 clearfix" style="background:url()">
-                    <div class="vertical-middle">
-                        <div class="col-padding clearfix">
-                            <div><div id="item-thumb1" class="item-thumb"></div></div>
-                            <div class="center divcenter"><a href="<?php echo site_url("review"); ?>" class="button button-border button-small button-black button-dark button-circle noleftmargin" style="margin-top: 0px;">See All</a></div>
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
-        <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png">
-    </div>
+    </div><!-- Portfolio Section /- -->
 
-    <div class="clear"></div>
-
-    <div class="section nobottommargin" style="padding: 0px 0; background: #FFF;    margin-top: 0px;">
-        <div class="container clearfix">
-            <div class="heading-block center nobottomborder">
-                <span class="font-primary ls1" style="font-size: 14px; color: #AAA"></span>
-                <h3 class="nott font-secondary ls0" style="font-size: 60px; line-height: 1.3;">Experience Woodlands</h3>
-            </div>
-            <div class="row clearfix">
-
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="team">
-                        <div class="team-image imagescalein">
-                            <iframe width="1133" height="550" src="https://www.youtube.com/embed/ASkSgQxdiVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="team-desc">
-                            <div class="team-title">
-                                <h4 class="font-primary t400 ls2">Welcome to Indian Vegetarian Restaurant - Woodlands
-                                </h4>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="team">
-                        <div class="team-image imagescalein">
-                            <iframe width="1133" height="550" src="https://www.youtube.com/embed/smRHSvResAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="team-desc">
-                            <div class="team-title">
-                                <h4 class="font-primary t400 ls2">Woodlands - 印度菜唔止得咖喱 | Indian Food isn't just curry 2 - Dosa
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Call To Action -->
+    <div class="container-fluid no-padding cta-section">
+        <!-- Container -->
+        <div class="container">
+            <h3><img src="<?php echo base_url(); ?>assets/theme2/images/cta-logo.png" alt="Logo" />here comes the best museum theme ever</h3>
+            <a href="#" title="PURCHASE NOW">PURCHASE NOW</a>
         </div>
-    </div>
+        <!-- Container /- -->
+    </div><!-- Call To Action /- -->
 
-    <?php
-    $this->load->view('layout/contactfooter');
-    ?>
-
-
-   
-
-</section>
-
+</main>
 <?php
 $this->load->view('layout/footer');
 ?>
