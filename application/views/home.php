@@ -282,8 +282,8 @@ They have been perfected by our experienced Chefs over decades, experts in the a
     <div class="container-fluid no-padding cta-section">
         <!-- Container -->
         <div class="container">
-            <h3><img src="<?php echo base_url(); ?>assets/theme2/images/cta-logo.png" alt="Logo" />here comes the best museum theme ever</h3>
-            <a href="#" title="PURCHASE NOW">PURCHASE NOW</a>
+            <h3>here comes the best indian food ever in hong kong</h3>
+            <a href="#" title="PURCHASE NOW">BOOK NOW</a>
         </div>
         <!-- Container /- -->
     </div><!-- Call To Action /- -->

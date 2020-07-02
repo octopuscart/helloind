@@ -116,14 +116,15 @@
                         <div class="navbar-collapse collapse navbar-right" id="navbar">
                             <ul class="nav navbar-nav">
 
-                                <li><a href="<?php echo site_url("/"); ?>" title="About">INSIGHTS</a></li>
+                                <li><a href="<?php echo site_url("about-us"); ?>" title="About">INSIGHTS</a></li>
                                 <li><a href="<?php echo site_url("/"); ?>" title="Gallery">GALLERY</a></li>
-                                <li><a href="" title="About">MEMBERSHIP</a></li>
+                                
                                 <li class="dropdown">
-                                    <a href="" title="EVENTS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">LOYALTY PROGRAM</a>
+                                    <a href="" title="EVENTS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">MEMBERSHIP</a>
                                     <i class="ddl-switch fa fa-angle-down"></i>
                                     <ul class="dropdown-menu">				
                                         <li><a href="" title="events 01">CLUB MEMBER</a></li>
+                                        <li><a href="" title="About">LOYALTY PROGRAM </a></li>
                                     </ul>
                                 </li>
 

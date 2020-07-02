@@ -22,10 +22,9 @@
 						<aside class="ftr-widget widget_link">
 							<h3 class="widget-title">INFORMATION</h3>
 							<ul>
-								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="INSIGHTS">INSIGHTS</a></li>
+								<li class="col-md-6 col-sm-6 col-xs-6"><a href="<?php echo site_url("about-us"); ?>" title="INSIGHTS">INSIGHTS</a></li>
 								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="GALLERY">GALLERY</a></li>
-								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="LOYALTY PROGRAM">LOYALTY PROGRAM</a></li>
-								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="Gallery">CLUB MEMBER</a></li>
+								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="LOYALTY PROGRAM">MEMBERSHIP</a></li>
 								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="ORDER NOW">ORDER NOW</a></li>
 								<li class="col-md-6 col-sm-6 col-xs-6"><a href="#" title="CONTACT US">CONTACT US</a></li>
 							</ul>
