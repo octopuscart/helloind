@@ -110,9 +110,7 @@
                         </div>
                         <!-- Menu Icon -->
                         <div class="menu-icon">
-                            <div class="search">	
-                                <a href="#" id="search" title="Search"><i class="icon icon-Search"></i></a>
-                            </div>
+                          
                         </div><!-- Menu Icon /- -->
                         <div class="navbar-collapse collapse navbar-right" id="navbar">
                             <ul class="nav navbar-nav">
@@ -124,13 +122,13 @@
                                     <a href="" title="EVENTS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">MEMBERSHIP</a>
                                     <i class="ddl-switch fa fa-angle-down"></i>
                                     <ul class="dropdown-menu">				
-                                        <li><a href="" title="events 01">CLUB MEMBER</a></li>
+                                        <li><a href="" title="Club Member">CLUB MEMBER</a></li>
                                         <li><a href="" title="About">LOYALTY PROGRAM </a></li>
                                     </ul>
                                 </li>
 
                                 <li><a href="<?php echo site_url("/"); ?>" title="Order Now">ORDER NOW</a></li>
-                                <li><a href="<?php echo site_url("/"); ?>" title="Book Now">BOOK NOW</a></li>
+                                <li><a href="<?php echo site_url("book-now"); ?>" title="Book Now">BOOK NOW</a></li>
                                 <li><a href="<?php echo site_url("contact"); ?>" title="Contact Us">CONTACT US</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->

@@ -40,11 +40,6 @@ They have been perfected by our experienced Chefs over decades, experts in the a
     </div><!-- Welcome Section /- -->
 
     <!-- Client Section -->
-    
-
- 
-
-   
 </main>
 
 

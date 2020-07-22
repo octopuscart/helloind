@@ -115,3 +115,28 @@
 }
 
 
+
+
+.bookingpage{
+    
+}
+
+.bookingpage .form-control{
+    margin-bottom:20px;
+}
+
+.booknowblock{
+    padding: 20px;
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 100px;
+}
+
+.booknowblock button{
+   background: orange;
+}
+
+
+.contact-form .form-control {
+    color:black;
+}
