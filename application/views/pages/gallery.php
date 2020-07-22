@@ -4,7 +4,7 @@ $this->load->view('layout/header');
 <main>
 
     <!-- Page Banner -->
-    <div class="container-fluid no-padding page-banner">
+    <div class="container-fluid no-padding page-banner" style="background: url('<?php echo base_url(); ?>assets/gallery/4.jpg');background-position: center;">
         <!-- Container -->
         <div class="container">
             <h3>gallery</h3>
@@ -12,123 +12,50 @@ $this->load->view('layout/header');
     </div><!-- Page Banner /- -->
 
     <!-- Portfolio Section -->
-    <div class="container-fluid no-padding portfolio-section">
+    <div class="container-fluid no-padding portfolio-section" style="padding: 0px;">
         <!-- Container -->
         <div class="container">
-            <div class="col-md-12 col-sm-12 col-xs-12 no-padding portfolio-categories">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding portfolio-categories" >
                 <ul id="filters">
                     <li><a data-filter="*" class="active" href="#">ALL</a></li>
-                    <li><a data-filter=".modern" href="#">MODERN ART</a></li>
-                    <li><a data-filter=".vintage" href="#">VINTAGE ART</a></li>
-                    <li><a data-filter=".statue" href="#">ANCIENT STATUE</a></li>
+                    <li><a data-filter=".culture" href="#">CULTURE </a></li>
+                    <li><a data-filter=".hotel" href="#">HOTEL </a></li>
+                    <li><a data-filter=".party" href="#">PARTY</a></li>
                     <li><a data-filter=".others" href="#">OTHERS</a></li>
                 </ul>
             </div>
         </div><!-- Container /- -->
         <div class="portfolio-list">
-            <div class="portfolio-box col-md-6 col-sm-6 no-padding modern statue">
-                <a href="images/portfolio-1.jpg">
-                    <img src="images/portfolio-1.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
+            <?php
+            $loopgallery = array(
+                "culture" => [1, 2, 4, 8, 9, 14, 16, 17],
+                "hotel" => [5, 6, 7, 10, 11, 13, 15, 18],
+                "party" => [19, 20, 21, 22],
+                "others" => [23, 24],
+            );
+            foreach ($loopgallery as $gkey => $gvalue) {
+                $classg = $gkey;
+                foreach ($gvalue as $key => $value) {
+                    ?>
+                    <div class="portfolio-box col-md-3  col-sm-3 no-padding <?php echo $classg;?> statue">
+                        <a href="<?php echo base_url(); ?>assets/gallery/<?php echo $value;?>.jpg">
+                            <img src="<?php echo base_url(); ?>assets/gallery/<?php echo $value;?>.jpg" alt="Portfolio" />
+                            <div class="portfolio-content">
+                                <i class="icon icon-Search"></i>
+
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3 col-sm-3 no-padding vintage">
-                <a href="images/portfolio-2.jpg">
-                    <img src="images/portfolio-2.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3 col-sm-3 no-padding statue others">
-                <a href="images/portfolio-3.jpg">
-                    <img src="images/portfolio-3.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3 col-sm-3 no-padding others">
-                <a href="images/portfolio-4.jpg">
-                    <img src="images/portfolio-4.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3 col-sm-3 no-padding modern">
-                <a href="images/portfolio-5.jpg">
-                    <img src="images/portfolio-5.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-6 col-sm-6 no-padding vintage modern">
-                <a href="images/portfolio-6.jpg">
-                    <img src="images/portfolio-6.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3 col-sm-3 no-padding vintage">
-                <a href="images/portfolio-7.jpg">
-                    <img src="images/portfolio-7.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3 col-sm-3 no-padding statue others">
-                <a href="images/portfolio-8.jpg">
-                    <img src="images/portfolio-8.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3 col-sm-3 no-padding others">
-                <a href="images/portfolio-9.jpg">
-                    <img src="images/portfolio-9.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3 col-sm-3 no-padding modern">
-                <a href="images/portfolio-10.jpg">
-                    <img src="images/portfolio-10.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-                        <h3>spral cloud</h3>
-                        <span>Photography</span>
-                    </div>
-                </a>
-            </div>
+                    <?php
+                }
+            }
+            ?>
+
+
+
         </div>
         <div class="padding-80"></div>
-       
+
     </div><!-- Portfolio Section /- -->
     <div class="section-padding"></div>
 </main>

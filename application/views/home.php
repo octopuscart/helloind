@@ -211,9 +211,9 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                 <div class="col-md-7 portfolio-categories">
                     <ul id="filters">
                         <li><a data-filter="*" class="active" href="#">ALL</a></li>
-                        <li><a data-filter=".modern" href="#">MODERN ART</a></li>
-                        <li><a data-filter=".vintage" href="#">VINTAGE ART</a></li>
-                        <li><a data-filter=".statue" href="#">ANCIENT STATUE</a></li>
+                        <li><a data-filter=".modern" href="#">CULURE ART</a></li>
+                        <li><a data-filter=".vintage" href="#">RIGINAL ART</a></li>
+                        <li><a data-filter=".statue" href="#">ANCIENT ART</a></li>
                         <li><a data-filter=".others" href="#">OTHERS</a></li>
                     </ul>
                 </div>
