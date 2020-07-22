@@ -116,7 +116,7 @@
                             <ul class="nav navbar-nav">
 
                                 <li><a href="<?php echo site_url("about-us"); ?>" title="About">INSIGHTS</a></li>
-                                <li><a href="<?php echo site_url("/"); ?>" title="Gallery">GALLERY</a></li>
+                                <li><a href="<?php echo site_url("gallery"); ?>" title="Gallery">GALLERY</a></li>
                                 
                                 <li class="dropdown">
                                     <a href="" title="EVENTS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">MEMBERSHIP</a>
