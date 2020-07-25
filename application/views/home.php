@@ -228,8 +228,8 @@ $this->load->view('layout/header');
                 <div class="col-md-7 portfolio-categories">
                     <ul id="filters">
                         <li><a data-filter="*" class="active" href="#">ALL</a></li>
-                        <li><a data-filter=".modern" href="#">CULURE ART</a></li>
-                        <li><a data-filter=".vintage" href="#">RIGINAL ART</a></li>
+                        <li><a data-filter=".modern" href="#">CULTURE ART</a></li>
+                        <li><a data-filter=".vintage" href="#">REGIONAL ART</a></li>
                         <li><a data-filter=".statue" href="#">ANCIENT ART</a></li>
                         <li><a data-filter=".others" href="#">OTHERS</a></li>
                     </ul>
