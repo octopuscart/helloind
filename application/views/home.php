@@ -12,7 +12,7 @@ $this->load->view('layout/header');
 
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
-                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider-5.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider/1.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 1 -->
@@ -64,9 +64,26 @@ $this->load->view('layout/header');
 
 
                     </li>
+
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
-                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider-1.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider/4.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    </li>
+                    
+                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
+                        <!-- MAIN IMAGE -->
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider/5.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    </li>
+                    
+                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
+                        <!-- MAIN IMAGE -->
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider/6.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    </li>
+
+
+                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
+                        <!-- MAIN IMAGE -->
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider/7.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" id="slide-layer-1" 
@@ -177,21 +194,21 @@ $this->load->view('layout/header');
                 </div><!-- Section Header /- -->
                 <p>
                     Hello India Welcomes you to a world of delicious Indian food. Signature dishes coming from our grand Indian heritage. 
-We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
- </p><p>
-In Hello India you can experience the especially rich flavours of so many Regional Indian recipes that have evolved over the centuries. 
-They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices.
+                    We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
+                </p><p>
+                    In Hello India you can experience the especially rich flavours of so many Regional Indian recipes that have evolved over the centuries. 
+                    They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices.
                 </p>
-               
+
             </div>
         </div><!-- Container /- -->
     </div><!-- Onview Section /- -->
- 
 
 
-  
 
- 
+
+
+
 
 
     <!-- Portfolio Section -->
@@ -221,12 +238,12 @@ They have been perfected by our experienced Chefs over decades, experts in the a
 
         </div><!-- Container /- -->
         <div class="portfolio-list">
-             <div class="portfolio-box col-md-3  col-sm-3 no-padding modern statue">
+            <div class="portfolio-box col-md-3  col-sm-3 no-padding modern statue">
                 <a href="<?php echo base_url(); ?>assets/gallery/IMG_3432.jpg">
                     <img src="<?php echo base_url(); ?>assets/gallery/IMG_3413.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
-                       
+
                     </div>
                 </a>
             </div>
@@ -235,7 +252,7 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     <img src="<?php echo base_url(); ?>assets/gallery/IMG_3388.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
-                       
+
                     </div>
                 </a>
             </div>
@@ -244,7 +261,7 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     <img src="<?php echo base_url(); ?>assets/gallery/1.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
-                       
+
                     </div>
                 </a>
             </div>
@@ -253,7 +270,7 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     <img src="<?php echo base_url(); ?>assets/gallery/2.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
-                       
+
                     </div>
                 </a>
             </div>
@@ -262,7 +279,7 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     <img src="<?php echo base_url(); ?>assets/gallery/3.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
-                       
+
                     </div>
                 </a>
             </div>
@@ -271,7 +288,7 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     <img src="<?php echo base_url(); ?>assets/gallery/4.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
-                     
+
                     </div>
                 </a>
             </div>
@@ -280,7 +297,7 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     <img src="<?php echo base_url(); ?>assets/gallery/5.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
-                      
+
                     </div>
                 </a>
             </div>
@@ -289,7 +306,7 @@ They have been perfected by our experienced Chefs over decades, experts in the a
                     <img src="<?php echo base_url(); ?>assets/gallery/6.jpg" alt="Portfolio" />
                     <div class="portfolio-content">
                         <i class="icon icon-Search"></i>
-                   
+
                     </div>
                 </a>
             </div>
