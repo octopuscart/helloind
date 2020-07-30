@@ -140,3 +140,118 @@
 .contact-form .form-control {
     color:black;
 }
+
+
+.change-color-gradiant  {
+    background: linear-gradient(270deg, #ff0000, #00db25, #0005db, #db8900, #00dbc0, #db0000);
+    background-size: 1200% 1200%;
+
+    -webkit-animation: changegradiantcolor 31s ease infinite;
+    -moz-animation: changegradiantcolor 31s ease infinite;
+    animation: changegradiantcolor 31s ease infinite;
+}
+
+@-webkit-keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.whilecolor{
+    color:white!important;
+}
+
+
+.stylefont-Arizonia{
+    font-family: 'Arizonia', cursive!important;
+}
+
+
+.stylefont-Merienda{
+    font-family: 'Merienda One', cursive!important;;
+
+}
+
+.font-50{
+    font-size: 50px!important;
+}
+
+.text-capitalize{
+    text-transform: capitalize!important;
+}
+
+
+.onview-section::before {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.stylefont-Kaushan{
+    font-family: 'Kaushan Script', cursive!important;
+}
+
+
+.page-banner h3 {
+    color: #2a2a2a;
+     font-family: 'Kaushan Script', cursive!important;
+}
+
+.page-banner {
+  
+    padding: 50px 0 50px;
+}
+
+
+.menuitem-group{
+    margin-top: 30px;
+}
+
+
+.menuitem{
+    width:100%;
+}
+
+.menuitem a{
+    width: 100%;
+    
+}
+
+.menuitem a {
+    width: 100%;
+    font-size: 17px;
+    color: #FF9800;
+}
+
+.menuitem.active a{
+background-color: #FF9800!important;
+border-radius: 25px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.menucontainer{
+    background-color: #FF9800;
+    /*height: 1000px;*/
+    padding: 20px!important;
+    border-radius: 25px;
+    float: left;
+}
+
+.menumarginpadding0{
+    padding: 0px;
+    margin: 0px;
+}
+
+.menuimagecontainer img{
+   height: 800px!important;
+    display: inline-block!important;
+}

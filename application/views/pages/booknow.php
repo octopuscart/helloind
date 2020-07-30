@@ -4,7 +4,7 @@ $this->load->view('layout/header');
 
 
 
-<main style="background: url(<?php echo base_url(); ?>assets/theme2/images/bookbackimage.jpg);background-size: cover;">
+<main style="background: url(<?php echo base_url(); ?>assets/theme2/images/onview-bg.jpg);background-size: cover;">
     <!-- Page Banner -->
 <!--    <div class="container-fluid no-padding page-banner" style="    padding: 30px 0 30px;">
          Container 

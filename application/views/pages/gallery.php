@@ -4,7 +4,7 @@ $this->load->view('layout/header');
 <main>
 
     <!-- Page Banner -->
-    <div class="container-fluid no-padding page-banner" style="background: url('<?php echo base_url(); ?>assets/gallery/4.jpg');background-position: center;">
+    <div class="container-fluid no-padding page-banner" style="background-position: center;">
         <!-- Container -->
         <div class="container">
             <h3>gallery</h3>

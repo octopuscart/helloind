@@ -1,9 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-        
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php
         meta_tags();
         ?>
@@ -11,6 +11,12 @@
 
         <!---- Library - Google Font Familys-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|PT+Serif:400,400i,700,700i|Poppins:300,400,500,600,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"> 
+
+
+        <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/revolution/css/settings.css">
 
@@ -110,14 +116,14 @@
                         </div>
                         <!-- Menu Icon -->
                         <div class="menu-icon">
-                          
+
                         </div><!-- Menu Icon /- -->
                         <div class="navbar-collapse collapse navbar-right" id="navbar">
                             <ul class="nav navbar-nav">
 
                                 <li><a href="<?php echo site_url("about-us"); ?>" title="About">INSIGHTS</a></li>
                                 <li><a href="<?php echo site_url("gallery"); ?>" title="Gallery">GALLERY</a></li>
-                                
+
                                 <li class="dropdown">
                                     <a href="" title="EVENTS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">MEMBERSHIP</a>
                                     <i class="ddl-switch fa fa-angle-down"></i>
@@ -127,7 +133,7 @@
                                     </ul>
                                 </li>
 
-                                <li><a href="<?php echo site_url("/"); ?>" title="Order Now">ORDER NOW</a></li>
+                                <li><a href="<?php echo site_url("our-menu/starters"); ?>" title="Order Now">MENU</a></li>
                                 <li><a href="<?php echo site_url("book-now"); ?>" title="Book Now">BOOK NOW</a></li>
                                 <li><a href="<?php echo site_url("contact"); ?>" title="Contact Us">CONTACT US</a></li>
                             </ul>

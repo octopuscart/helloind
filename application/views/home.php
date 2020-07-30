@@ -16,7 +16,7 @@ $this->load->view('layout/header');
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 1 -->
-                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" id="slide-layer-5" 
+                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0 stylefont-Kaushan" id="slide-layer-5" 
                              data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                              data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
                              data-fontsize="['70','70','70','45']"
@@ -39,7 +39,7 @@ $this->load->view('layout/header');
                         </div>
 
                         <!-- LAYER NR. 2 -->
-                        <div class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0" id="slide-layer-6" 
+                        <div class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0 stylefont-Kaushan" id="slide-layer-6" 
                              data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                              data-y="['middle','middle','middle','middle']" data-voffset="['90','90','90','90']" 
                              data-fontsize="['70','70','70','45']"
@@ -140,14 +140,14 @@ $this->load->view('layout/header');
     </div><!-- Slider Section /- -->
 
     <!-- Welcome Section -->
-    <div id="welcome-section" class="container-fluid no-padding welcome-section" style="padding-bottom: 20px;">
+    <div id="welcome-section" class="container-fluid no-padding welcome-section change-color-gradiant" style="padding-bottom: 20px;">
         <!-- Container -->
         <div class="container">
             <!-- Section Header -->
             <div class="section-header">
-                <div class="section-title-border">
+                <div class="section-title-border1">
                     <span>Welcome to</span>
-                    <h2>HELLO INDIA</h2>
+                    <h2 class="whilecolor">HELLO INDIA</h2>
                 </div>
             </div><!-- Section Header /- -->
             <!-- Row -->
@@ -156,14 +156,14 @@ $this->load->view('layout/header');
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <div class="col-md-6 col-sm-6 content-block">
-                                <p>Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent. Given the diversity in soil, climate, culture, ethnic groups, and occupations, these cuisines vary substantially and use locally available spices, herbs, vegetables, and fruits. </p>
-                                <p>Hello India Welcomes you to a world of delicious Indian food. Signature dishes coming from our grand Indian heritage. 
+                            <div class="col-md-6 col-sm-6 content-block ">
+                                <p class="whilecolor ">Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent. Given the diversity in soil, climate, culture, ethnic groups, and occupations, these cuisines vary substantially and use locally available spices, herbs, vegetables, and fruits. </p>
+                                <p class="whilecolor">Hello India Welcomes you to a world of delicious Indian food. Signature dishes coming from our grand Indian heritage. 
                                     We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
 
                                     In Hello India you can experience the especially rich flavours of so many Regional Indian recipes that have evolved over the centuries. 
                                     They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices.</p>
-                                <a href="#" title="Read More">Read More</a>
+                                <a class="whilecolor"  href="#" title="Read More">Read More</a>
                             </div>
                             <div class="col-md-6 col-sm-6 img-block">
                                 <i><img src="<?php echo base_url(); ?>assets/theme2/images/welcome-1.jpg" alt="Welcome" /></i>
@@ -188,8 +188,8 @@ $this->load->view('layout/header');
                 <!-- Section Header -->
                 <div class="section-header">
                     <div class="section-title-border">
-                        <span>About us</span>
-                        <h2>on view</h2>
+                        <span style="color:black">About us</span>
+                        <h2 >On View</h2>
                     </div>
                 </div><!-- Section Header /- -->
                 <p>

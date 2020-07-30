@@ -6,8 +6,8 @@ $this->load->view('layout/header');
     <!-- Page Banner -->
     <div class="container-fluid no-padding page-banner">
         <!-- Container -->
-        <div class="container">
-            <h3>contact</h3>
+        <div class="container ">
+            <h3 class="stylefont-Kaushan">contact</h3>
         </div><!-- Container /- -->
     </div><!-- Page Banner /- -->
 

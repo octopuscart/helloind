@@ -193,5 +193,10 @@ class Shop extends CI_Controller {
     function charityIfram() {
         $this->load->view('pages/charityIfram');
     }
+    
+    function menu($menuitem = 'starters') {
+        $data['activemenu'] = $menuitem;
+        $this->load->view('pages/menu', $data);
+    }
 
 }

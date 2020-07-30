@@ -242,11 +242,28 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                 </div>    
                                                 <div class="col-md-12" style="margin-top: 50px;">
                                                     <div class="row delivery_block">
-                                                       
-                                                            <input  name="delivery_time" type="hidden" value="" />
-                      
-                                                            <input name="delivery_date" type="hidden" value="" >
-                                                       
+                                                        <div class="col-md-4">
+                                                            <h4 style="color:black;">
+                                                                Select delivery time
+                                                            </h4>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <select name="delivery_time" class="form-control" ng-model="shippingInit.delivery_time">
+                                                                <?php
+                                                                foreach ($selectTimeSlot as $key => $value) {
+                                                                    echo "<option value='$value'>$value</option>";
+                                                                }
+                                                                ?>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div name="delivery_date" class="form-control" ng-model="shippingInit.delivery_date">
+                                                                <?php
+                                                                echo "<option value='$delivery_date'>$delivery_date</option>";
+                                                                ?>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
 
