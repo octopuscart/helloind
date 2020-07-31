@@ -1,6 +1,19 @@
 <?php
 $this->load->view('layout/header');
 ?>
+<style>
+    .col-sm-20{
+        width:10%;
+        float: left;
+    }
+    
+    .margin-top-50{
+        float:left;
+        width: 100%;
+           height: 50px;
+    }
+</style>
+
 <main>
 
     <!-- Page Banner -->
@@ -17,7 +30,9 @@ $this->load->view('layout/header');
         <div class="container">
 
             <div class="portfolio-list">
-                <div class="row">
+                <div class="row" style='border: 1px solid #ff9800;
+    padding: 10px;
+    border-radius: 25px;'>
 
                     <div class="col-md-3 menumarginpadding0">
 
@@ -55,7 +70,8 @@ $this->load->view('layout/header');
                             ?>
 
                             <div role="tabpanel" class="tab-pane active" id="<?php echo $activemenu; ?>">
-                                <h2 class="stylefont-Kaushan whilecolor">
+                                <h2 class="stylefont-Kaushan whilecolor" style='margin: 20px;
+    text-align: center;'>
                                     <?php echo $activemenuitem['title']; ?>
                                 </h2>
 
@@ -65,7 +81,7 @@ $this->load->view('layout/header');
                                         <?php
                                         foreach ($activemenuitem['images'] as $key => $value) {
                                             ?>
-                                            <li data-target="#<?php echo $activemenu; ?>generic" data-slide-to="0" class="<?php echo $key == 0?'active':'';?>"></li>
+                                            <li data-target="#<?php echo $activemenu; ?>generic" data-slide-to="0" class="<?php echo $key == 0 ? 'active' : ''; ?>"></li>
                                             <?php
                                         }
                                         ?>
@@ -76,17 +92,20 @@ $this->load->view('layout/header');
                                         <?php
                                         foreach ($activemenuitem['images'] as $key => $value) {
                                             ?>
-                                        <div class="item <?php echo $key == 0?'active':'';?> text-center menuimagecontainer" >
-                                            <img src="<?php echo base_url(); ?>assets/menu/<?php echo $activemenu .'/'.  $value;?>" alt="...">
-                                            <div class="carousel-caption">
-                                                ...
+                                            <div class="item <?php echo $key == 0 ? 'active' : ''; ?> text-center menuimagecontainer" >
+                                                <img src="<?php echo base_url(); ?>assets/menu/<?php echo $activemenu . '/' . $value; ?>" alt="...">
+                                                <div class="carousel-caption">
+                                                    ...
+                                                </div>
                                             </div>
-                                        </div>
-                                         <?php
+                                            <?php
                                         }
                                         ?>
                                     </div>
 
+                                    <?php
+                                    if(count($activemenuitem['images'])>1){
+                                    ?>
                                     <!-- Controls -->
                                     <a class="left carousel-control" href="#<?php echo $activemenu; ?>generic" role="button" data-slide="prev">
                                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -96,6 +115,9 @@ $this->load->view('layout/header');
                                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
 
                             </div>
@@ -106,10 +128,57 @@ $this->load->view('layout/header');
                 </div>
 
             </div>
-            <div class="padding-80"></div>
+<div class="margin-top-50"></div>
+            <?php
+            $itemsimages = ['AlooGobi.jpg',
+                'ButterChicken.jpg',
+                'ChickenTikka.jpg',
+                'GarlicNaan.jpg',
+                'KashmiriNaan.jpg',
+                'LachaParatha.jpg',
+                'LambChop.jpg',
+                'LambRoganJosh.jpg',
+                'OnionRings.jpg',
+                'PalakPaneer.jpg',
+                'PaneerTikka.jpg',
+                'PaniPuri.jpg',
+                'PrawnVindaloo.jpg',
+                'PulavRice.jpg',
+                'ReshmiKabab.jpg',
+                'SabziKadhai.jpg',
+                'Samosa.jpg',
+                'SheekhKabab.jpg',
+                'TandooriChicken.jpg',
+                'TandooriPrawns.jpg'];
+          
+            ?>
+            
+              <div class="portfolio-list2">
+            <?php
+           
+            foreach ($itemsimages as $gkey => $gvalue) {
+              
+                    ?>
+                    <div class="portfolio-box col-md-3 col-md-20  col-sm-20 no-padding  statue">
+                        <a href="<?php echo base_url(); ?>assets/gallery/food/<?php echo $gvalue;?>">
+                            <img src="<?php echo base_url(); ?>assets/gallery/food/fooddefault.png" alt="Portfolio" style="background: url('<?php echo base_url(); ?>assets/gallery/food/<?php echo $gvalue;?>');background-size: cover;background-position:center; " />
+                            <div class="portfolio-content">
+                                <i class="icon icon-Search"></i>
+
+                            </div>
+                        </a>
+                    </div>
+                    <?php
+                
+            }
+            ?>
+
+
+            
 
         </div><!-- Portfolio Section /- -->
         <div class="section-padding"></div>
+         <div class="margin-top-50"></div>
 </main>
 
 

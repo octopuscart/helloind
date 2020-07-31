@@ -255,3 +255,9 @@ border-radius: 25px;
    height: 800px!important;
     display: inline-block!important;
 }
+
+
+.indianflaggradient{
+    background: rgb(255,136,0);
+background: linear-gradient(39deg, rgba(255,136,0,1) 0%, rgba(255,255,255,1) 50%, rgba(51,199,0,1) 100%);
+}
