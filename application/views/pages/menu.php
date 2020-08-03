@@ -6,11 +6,25 @@ $this->load->view('layout/header');
         width:10%;
         float: left;
     }
-    
+
     .margin-top-50{
         float:left;
         width: 100%;
-           height: 50px;
+        height: 50px;
+    }
+    
+    .menutext{
+          font-size: 17px;
+    color: white;
+    background: #000;
+    margin: 0;
+    padding: 5px;
+  
+    text-align: center;
+    height: 56px;
+    border: 1px solid #424242;
+    font-weight: 100!important;
+
     }
 </style>
 
@@ -31,8 +45,8 @@ $this->load->view('layout/header');
 
             <div class="portfolio-list">
                 <div class="row" style='border: 1px solid #ff9800;
-    padding: 10px;
-    border-radius: 25px;'>
+                     padding: 10px;
+                     border-radius: 25px;'>
 
                     <div class="col-md-3 menumarginpadding0">
 
@@ -71,7 +85,7 @@ $this->load->view('layout/header');
 
                             <div role="tabpanel" class="tab-pane active" id="<?php echo $activemenu; ?>">
                                 <h2 class="stylefont-Kaushan whilecolor" style='margin: 20px;
-    text-align: center;'>
+                                    text-align: center;'>
                                     <?php echo $activemenuitem['title']; ?>
                                 </h2>
 
@@ -104,18 +118,18 @@ $this->load->view('layout/header');
                                     </div>
 
                                     <?php
-                                    if(count($activemenuitem['images'])>1){
-                                    ?>
-                                    <!-- Controls -->
-                                    <a class="left carousel-control" href="#<?php echo $activemenu; ?>generic" role="button" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="right carousel-control" href="#<?php echo $activemenu; ?>generic" role="button" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                    <?php
+                                    if (count($activemenuitem['images']) > 1) {
+                                        ?>
+                                        <!-- Controls -->
+                                        <a class="left carousel-control" href="#<?php echo $activemenu; ?>generic" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#<?php echo $activemenu; ?>generic" role="button" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                        <?php
                                     }
                                     ?>
                                 </div>
@@ -128,58 +142,57 @@ $this->load->view('layout/header');
                 </div>
 
             </div>
-<div class="margin-top-50"></div>
+            <div class="margin-top-50"></div>
             <?php
-            $itemsimages = ['AlooGobi.jpg',
-                'ButterChicken.jpg',
-                'ChickenTikka.jpg',
-                'GarlicNaan.jpg',
-                'KashmiriNaan.jpg',
-                'LachaParatha.jpg',
-                'LambChop.jpg',
-                'LambRoganJosh.jpg',
-                'OnionRings.jpg',
-                'PalakPaneer.jpg',
-                'PaneerTikka.jpg',
-                'PaniPuri.jpg',
-                'PrawnVindaloo.jpg',
-                'PulavRice.jpg',
-                'ReshmiKabab.jpg',
-                'SabziKadhai.jpg',
-                'Samosa.jpg',
-                'SheekhKabab.jpg',
-                'TandooriChicken.jpg',
-                'TandooriPrawns.jpg'];
-          
+            $itemsimages = array(
+                'Aloo Gobi' => 'AlooGobi.jpg',
+                'Butter Chicken' => 'ButterChicken.jpg',
+                'Chicken Tikka' => 'ChickenTikka.jpg',
+                'Garlic Naan' => 'GarlicNaan.jpg',
+                'Kashmiri Naan' => 'KashmiriNaan.jpg',
+                'Lacha Paratha' => 'LachaParatha.jpg',
+                'Lamb Chop' => 'LambChop.jpg',
+                'Lamb Rogan Josh' => 'LambRoganJosh.jpg',
+                'Onion Rings' => 'OnionRings.jpg',
+                'Palak Paneer' => 'PalakPaneer.jpg',
+                'Paneer Tikka' => 'PaneerTikka.jpg',
+                'Pani Puri' => 'PaniPuri.jpg',
+                'Prawn Vindaloo' => 'PrawnVindaloo.jpg',
+                'Pulav Rice' => 'PulavRice.jpg',
+                'Reshmi Kabab' => 'ReshmiKabab.jpg',
+                'Sabzi Kadhai' => 'SabziKadhai.jpg',
+                'Samosa' => 'Samosa.jpg',
+                'Sheekh Kabab' => 'SheekhKabab.jpg',
+                'Tandoori Chicken' => 'TandooriChicken.jpg',
+                'Tandoori Prawns' => 'TandooriPrawns.jpg'
+            );
             ?>
-            
-              <div class="portfolio-list2">
-            <?php
-           
-            foreach ($itemsimages as $gkey => $gvalue) {
-              
+
+            <div class="portfolio-list2">
+                <?php
+                foreach ($itemsimages as $gkey => $gvalue) {
                     ?>
                     <div class="portfolio-box col-md-3 col-md-20  col-sm-20 no-padding  statue">
-                        <a href="<?php echo base_url(); ?>assets/gallery/food/<?php echo $gvalue;?>">
-                            <img src="<?php echo base_url(); ?>assets/gallery/food/fooddefault.png" alt="Portfolio" style="background: url('<?php echo base_url(); ?>assets/gallery/food/<?php echo $gvalue;?>');background-size: cover;background-position:center; " />
+                        <a href="<?php echo base_url(); ?>assets/gallery/food/<?php echo $gvalue; ?>">
+                            <img src="<?php echo base_url(); ?>assets/gallery/food/fooddefault.png" alt="Portfolio" style="background: url('<?php echo base_url(); ?>assets/gallery/food/<?php echo $gvalue; ?>');background-size: cover;background-position:center; " />
                             <div class="portfolio-content">
                                 <i class="icon icon-Search"></i>
 
                             </div>
+                            <h3 class="menutext"><?php echo $gkey;?></h3>
                         </a>
                     </div>
-                    <?php
-                
-            }
-            ?>
+    <?php
+}
+?>
 
 
-            
 
-        </div><!-- Portfolio Section /- -->
-        <div class="section-padding"></div>
-         <div class="margin-top-50"></div>
-</main>
+
+            </div><!-- Portfolio Section /- -->
+            <div class="section-padding"></div>
+            <div class="margin-top-50"></div>
+            </main>
 
 
 <?php
