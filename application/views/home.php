@@ -69,12 +69,12 @@ $this->load->view('layout/header');
                         <!-- MAIN IMAGE -->
                         <img src="<?php echo base_url(); ?>assets/theme2/images/slider/4.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     </li>
-                    
+
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
                         <img src="<?php echo base_url(); ?>assets/theme2/images/slider/5.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     </li>
-                    
+
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
                         <img src="<?php echo base_url(); ?>assets/theme2/images/slider/6.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
@@ -228,88 +228,57 @@ $this->load->view('layout/header');
                 <div class="col-md-7 portfolio-categories">
                     <ul id="filters">
                         <li><a data-filter="*" class="active" href="#">ALL</a></li>
-                        <li><a data-filter=".modern" href="#">CULTURE ART</a></li>
-                        <li><a data-filter=".vintage" href="#">REGIONAL ART</a></li>
-                        <li><a data-filter=".statue" href="#">ANCIENT ART</a></li>
-                        <li><a data-filter=".others" href="#">OTHERS</a></li>
+                        <li><a data-filter=".culture" href="#">CULTURE ART</a></li>
+                        <li><a data-filter=".regional" href="#">REGIONAL ART</a></li>
+                        <li><a data-filter=".restaurant" href="#">RESTAURANT</a></li>
                     </ul>
                 </div>
             </div>
 
         </div><!-- Container /- -->
         <div class="portfolio-list">
-            <div class="portfolio-box col-md-3  col-sm-3 no-padding modern statue">
-                <a href="<?php echo base_url(); ?>assets/gallery/IMG_3432.jpg">
-                    <img src="<?php echo base_url(); ?>assets/gallery/IMG_3413.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
+            <?php
+            $gallary = array(
+                "culture" => [
+                    "IMG_3429.jpg",
+                    "IMG_3435.jpg",
+                    "IMG_3437.jpg",
+                    "IMG_4170.jpg",
+                ],
+                "regional" => [
+                    "IMG_4172.jpg",
+                    "IMG_4173.jpg",
+                    "IMG_4174.jpg"
+                ],
+                "restaurant" => [
+                    "IMG_3393.jpg",
+                    "IMG_3395.jpg",
+                    "IMG_3411.jpg",
+                    "IMG_3426.jpg",
+                    "IMG_4171.jpg",
+                ],
+            );
 
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3  col-sm-3 no-padding vintage">
-                <a href="<?php echo base_url(); ?>assets/gallery/IMG_3436.jpg">
-                    <img src="<?php echo base_url(); ?>assets/gallery/IMG_3388.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
+            foreach ($gallary as $gkey => $gvalue) {
+                foreach ($gvalue as $key => $value) {
+                    ?>
+                    <div class="portfolio-box col-md-3  col-sm-3 no-padding <?php echo $gkey;?> statue">
+                        <a href="<?php echo base_url(); ?>assets/gallery/new/<?php echo $value;?>">
+                            <img src="<?php echo base_url(); ?>assets/gallery/new/<?php echo $value;?>" alt="Portfolio" />
+                            <div class="portfolio-content">
+                                <i class="icon icon-Search"></i>
 
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3  col-sm-3 no-padding modern statue">
-                <a href="<?php echo base_url(); ?>assets/gallery/1.jpg">
-                    <img src="<?php echo base_url(); ?>assets/gallery/1.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
+                    <?php
+                }
+            }
+            ?>
 
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3  col-sm-3 no-padding vintage">
-                <a href="<?php echo base_url(); ?>assets/gallery/2.jpg">
-                    <img src="<?php echo base_url(); ?>assets/gallery/2.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
 
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3  col-sm-3 no-padding statue others">
-                <a href="<?php echo base_url(); ?>assets/gallery/3.jpg">
-                    <img src="<?php echo base_url(); ?>assets/gallery/3.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
 
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3  col-sm-3 no-padding others">
-                <a href="<?php echo base_url(); ?>assets/gallery/4.jpg">
-                    <img src="<?php echo base_url(); ?>assets/gallery/4.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
 
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3  col-sm-3 no-padding modern">
-                <a href="<?php echo base_url(); ?>assets/gallery/5.jpg">
-                    <img src="<?php echo base_url(); ?>assets/gallery/5.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-box col-md-3  col-sm-3 no-padding vintage modern">
-                <a href="<?php echo base_url(); ?>assets/gallery/6.jpg">
-                    <img src="<?php echo base_url(); ?>assets/gallery/6.jpg" alt="Portfolio" />
-                    <div class="portfolio-content">
-                        <i class="icon icon-Search"></i>
-
-                    </div>
-                </a>
-            </div>
         </div>
     </div><!-- Portfolio Section /- -->
 
