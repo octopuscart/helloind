@@ -287,7 +287,7 @@ $this->load->view('layout/header');
         <!-- Container -->
         <div class="container">
             <h3>here comes the best indian food ever in hong kong</h3>
-            <a href="#" title="PURCHASE NOW">BOOK NOW</a>
+            <a href="<?php echo site_url("book-now");?>" title="PURCHASE NOW">BOOK NOW</a>
         </div>
         <!-- Container /- -->
     </div><!-- Call To Action /- -->
