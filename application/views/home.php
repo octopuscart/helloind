@@ -177,6 +177,22 @@ $this->load->view('layout/header');
         </div><!-- Container /- -->
     </div><!-- Welcome Section /- -->
 
+
+    <!-- Onview Section -->
+    <div class="container-fluid no-padding onview-section" style="    padding: 20px;;background:#fff">
+        <!-- Container -->
+        <div class="container">
+           
+            <div class="col-md-12 col-sm-12 col-xs-12 onview-content" style='padding: 30px;'>
+
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/oWDEpOUGSR8" frameborder="5" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+
+
+            </div>
+        </div><!-- Container /- -->
+    </div><!-- Onview Section /- -->
+
+
     <!-- Onview Section -->
     <div class="container-fluid no-padding onview-section" style="padding-bottom: 10px;">
         <!-- Container -->
@@ -262,9 +278,9 @@ $this->load->view('layout/header');
             foreach ($gallary as $gkey => $gvalue) {
                 foreach ($gvalue as $key => $value) {
                     ?>
-                    <div class="portfolio-box col-md-3  col-sm-3 no-padding <?php echo $gkey;?> statue">
-                        <a href="<?php echo base_url(); ?>assets/gallery/new/<?php echo $value;?>">
-                            <img src="<?php echo base_url(); ?>assets/gallery/new/<?php echo $value;?>" alt="Portfolio" />
+                    <div class="portfolio-box col-md-3  col-sm-3 no-padding <?php echo $gkey; ?> statue">
+                        <a href="<?php echo base_url(); ?>assets/gallery/new/<?php echo $value; ?>">
+                            <img src="<?php echo base_url(); ?>assets/gallery/new/<?php echo $value; ?>" alt="Portfolio" />
                             <div class="portfolio-content">
                                 <i class="icon icon-Search"></i>
 
@@ -287,7 +303,7 @@ $this->load->view('layout/header');
         <!-- Container -->
         <div class="container">
             <h3>here comes the best indian food ever in hong kong</h3>
-            <a href="<?php echo site_url("book-now");?>" title="PURCHASE NOW">BOOK NOW</a>
+            <a href="<?php echo site_url("book-now"); ?>" title="PURCHASE NOW">BOOK NOW</a>
         </div>
         <!-- Container /- -->
     </div><!-- Call To Action /- -->
