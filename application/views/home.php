@@ -185,7 +185,7 @@ $this->load->view('layout/header');
            
             <div class="col-md-12 col-sm-12 col-xs-12 onview-content" style='padding: 30px;'>
 
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/oWDEpOUGSR8" frameborder="5" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+                <iframe width="100%" height="630" src="https://www.youtube.com/embed/oWDEpOUGSR8" frameborder="5" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
 
 
             </div>
