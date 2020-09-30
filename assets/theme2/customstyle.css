@@ -244,6 +244,7 @@ border-radius: 25px;
     padding: 20px!important;
     border-radius: 25px;
     float: left;
+    min-height: 1500px;
 }
 
 .menumarginpadding0{

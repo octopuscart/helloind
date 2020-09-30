@@ -153,7 +153,7 @@
                                     <li><a href="" title="About">LOYALTY PROGRAM </a></li>
                                 </ul>
                             </li>
-
+                            <li><a href="<?php echo site_url("menu/0/0"); ?>" title="Order Now">ORDER NOW</a></li>
                             <li><a href="<?php echo site_url("our-menu/starters"); ?>" title="Order Now">MENU</a></li>
                             <li><a href="<?php echo site_url("book-now"); ?>" title="Book Now">BOOK NOW</a></li>
                             <li><a href="<?php echo site_url("contact"); ?>" title="Contact Us">CONTACT US</a></li>

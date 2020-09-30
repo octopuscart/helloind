@@ -66,6 +66,8 @@ $route['review'] = 'Shop/wall';
 
 $route['our-menu/(:any)'] = 'Shop/menu/$1';
 
+$route['ordernow'] = 'Shop/ordernow';
+
 $route['annual-charity'] = 'Shop/annual_charity';
 
 $route['book-now'] = 'Shop/booknow';

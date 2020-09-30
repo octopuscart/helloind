@@ -27,11 +27,11 @@ switch ($baselink) {
           $adminlinkmain = $baselink . "/shopadmin";
         break;
     default:
-        $adminlinkmain = "https://admin.maharajamart.com/";
+        $adminlinkmain = "http://admin.helloindia.com.hk/";
 }
 
 define('ADMINURL', $adminlinkmain);
-define('PRODUCTIMAGELINK', "https://demo.costcokart.com/assets/theme2/res/food/");
+define('PRODUCTIMAGELINK', "http://admin.helloindia.com.hk/assets/product_images/");
 
 
 define('imageserver', $baselinkmain . "assets_main/productimages/");

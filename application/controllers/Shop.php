@@ -198,5 +198,8 @@ class Shop extends CI_Controller {
         $data['activemenu'] = $menuitem;
         $this->load->view('pages/menu', $data);
     }
+    function ordernow(){
+        
+    }
 
 }
