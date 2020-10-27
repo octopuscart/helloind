@@ -260,47 +260,36 @@
 
 
                         <?php // echo EMAIL_FOOTER; ?>
-                        <table style="width:100%;">
-                            <tbody>
-                                <tr>
-                                    <td colspan="2">
-                                        <p style="text-align: center;">Thank you for choosing Woodlands. Your food will be on its way.</p>
+                        <table>
+	<tbody>
+		<tr>
+			<td colspan="2">
+			<p>For any queries, Please contact us on Whastsapp <a href="https://api.whatsapp.com/send?phone=85223677489&amp;text=&amp;source=&amp;data=&amp;app_absent=" style="color:black;" target="_blank">+(852) 2367 7489</a> or email at <a href="mailto:hello@helloindia.com.hk" style="color:black;" target="_blank">hello@helloindia.com.hk</a></p>
 
-                                        <p>For any queries, Please contact us on Whastsapp <a href="https://api.whatsapp.com/send?phone=85256818131&amp;text=&amp;source=&amp;data=&amp;app_absent=" style="color:black;" target="_blank">+(852) 5681 8131</a> or email at <a href="mailto:order@woodlandshk.com" style="color:black;" target="_blank">order@woodlandshk.com</a></p>
+			<p>We assure you of best services at all times.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 70%">
+			<div style="height: 200px;">Kindest Regards,<br />
+			<img src="https://www.helloindia.com.hk/assets/images/logo.png" style="  background: #fff;  height: 45px; margin: 5px 0px 10px;" />
+			<address><span style="float: left; font-size: 12px;"><b>Address </b><br />
+			Hanyee Building, Shop A &amp; E, 1/F,<br />
+			19-21 Hankow Rd, Tsim Sha Tsui, Hong Kong<br />
+			<b>Tel#</b>:&nbsp;+(852) 2367 7489<br />
+			<b>Email</b>: hello@helloindia.com.hk, info@helloindia.com.hk<br />
+			<b>Web</b>: www.helloindia.com</span></address>
+			<span style="float: left; font-size: 12px;"> </span></div>
+			</td>
+			<td style="width: 30%;">
+			<p>&nbsp;</p>
 
-                                        <p>Enjoy the food from</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 60%">
-                                        <div style="height: 200px;">Your Favorite Vegetarian Restaurants<br />
-                                            <img src="https://www.woodlandshk.com/assets/images/logo.png" style="    height: 90px; margin: 5px 0px 10px;" />
-                                            <address><span style="float: left; font-size: 12px;"><b>Address </b><br />
-                                                    UG Shop 16 &amp; 17, Wing On Plaza,<br />
-                                                    62, Mody Road, Tsim Sha Tsui East,<br />
-                                                    Kowloon, Hong Kong<br />
-                                                    <b>Tel#</b>:&nbsp;+(852) 2369 3718, +(852) 2366 1945<br />
-                                                    <b>Email</b>: order@woodlandshk.com, info@woodlandshk.com<br />
-                                                    <b>Web</b>: www.woodlandshk.com</span></address>
-                                            <span style="float: left; font-size: 12px;"> </span></div>
-                                    </td>
-                                    <td style="    width: 40%;    text-align: center;">
-                                        <p>
-                                            <a href="https://www.facebook.com/woodlandshk" target="_blank" class="socialicons">
-                                                <img src="https://www.woodlandshk.com/assets/icon/facebook.png"/>
-                                            </a>
-                                            <a href="https://www.instagram.com/woodlands.hk/" target="_blank" class="socialicons">
-                                                <img src="https://www.woodlandshk.com/assets/icon/instagram.png"/>
-                                            </a>
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-                                        </p>
-                                        <p>&nbsp;</p>
-
-                                        <p><a href="https://www.woodlandshk.com/loyalty-program" target="_blank">Join our loyalty program.</a> <br/>(For exclusive offers and benefits)</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
 
 
 
