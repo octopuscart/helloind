@@ -128,7 +128,7 @@ class Shop extends CI_Controller {
                 );
                 $this->db->insert('system_log', $orderlog);
 
-                $subject = "Thanks you for booking cake.";
+                $subject = "Thank you for booking cake.";
                 $this->email->subject($subject);
 
                 $web_enquiry['web_enquiry'] = $web_enquiry;
