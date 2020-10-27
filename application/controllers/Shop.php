@@ -116,7 +116,7 @@ class Shop extends CI_Controller {
             $sendernameeq = $this->input->post('name');
             if ($this->input->post('email')) {
                 $this->email->set_newline("\r\n");
-                $this->email->from($this->input->post('email'), $sendername);
+                $this->email->from($emailsender, $sendername);
                 $this->email->to(email_bcc);
                 $this->email->bcc($this->input->post('email'));
                 $subjectt = $this->input->post('subject');
