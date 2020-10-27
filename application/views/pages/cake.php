@@ -25,17 +25,17 @@ $this->load->view('layout/header');
         <div class="container">
             <!-- Row -->
             <div class="row">			
-                <div class="col-md-6 col-sm-6 img-block" style="    height: 500px;background: #8c3136;
+                <div class="col-md-6 col-sm-6 img-block" style="    height: 550px;background: #8c3136;
                      border: 10px solid #fff;
                      border-radius: 40px;">
-                    <img src="<?php echo base_url(); ?>assets/cake/{{cakeinit.selct_flavour}}" style="margin-top: 100px;"/>
+                    <img src="<?php echo base_url(); ?>assets/cake/{{cakeinit.selct_flavour}}" style="margin-top: 130px;"/>
                 </div>
                 <div class="col-md-6 col-sm-6 " >
                     <div class="tab-container mt-4 booknowblock" style="    border-radius: 40px;">
                         <div>
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <center style="width:100%;height: 450px;">
+                                <center style="width:100%;height: 500px;">
                                     <div class="row clearfix" style="    width: fit-content;">
 
                                         <div class="p-5 reservation-form1 rounded bg-white" style="width: 500px;">
@@ -43,7 +43,9 @@ $this->load->view('layout/header');
 
 
                                             <div class="form-widget mt-4 mt-lg-0 bookingpage" data-loader="button">
-                                                <div class="form-result"></div>
+                                                <div class="form-result">
+
+                                                </div>
                                                 <form class="mb-0 row"  action="#" method="post" >
 
                                                     <div class="col-sm-6 mb-3">
@@ -97,7 +99,9 @@ $this->load->view('layout/header');
                                                         <input type="date" id="template-contactform-subject" name="select_date" class="form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" value="<?php echo date("Y-m-d") ?>">
                                                     </div>
                                                     <div class="clear"></div>
-
+                                                    <h2 style="font-size: 15px;background: red;color:white;padding: 5px;">
+                                                        Order 1 Day Before 11:00 AM & Pickup Next Day After 2:00 PM
+                                                    </h2>
                                                     <div class="clear"></div>
                                                     <div class="col-12 nobottommargin">
                                                         <button class="button btn btn-lg btn btn-danger button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="booknow" value="submit">Book Now</button>

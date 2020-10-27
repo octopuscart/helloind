@@ -87,6 +87,7 @@
                                       
 
                                     </table>
+                                    <p>Order 1 Day Before 11:00 AM & Pickup Next Day After 2:00 PM</p>
 
 
 
