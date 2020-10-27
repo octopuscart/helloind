@@ -26,6 +26,25 @@ $this->load->view('layout/header');
         font-weight: 100!important;
 
     }
+
+    .productelement .btn-warning{
+        background: #d20404;
+        border-radius: 10px;
+    }
+    .iportfolio{
+        padding: 10px;
+        background: #fff;
+        border-radius: 15px;
+    }
+
+    .iportfolio .producttitle{
+        font-size: 16px; 
+        margin-bottom: 13px;
+        float: left;
+        width: 100%;
+        color: #ff9800;
+    }
+
 </style>
 
 <main>
@@ -79,11 +98,8 @@ $this->load->view('layout/header');
                                     foreach ($categoryproducts as $prkey => $prvalue) {
                                         ?>
 
-                                        <div class="col-lg-4 col-md-6"  style="padding: 10px">
-                                            <div class="iportfolio mb-4 clearfix" style=";
-                                                 padding: 10px;
-                                                 background: #fff;
-                                                 border-radius: 9px;">
+                                        <div class="col-lg-4 col-md-6 productelement"  style="padding: 10px">
+                                            <div class="iportfolio mb-4 clearfix" style="">
 
                                                 <a href="#"  class="portfolio-image12">
                                                     <img src="<?php echo PRODUCTIMAGELINK . "default.png"; ?>" style="background: url(<?php echo PRODUCTIMAGELINK . $prvalue['file_name']; ?>);    background-size: cover;
@@ -92,18 +108,17 @@ $this->load->view('layout/header');
                                                 </a>
 
                                                 <div class="portfolio-desc pt-2">
-                                                    <h4 class="mb-1" style="    height: 99px;"><a href="#" class="stylefont-Merienda" style="font-size: 16px;    margin-bottom: 13px;
-    float: left;
-    width: 100%;
-    color: #ff9800;"><?php echo $prvalue['title']; ?></a><br/><?php echo $prvalue['short_description']; ?></h4>
+                                                    <h4 class="mb-1" style="    height: 99px;">
+                                                        <a href="#" class="stylefont-Merienda producttitle" 
+                                                           style=""><?php echo $prvalue['title']; ?></a><br/><?php echo $prvalue['short_description']; ?></h4>
                                                     <div class="item-price stylefont-Merienda">{{<?php echo $prvalue['price']; ?>|currency:"<?php echo globle_currency; ?> "}}</div>
                                                 </div>
-                                                <div class="">
-                                                    <button class="button btn btn-default">
+                                                <div class="" style="    margin-top: 12px;">
+                                                    <button class="button btn btn-warning" ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)">
                                                         Add To Cart
                                                     </button>
 
-                                                    <button  class="button btn btn-warrning " style="    float: right;">
+                                                    <button  class="button btn btn-warning " ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" style="    float: right;">
                                                         Buy Now
                                                     </button>
                                                 </div>

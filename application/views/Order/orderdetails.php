@@ -45,32 +45,39 @@ $paymentstatus = "";
         color: #fff;
         font-weight: 300;
         font-size: 18px;
+            margin: 0;
+            border-radius: 5px;
     }
     .media-body {
         -ms-flex: 1;
         flex: 1;
         margin: 0px 10px;
     }
+    .order-details-page-area .col-md-3{
+        border-radius:15px
+    }
 </style>
 
+<!-- Inner Page Banner Area Start Here -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/cart.css" type="text/css" />
 
 <!-- Inner Page Banner Area Start Here -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/res/cart.css" type="text/css" />
-
-<!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/cart.jpg');   margin-top: -30px;    padding: 55px 0px;    background-position: -237px -135px;" data-center="" data-top-bottom="">
-    <div class="container clearfix">
-        <h1 class="font-secondary capitalize ls0" style="font-size: 62px;">Your Order</h1>
-        <span class="font-primary ls1 mb-2 color" >Order No. #<?php echo $order_data->order_no; ?></span>
-
-    </div>
-</section>
+ <div class="container-fluid no-padding page-banner" style="background-position: center;    padding: 10px;">
+        <!-- Container -->
+        <div class="container">
+            <h1 class="font-secondary capitalize ls0" style="font-size: 62px;">Your Order</h1>
+        <span class="font-primary ls1 mb-2 color" style="font-size: 15px;">Order No. #<?php echo $order_data->order_no; ?></span>
+        </div><!-- Container /- -->
+    </div><!-- Page Banner /- -->
 <!-- Inner Page Banner Area End Here -->
+
+<!-- Inner Page Banner Area Start Here -->
+
 
 
 <section id="content" style="overflow: visible;">
     <div class="content-wrap nobottompadding">
-        <div class="container clearfix">
+        <div class="container clearfix" style="    background: #fff;">
             <div class="row clearfix">
 
                 <!-- Content -->

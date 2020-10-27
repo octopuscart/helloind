@@ -321,12 +321,9 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where('order_id', $order_details->id);
             $query = $this->db->get('cart');
             $cart_items = $query->result();
+         
             
-            
-//            LAST ORDER DATA
-              $this->db->where('email', $order_details->id);
-            $query = $this->db->get('user_order');
-            $cart_items = $query->result();
+
 
             $this->db->order_by('display_index', 'asc');
             $this->db->where('order_id', $order_details->id);
@@ -335,25 +332,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
             $order_data['measurements_items'] = $custom_measurement;
 
-            foreach ($cart_items as $key => $value) {
-                $cart_id = $value->id;
-
-                $this->db->where('cart_id', $cart_id);
-                $query = $this->db->get('cart_customization');
-                $cartcustom = $query->result_array();
-
-                $customdata = array();
-                foreach ($cartcustom as $key1 => $value1) {
-                    $customdata[$value1['style_key']] = $value1['style_value'];
-                }
-                $value->custom_dict = $customdata;
-
-//                $this->db->where('order_id', $order_id);
-//                $this->db->where('vendor_id', $vendor_id);
-//                $query = $this->db->get('vendor_order_status');
-//                $orderstatus = $query->result();
-                $value->product_status = array();
-            }
+   
             $order_data['payment_details'] = $payment_details;
             $order_data['cart_data'] = $cart_items;
             $order_data['amount_in_word'] = $this->convert_num_word($order_data['order_data']->total_price);
@@ -583,7 +562,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             );
             $this->db->insert('user_order_log', $orderlog);
 
-            $subject = "Order Confirmation - Your Order with www.woodlandshk.com [" . $order_no . "] has been successfully placed!";
+            $subject = "Order Confirmation - Your Order with www.helloindia.com.hk [" . $order_no . "] has been successfully placed!";
             $this->email->subject($subject);
 
             if ($checkcode) {

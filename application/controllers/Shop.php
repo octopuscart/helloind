@@ -92,6 +92,75 @@ class Shop extends CI_Controller {
         $this->load->view('pages/contactus');
     }
 
+    public function cake() {
+
+        if (isset($_POST['booknow'])) {
+            $web_enquiry = array(
+                'cake_shape' => $this->input->post('cake_shape'),
+                'cake_flavour' => $this->input->post('cake_flavour'),
+                "cake_color"=>"Single Color",
+                "cake_price"=> $this->input->post('cake_price'),
+                'contact' => $this->input->post('contact'),
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'contact' => $this->input->post('contact'),
+                'message' => $this->input->post('message'),
+                'pickup_date' => $this->input->post('select_date'),
+                'booking_datetime' => date("Y-m-d H:i:s a"),
+            );
+
+            $this->db->insert('cake_booking', $web_enquiry);
+            $emailsender = email_sender;
+            $sendername = email_sender_name;
+            $email_bcc = email_bcc;
+            $sendernameeq = $this->input->post('name');
+            if ($this->input->post('email')) {
+                $this->email->set_newline("\r\n");
+                $this->email->from($this->input->post('email'), $sendername);
+                $this->email->to(email_bcc);
+                $this->email->bcc($this->input->post('email'));
+                $subjectt = $this->input->post('subject');
+                $orderlog = array(
+                    'log_type' => 'Cake Booking',
+                    'log_datetime' => date('Y-m-d H:i:s'),
+                    'user_id' => 'ENQ',
+                    'log_detail' => "Cake Booking - "
+                );
+                $this->db->insert('system_log', $orderlog);
+
+                $subject = "Thanks you for booking cake.";
+                $this->email->subject($subject);
+
+                $web_enquiry['web_enquiry'] = $web_enquiry;
+
+
+
+                $htmlsmessage = $this->load->view('Email/cakebooking', $web_enquiry, true);
+                if (REPORT_MODE == 1) {
+                    if ($this->input->post('email')) {
+                        $this->email->message($htmlsmessage);
+
+                        $this->email->print_debugger();
+                        $send = $this->email->send();
+                        if ($send) {
+                            //echo json_encode("send");
+                        } else {
+                            $error = $this->email->print_debugger(array('headers'));
+                          //  echo json_encode($error);
+                        }
+                    } else {
+                        echo $htmlsmessage;
+                    }
+                } else {
+                    echo $htmlsmessage;
+                }
+            }
+
+            redirect('Shop/cake');
+        }
+        $this->load->view('pages/cake');
+    }
+
     public function aboutus() {
         $this->load->view('pages/aboutus');
     }
@@ -109,10 +178,10 @@ class Shop extends CI_Controller {
     }
 
     public function annual_charity() {
-          $this->load->view('pages/annual_charity');
+        $this->load->view('pages/annual_charity');
     }
-    
-     public function booknow() {
+
+    public function booknow() {
         if (isset($_POST['booknow'])) {
             $booking_order = array(
                 'name' => $this->input->post('name'),
@@ -170,35 +239,37 @@ class Shop extends CI_Controller {
                     echo $htmlsmessage;
                 }
             }
-            redirect("book-now");
+//            redirect("book-now");
         }
         $this->load->view('pages/booknow');
     }
-    
-    public function blog($pageno=0) {
+
+    public function blog($pageno = 0) {
         $this->load->view('pages/blog');
     }
-    
-    function loyalprogram(){
-         $this->load->view('pages/loyalprogram');
+
+    function loyalprogram() {
+        $this->load->view('pages/loyalprogram');
     }
 
     function privacy_policy() {
         $this->load->view('pages/pp');
     }
+
     function gallery() {
         $this->load->view('pages/gallery');
     }
-    
+
     function charityIfram() {
         $this->load->view('pages/charityIfram');
     }
-    
+
     function menu($menuitem = 'starters') {
         $data['activemenu'] = $menuitem;
         $this->load->view('pages/menu', $data);
     }
-    function ordernow(){
+
+    function ordernow() {
         
     }
 

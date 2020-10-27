@@ -45,25 +45,25 @@ class Api extends REST_Controller {
             $session_cart = $this->Product_model->cartData();
         }
 
-        $session_cart['shipping_price'] = 40;
-        if ($session_cart['total_price'] > 399) {
-            $session_cart['shipping_price'] = 0;
-        }
-        if ($this->checklogin) {
-            $user_address_details2 = $this->User_model->user_address_details($this->user_id);
-            if ($user_address_details2) {
-                $user_address_details = $user_address_details2[0];
-            } else {
-                $user_address_details = "";
-            }
-        } else {
-            $user_address_details = $this->session->userdata('shipping_address');
-        }
-        if ($user_address_details) {
-            if ($user_address_details['zipcode'] == 'Tsim Sha Tsui') {
-                $session_cart['shipping_price'] = 0;
-            }
-        }
+        $session_cart['shipping_price'] = 0;
+//        if ($session_cart['total_price'] > 399) {
+//            $session_cart['shipping_price'] = 0;
+//        }
+//        if ($this->checklogin) {
+//            $user_address_details2 = $this->User_model->user_address_details($this->user_id);
+//            if ($user_address_details2) {
+//                $user_address_details = $user_address_details2[0];
+//            } else {
+//                $user_address_details = "";
+//            }
+//        } else {
+//            $user_address_details = $this->session->userdata('shipping_address');
+//        }
+//        if ($user_address_details) {
+//            if ($user_address_details['zipcode'] == 'Tsim Sha Tsui') {
+//                $session_cart['shipping_price'] = 0;
+//            }
+//        }
 
         $session_cart['sub_total_price'] = $session_cart['total_price'];
 

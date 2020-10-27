@@ -153,15 +153,15 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
 
 <!-- Inner Page Banner Area Start Here -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/res/cart.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/cart.css" type="text/css" />
 
 <!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/cart.jpg');   margin-top: -30px;    padding: 55px 0px;    background-position: -237px -135px;" data-center="" data-top-bottom="">
-    <div class="container clearfix">
-        <span class="font-primary ls1 mb-2 color" style="font-size: 14px;">Top Services</span>
-        <h1 class="font-secondary capitalize ls0" style="font-size: 62px;">Shopping Cart</h1>
-    </div>
-</section>
+ <div class="container-fluid no-padding page-banner" style="background-position: center;">
+        <!-- Container -->
+        <div class="container">
+            <h3>Shipping Cart</h3>
+        </div><!-- Container /- -->
+    </div><!-- Page Banner /- -->
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
@@ -241,13 +241,13 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                     ?>
                                                 </div>    
                                                 <div class="col-md-12" style="margin-top: 50px;">
-                                                    <div class="row delivery_block">
+                                               
                                                        
                                                             <input  name="delivery_time" type="hidden" value="" />
                       
                                                             <input name="delivery_date" type="hidden" value="" >
                                                        
-                                                    </div>
+                                                   
                                                 </div>
 
                                             </div>
@@ -383,7 +383,6 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                     <td>
                                         <select name="zipcode" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;    font-size: 12px;">
                                             <option value="Tsim Sha Tsui">Tsim Sha Tsui (For Free Shipping)</option>
-                                            <option value="Whampoa">Whampoa Garden ($40 On Order value < $400)</option>
                                         </select>
 
 

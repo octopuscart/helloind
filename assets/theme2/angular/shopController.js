@@ -10,14 +10,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
 
     $('.typeahead').bind('typeahead:select', function (ev, suggestion) {
-        //  window.location = baseurl + "Product/ProductDetails/" + suggestion.id;
+//  window.location = baseurl + "Product/ProductDetails/" + suggestion.id;
     });
-
     $(document).on("typeahead:beforeselect", function (event, data) {
         event.preventDefault();
     });
-
-
     //search data
     $(function () {
 //        function log(message) {
@@ -45,15 +42,12 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 //            }
 //        });
     });
-
     //searchdata 
 
     var globlecart = baseurl + "Api/cartOperation";
     $scope.product_quantity = 1;
-
     var currencyfilter = $filter('currency');
-
-    $scope.globleCartData = {'total_quantity': 0};//cart data
+    $scope.globleCartData = {'total_quantity': 0}; //cart data
 
     //get cart data
     $scope.getCartData = function () {
@@ -65,14 +59,12 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         })
     }
     $scope.getCartData();
-
-
     //change productverient
     $scope.changeProductVarient = function (verient, productobj) {
         console.log(productobj, verient)
     }
-    //
-    //remove cart data
+//
+//remove cart data
     $scope.removeCart = function (product_id) {
         $http.get(globlecart + "Delete/" + product_id).then(function (rdata) {
             console.log("asdfsadf");
@@ -81,7 +73,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         })
     }
 
-    //update cart
+//update cart
     $scope.updateCart = function (productobj, oper) {
         if (oper == 'sub') {
             if (productobj.quantity == 1) {
@@ -102,7 +94,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         })
     }
 
-    //add cart product
+//add cart product
     $scope.addToCart = function (product_id, quantity) {
         var productdict = {
             'product_id': product_id,
@@ -199,7 +191,6 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     }
 
     $scope.avaiblecredits = avaiblecredits;
-
     $scope.checkOrderTotal = function () {
         if ($scope.globleCartData.used_credit) {
             $scope.globleCartData.grand_total = $scope.globleCartData.total_price - $scope.globleCartData.used_credit;
@@ -224,23 +215,19 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         });
     }
 
-    //Get Menu data
+//Get Menu data
     var globlemenu = baseurl + "Api/categoryMenu";
     $http.get(globlemenu).then(function (r) {
         $scope.categoriesMenu = r.data;
-
     }, function (e) {
     })
     var substringMatcher = function (strs) {
         return function findMatches(q, cb) {
             var matches, substringRegex;
-
             // an array that will be populated with substring matches
             matches = [];
-
             // regex used to determine if a string contains the substring `q`
             substrRegex = new RegExp(q, 'i');
-
             // iterate through the pool of strings and for any string that
             // contains the substring `q`, add it to the `matches` array
             $.each(strs, function (i, str) {
@@ -248,11 +235,9 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                     matches.push(str);
                 }
             });
-
             cb(matches);
         };
     };
-
     var templatesearch2 = `
 <ul class="media-list">
   <li class="media">
@@ -316,7 +301,6 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                         </div>
                     </div>
                 </div>`;
-
     $scope.prefetchdata = {};
     $http.get(baseurl + "Api/prefetchdata.json").then(function (rdata) {
         $scope.prefetchdata = rdata.data;
@@ -335,7 +319,6 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                     wildcard: '%QUERY%'
                 }
             });
-
             $('.typeahead').typeahead(null, {
                 name: 'search-products',
                 display: 'title',
@@ -350,7 +333,6 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                     suggestion: Handlebars.compile(templatesearch2)
                 }
             });
-
         }, 500);
     })
 
@@ -393,7 +375,6 @@ App.controller('HomeController', function ($scope, $http, $timeout, $interval, $
 
 App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $filter) {
     $scope.productver = {'quantity': 1};
-
     $scope.updateCartDetail = function (oper) {
         console.log(oper)
         if (oper == 'sub') {
@@ -420,10 +401,27 @@ App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $
 })
 
 
+App.controller('cakeController', function ($scope, $http, $timeout, $interval, $filter) {
+    $scope.cakeinit = {"selct_flavour":"mixed_fruit.jpg", "flavour": "Mixed Fruit"};
+    $scope.cakeflavoue = {
+        "Mango": "mango.jpg",
+        "Black Forest": "blackforest.jpg",
+        "Mixed Fruit": "mixed_fruit.jpg",
+        "Velvet": "velvet.jpg"
+    };
+    
+    $scope.cakeinit.selct_flavour = $scope.cakeflavoue[$scope.cakeinit.flavour];
+    
+    $scope.changeFlavour = function () {
+        $scope.cakeinit.selct_flavour = $scope.cakeflavoue[$scope.cakeinit.flavour];
+    }
+    
+})
+
+
 
 function addToCartExt(productid, qnty, obj) {
     var qntyobj = $(obj).parents(".searchbody").find(".cartquantitysearch").text();
-
     angular.element(document.getElementById("ShopController")).scope().addToCart(productid, qntyobj);
 }
 
