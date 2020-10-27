@@ -140,7 +140,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
 
 <!-- Inner Page Banner Area Start Here -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/res/cart.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/cart.css" type="text/css" />
 
 <!-- Inner Page Banner Area Start Here -->
 <section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/cart.jpg');   margin-top: -30px;    padding: 55px 0px;    background-position: -237px -135px;" data-center="" data-top-bottom="">
@@ -230,33 +230,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                     </div>                            
 
                                                 </div>
-                                                <div class="col-md-12" style="margin-top: 50px;">
-                                                    <div class="row delivery_block">
-                                                        <div class="col-md-4">
-                                                            <h4 style="color:black;">
-                                                                Select delivery time
-                                                            </h4>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <select name="delivery_time" class="form-control" ng-model="shippingInit.delivery_time">
-                                                                <?php
-                                                                foreach ($selectTimeSlot as $key => $value) {
-                                                                    echo "<option value='$value'>$value</option>";
-                                                                }
-                                                                ?>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="col-md-4">
-                                                            <div name="delivery_date" class="form-control" ng-model="shippingInit.delivery_date">
-                                                                <?php
-                                                                echo "<option value='$delivery_date'>$delivery_date</option>";
-                                                                ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                <input type="hidden" name="delivery_time" class="form-control" ng-model="shippingInit.delivery_time">
+                                                <input type="hidden" name="delivery_date" class="form-control" ng-model="shippingInit.delivery_date">
+                                                        
                                             <div class="cart-page-top table-responsive">
                                                 <table class="table table-hover">
                                                     <tbody id="quantity-holder">
@@ -363,7 +339,6 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                     <td>
                                         <select name="zipcode" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;    font-size: 12px;">
                                             <option value="Tsim Sha Tsui">Tsim Sha Tsui (For Free Shipping)</option>
-                                            <option value="Whampoa">Whampoa Garden ($40 On Order value < $400)</option>
                                         </select>
 
                                         <input type="hidden" name="delivery_date" value="{{shippingInit.delivery_date}}"/>

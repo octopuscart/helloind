@@ -233,7 +233,7 @@ class Cart extends CI_Controller {
                 $data['user_credits'] = $user_credits;
                 $address = $user_address_details[0];
 
-                $session_cart['shipping_price'] = 40;
+                $session_cart['shipping_price'] = 0;
                 if ($session_cart['total_price'] > 399) {
                     $session_cart['shipping_price'] = 0;
                 }
