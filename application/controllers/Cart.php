@@ -240,6 +240,7 @@ class Cart extends CI_Controller {
                 if ($address['zipcode'] == 'Tsim Sha Tsui') {
                     $session_cart['shipping_price'] = 0;
                 }
+                $session_cart['shipping_price'] = 25;
                 $session_cart['sub_total_price'] = $session_cart['total_price'];
 
                 $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];

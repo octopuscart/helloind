@@ -45,7 +45,7 @@ class Api extends REST_Controller {
             $session_cart = $this->Product_model->cartData();
         }
 
-        $session_cart['shipping_price'] = 0;
+        $session_cart['shipping_price'] = 25;
 //        if ($session_cart['total_price'] > 399) {
 //            $session_cart['shipping_price'] = 0;
 //        }
