@@ -74,6 +74,20 @@
 
 </head>
 
+<style>
+    .cart-budget{
+        margin-top: -8px;
+    position: absolute;
+    background: red;
+    color: white;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 10px;
+    height: 20px;
+    }
+</style>
+
 <body ng-app="App" class="stretched sticky-footer" data-offset="200" data-spy="scroll" data-target=".ow-navigation">
 
 
@@ -157,6 +171,11 @@
                             <li><a href="<?php echo site_url("book-now"); ?>" title="Book Now">BOOK NOW</a></li>
                             <li><a href="<?php echo site_url("book-cake"); ?>" title="Book Now">BOOK CAKE</a></li>
                             <li><a href="<?php echo site_url("contact"); ?>" title="Contact Us">CONTACT US</a></li>
+                            <li>
+                                <a href="<?php echo site_url("cart") ?>" class="cartheadericon">
+                                    <i class="fa fa-shopping-cart" style="    font-size: 20px;"></i><span class="cart-budget">{{globleCartData.total_quantity}}</span>
+                                </a>
+                            </li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </nav><!-- nav /- -->

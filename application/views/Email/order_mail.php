@@ -72,12 +72,12 @@
                 position: inherit;
                 width: 50px;
                 display: inline-block;
-                    margin-right: 20px;
+                margin-right: 20px;
             }
 
             .socialicons img {
                 width: 50px;
-               
+
             }
         </style>
     </head>
@@ -259,36 +259,14 @@
 
 
 
-                        <?php // echo EMAIL_FOOTER; ?>
+                        <?php echo EMAIL_FOOTER; ?>
                         <table>
-	<tbody>
-		<tr>
-			<td colspan="2">
-			<p>For any queries, Please contact us on Whastsapp <a href="https://api.whatsapp.com/send?phone=85223677489&amp;text=&amp;source=&amp;data=&amp;app_absent=" style="color:black;" target="_blank">+(852) 2367 7489</a> or email at <a href="mailto:hello@helloindia.com.hk" style="color:black;" target="_blank">hello@helloindia.com.hk</a></p>
-
-			<p>We assure you of best services at all times.</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="width: 70%">
-			<div style="height: 200px;">Kindest Regards,<br />
-			<img src="https://www.helloindia.com.hk/assets/images/logo.png" style="  background: #fff;  height: 45px; margin: 5px 0px 10px;" />
-			<address><span style="float: left; font-size: 12px;"><b>Address </b><br />
-			Hanyee Building, Shop A &amp; E, 1/F,<br />
-			19-21 Hankow Rd, Tsim Sha Tsui, Hong Kong<br />
-			<b>Tel#</b>:&nbsp;+(852) 2367 7489<br />
-			<b>Email</b>: hello@helloindia.com.hk, info@helloindia.com.hk<br />
-			<b>Web</b>: www.helloindia.com</span></address>
-			<span style="float: left; font-size: 12px;"> </span></div>
-			</td>
-			<td style="width: 30%;">
-			<p>&nbsp;</p>
-
-			<p>&nbsp;</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+                            <div class="" style="width: 100%;float:left;background: #fff;padding: 5px 0px;;text-align: center;background: #d92229;">
+                                <a href="<?php echo ADMINURL . 'order/order_pdf_order_key/' . $order_data->order_key; ?>"  target="_blank" style="color:white!important;">
+                                    Click Here To Download Invoice
+                                </a>
+                            </div>
+                        </table>
 
 
 
