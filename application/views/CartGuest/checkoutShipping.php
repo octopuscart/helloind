@@ -382,7 +382,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                     </td>
                                     <td>
                                         <select name="zipcode" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;    font-size: 12px;">
-                                            <option value="Tsim Sha Tsui">Tsim Sha Tsui (For Free Shipping)</option>
+                                            <option value="Tsim Sha Tsui">Tsim Sha Tsui </option>
                                         </select>
 
 
