@@ -212,8 +212,8 @@
 		/* - Portfolio Section */
 		if($(".portfolio-section").length){
 			var url;
-			$(".portfolio-section .portfolio-box").magnificPopup({
-				delegate: "a",
+			$(".portfolio-section .portfolio-box" ).magnificPopup({
+				delegate: "span",
 				type: "image",
 				tLoading: "Loading image #%curr%...",
 				mainClass: "mfp-img-mobile",

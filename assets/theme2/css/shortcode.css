@@ -679,7 +679,7 @@
 	width: 100%;
 }
 .portfolio-box a::before {
-	background-color: rgba(255,255,255,0.9);
+	background-color: rgb(255 255 255 / 48%);
 	content: "";
 	position: absolute;
 	left: 0;
