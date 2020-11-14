@@ -2,9 +2,13 @@
 $this->load->view('layout/header');
 ?>
 
+<style>
+    .datepicker-days .day{
+        cursor: pointer;
+    }
+</style>
 
-
-<main style="background: url(<?php echo base_url(); ?>assets/theme2/images/onview-bg.jpg);background-size: cover;">
+<main style="background: url(<?php echo base_url(); ?>assets/theme2/images/onview-bg.jpg);background-size: cover;" ng-controller="bookController">
     <!-- Page Banner -->
     <!--    <div class="container-fluid no-padding page-banner" style="    padding: 30px 0 30px;">
              Container 
@@ -14,6 +18,7 @@ $this->load->view('layout/header');
         </div> Page Banner /- -->
 
     <!-- Welcome Section -->
+    <input type="hidden" ng-model="bookinit.predate" ng-init="bookinit.predate = '<?php echo date("Y-m-d") ?>'">
     <div class="container-fluid no-padding welcome-section2">
         <!-- Container -->
         <div class="container">
@@ -67,12 +72,25 @@ $this->load->view('layout/header');
                                                             <div class="col-sm-6 mb-3">
                                                                 <input type="text" id="template-contactform-phone" name="contact" value="" class="form-control border-form-control required" placeholder="Contact No." required="">
                                                             </div>
-                                                            <div class="col-sm-6 mb-3 input-daterange travel-date-group">
-                                                                <input type="date" id="template-contactform-subject" name="select_date" value="" class="form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>">
+                                                            <div class="col-sm-6 mb-3  travel-date-group">
+                                                                <!--<input type="date" id="template-contactform-subject" name="select_date" value="" class="form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" ng-model="bookinit.selectdate" ng-change="changeDate()">-->
+
+                                                                <div class="">
+                                                                    <input type="text" class="form-control datepicker" value="<?php echo date("Y-m-d") ?>"/>
+                                                                </div>
+
                                                             </div>
                                                             <div class="clear"></div>
+
                                                             <div class="col-sm-6 mb-3">
-                                                                <select id="template-contactform-time" class="custom-select form-control border-form-control" name="select_time" required="">
+                                                                <select id="template-contactform-time" class="custom-select form-control border-form-control" name="select_time" required="" ng-if="bookinit.selectdate == '2020-11-14'">
+                                                                    <option value="disabled" disabled="" selected="">Select Time</option>
+                                                                    <option value="12:00">12:00 - 13:00</option>
+                                                                    <option value="13:00">13:00 - 14:00</option>
+                                                                    <option value="14:00">14:00 - 15:00</option>
+
+                                                                </select>
+                                                                <select id="template-contactform-time" class="custom-select form-control border-form-control" name="select_time" required="" ng-if="bookinit.selectdate != '2020-11-14'">
                                                                     <option value="disabled" disabled="" selected="">Select Time</option>
                                                                     <option value="12:00">12:00 - 13:00</option>
                                                                     <option value="13:00">13:00 - 14:00</option>
@@ -110,7 +128,7 @@ $this->load->view('layout/header');
                                 <div role="tabpanel" class="tab-pane" id="quandoo">
                                     <center>
                                         <iframe src="https://booking-widget.quandoo.com.au/iframe.html?agentId=2&merchantId=71001&origin=https%3A%2F%2Fadmin.quandoo.com&path=https%3A%2F%2Fbooking-widget.quandoo.com%2F&theme=brand " style="    height: 666px;
-                                               
+
                                                 border: none;"></iframe>
                                     </center>
                                 </div>
@@ -157,7 +175,12 @@ $this->load->view('layout/header');
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <?php
 $this->load->view('layout/footer');
 ?>

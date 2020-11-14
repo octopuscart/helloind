@@ -402,21 +402,57 @@ App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $
 
 
 App.controller('cakeController', function ($scope, $http, $timeout, $interval, $filter) {
-    $scope.cakeinit = {"selct_flavour":"mixed_fruit.jpg", "flavour": "Mixed Fruit"};
+    $scope.cakeinit = {"selct_flavour": "mixed_fruit.jpg", "flavour": "Mixed Fruit"};
     $scope.cakeflavoue = {
         "Mango": "mango.jpg",
         "Black Forest": "blackforest.jpg",
         "Mixed Fruit": "mixed_fruit.jpg",
         "Velvet": "velvet.jpg"
     };
-    
+
     $scope.cakeinit.selct_flavour = $scope.cakeflavoue[$scope.cakeinit.flavour];
-    
+
     $scope.changeFlavour = function () {
         $scope.cakeinit.selct_flavour = $scope.cakeflavoue[$scope.cakeinit.flavour];
     }
-    
+
 })
+
+
+App.controller('bookController', function ($scope, $http, $timeout, $interval, $filter) {
+
+    $scope.bookinit = {"selectdate": "", "predate": "", "defaultdate": ""};
+    $timeout(function () {
+        $scope.bookinit.selectdate = $scope.bookinit.predate;
+
+    }, 1500)
+
+    $(function () {
+        var datepickerobj = $(".datepicker").datepicker({
+
+            "dateFormat": "yy-mm-dd",
+            minDate: -0,
+            onSelect: function (dateselect) {
+                console.log(dateselect);
+                $timeout(function () {
+                    $scope.bookinit.selectdate = dateselect;
+                }, 1000)
+            }
+        });
+
+
+
+    });
+
+
+    $scope.changeDate = function () {
+        console.log($scope.bookinit)
+    }
+
+})
+
+
+
 
 
 
