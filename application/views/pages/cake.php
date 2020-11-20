@@ -15,7 +15,8 @@ $this->load->view('layout/header');
     <div class="container-fluid no-padding page-banner" style="    padding: 30px 0 30px;">
 
         <div class="container">
-            <h3>Cake Booking</h3>
+            <h3>Halal Cake</h3>
+            <h3 style="font-size: 25px;line-height: 25px;">Booking </h3>
         </div>
     </div>
 
@@ -25,9 +26,11 @@ $this->load->view('layout/header');
         <div class="container">
             <!-- Row -->
             <div class="row">			
-                <div class="col-md-6 col-sm-6 img-block" style="    height: 550px;background: #8c3136;
-                     border: 10px solid #fff;
-                     border-radius: 40px;">
+                <div class="col-md-6 col-sm-6 img-block" style="    height: 566px;background: #8c3136;
+                     border: 10px solid #fff;background-image:  url(<?php echo base_url(); ?>assets/images/cakeback.jpg);
+                     border-radius: 40px;background-size: cover;">
+                       <h3 style="    font-family: 'Kaushan Script', cursive!important;font-size: 35px;
+    color: #fcc547;    margin-bottom: -55px;">{{cakeinit.flavour}} Halal Cake </h3>
                     <img src="<?php echo base_url(); ?>assets/cake/{{cakeinit.selct_flavour}}" style="margin-top: 130px;"/>
                 </div>
                 <div class="col-md-6 col-sm-6 " >
@@ -35,10 +38,11 @@ $this->load->view('layout/header');
                         <div>
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <center style="width:100%;height: 500px;">
+                                <center style="width:100%;">
                                     <div class="row clearfix" style="    width: fit-content;">
 
-                                        <div class="p-5 reservation-form1 rounded bg-white" style="width: 500px;">
+                                        <div class="p-5 reservation-form1 rounded bg-white" style="    width: auto;
+    padding: 14px;">
 
 
 
@@ -73,7 +77,7 @@ $this->load->view('layout/header');
                                                         <label >Cake Price</label >
                                                         <select id="template-contactform-time" class="custom-select form-control border-form-control" name="cake_price" required="">
                                                             <option value="1 Lb HK$250">1 Lb HK$250</option>
-                                                            <option value="2 Lb HK$250">1 Lb HK$490</option>
+                                                            <option value="2 Lb HK$250">2 Lb HK$490</option>
                                                         </select>                                                      
                                                     </div>
                                                     <div class="col-sm-12 mb-3">

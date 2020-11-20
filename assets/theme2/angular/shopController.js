@@ -404,10 +404,10 @@ App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $
 App.controller('cakeController', function ($scope, $http, $timeout, $interval, $filter) {
     $scope.cakeinit = {"selct_flavour": "mixed_fruit.jpg", "flavour": "Mixed Fruit"};
     $scope.cakeflavoue = {
-        "Mango": "mango.jpg",
-        "Black Forest": "blackforest.jpg",
-        "Mixed Fruit": "mixed_fruit.jpg",
-        "Velvet": "velvet.jpg"
+        "Mango": "mango.png",
+        "Black Forest": "blackforest.png",
+        "Mixed Fruit": "mixed_fruit.png",
+        "Velvet": "velvet.png"
     };
 
     $scope.cakeinit.selct_flavour = $scope.cakeflavoue[$scope.cakeinit.flavour];
