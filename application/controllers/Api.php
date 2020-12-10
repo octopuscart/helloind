@@ -82,12 +82,11 @@ class Api extends REST_Controller {
         }
         
 
-        if ($user_address_details) {
+        if (1) {
 
             $addresscheck2 = $this->session->userdata('shipping_address');
 
            
-
 
             if ($this->checklogin) {
 
