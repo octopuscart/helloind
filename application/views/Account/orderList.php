@@ -21,23 +21,18 @@ $this->load->view('layout/header');
         margin-right: 13px!important;
     }
 
-    .blog-posts article {
-        margin-bottom: 10px;
-    }
+   
 </style>
 
 <style>
-    footer{
-        position: inherit!important;
-    }
+
 </style> 
-<!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/blog.jpg');   margin-top: -30px;    padding: 100px 0px;   " data-center="" data-top-bottom="">
-    <div class="container clearfix">
-        <h1 class="font-secondary capitalize ls0" style="font-size: 62px;color:white;">Account</h1>
-    </div>
-</section>
-<!-- Inner Page Banner Area End Here -->
+<div class="container-fluid no-padding page-banner" style="background-position: center;">
+    <!-- Container -->
+    <div class="container">
+        <h3>My Account</h3>
+    </div><!-- Container /- -->
+</div><!-- Page Banner /- -->
 
 <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="    margin-top: -65px;
      position: absolute;
@@ -47,7 +42,7 @@ $this->load->view('layout/header');
 <div id="content" class="my-account-page-area"> 
 
     <!-- Blog -->
-    <section class="new-main blog-posts ">
+    <section class="new-main blog-posts " >
         <div class="container"> 
 
             <!-- News Post -->
@@ -65,7 +60,7 @@ $this->load->view('layout/header');
                             ?>
                             <div class="row  "> 
 
-                                    <article class="order_box" style="padding: 10px;width: 100%;">
+                                    <article class="order_box blockcontainer" style="padding: 10px;width: 100%;">
                                         <div class="col-md-12">
                                             <h6>
                                                 Order No. #<?php echo $value->order_no; ?>
@@ -84,7 +79,7 @@ $this->load->view('layout/header');
 
                                         </div>
                                         <div class="col-md-4 colleft">
-                                            <a href="<?php echo site_url('order/orderdetails/' . $value->order_key); ?>" class="btn btn-inverse btn-small  button button-circle button-large text-white ml-0 mt-3 colordarkgreen listbuttons" style="margin: 0px;    float: right;">View Order</a>
+                                            <a href="<?php echo site_url('order/orderdetails/' . $value->order_key); ?>" class="btn btn-default btn-small  button button-circle button-large text-white ml-0 mt-3 colordarkgreen listbuttons" style="margin: 0px;    float: right;">View Order</a>
                                         </div>
                                     </article>
 

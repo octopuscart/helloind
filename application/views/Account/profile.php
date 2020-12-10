@@ -4,21 +4,19 @@ $this->load->view('layout/header');
 
 
 <style>
-    footer{
-        position: inherit!important;
+   
+    .inlineformmargin{
+        margin-bottom: 20px;
     }
 </style> 
-<!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/blog.jpg');   margin-top: -30px;    padding: 100px 0px;   " data-center="" data-top-bottom="">
-    <div class="container clearfix">
-        <h1 class="font-secondary capitalize ls0" style="font-size: 62px;color:white;">Account</h1>
-    </div>
-</section>
-<!-- Inner Page Banner Area End Here -->
+<div class="container-fluid no-padding page-banner" style="background-position: center;">
+        <!-- Container -->
+        <div class="container">
+            <h3>My Account</h3>
+        </div><!-- Container /- -->
+    </div><!-- Page Banner /- -->
 
-<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="    margin-top: -65px;
-     position: absolute;
-     z-index: 200;" />
+
 
 
 
@@ -38,7 +36,7 @@ $this->load->view('layout/header');
                     ?>
 
 
-                    <div class="col-md-9 checkout-form">
+                    <div class="col-md-9 checkout-form blockcontainer">
                         <?php
                         if ($msg) {
                             ?>
@@ -62,102 +60,77 @@ $this->load->view('layout/header');
                                 <form class="create_account_form row woocommerce-EditAccountForm edit-account" method="post" action="#">
                                     <input type="hidden" name="user_id" value="45">
                                     <ul class="row">
-                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <div class="col-sm-6 col-lg-6 inlineformmargin">
                                             <label>
                                                 First Name
-                                                <input type="text" name="first_name" class="woocommerce-Input sm-form-control border-form-control tleft required"  value="<?php echo $user_details->first_name; ?>">
+                                                <input type="text" name="first_name" class="form-control"  value="<?php echo $user_details->first_name; ?>">
                                             </label>
-                                        </li>
-                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        </div>
+                                        <div class="col-sm-6 col-lg-6 inlineformmargin">
 
                                             <label>
                                                 Last Name
-                                                <input type="text" name="last_name" class="woocommerce-Input sm-form-control border-form-control tleft required"  value="<?php echo $user_details->last_name; ?>">
+                                                <input type="text" name="last_name" class="form-control"  value="<?php echo $user_details->last_name; ?>">
                                             </label>
-                                        </li>
+                                        </div>
 
 
-                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <div class="col-sm-6 col-lg-6 inlineformmargin">
 
                                             <label>
                                                 Contact No.
-                                                <input type="text" name="contact_no" class="woocommerce-Input sm-form-control border-form-control tleft required"  value="<?php echo $user_details->contact_no; ?>">
+                                                <input type="text" name="contact_no" class="form-control"  value="<?php echo $user_details->contact_no; ?>">
                                             </label>
-                                        </li>
+                                        </div>
 
 
 
-                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <div class="col-sm-6 col-lg-6 inlineformmargin">
 
                                             <label>
                                                 Gender
-                                                <select name="gender" class="form-control" style="    background: #f5f5f5;
-                                                        height: 45px;
-                                                        font-size: 12px;
-                                                        line-height: 50px;
-                                                        border: none;
-                                                        color: #000;
-                                                        width: 100%;
-                                                        padding: 0 25px;border-radius: 0;">
+                                                <select name="gender" class="form-control" >
                                                     <option  value="Male" <?php echo $user_details->gender == 'Male' ? "selected" : ""; ?>>Male</option>
                                                     <option  value="Female" <?php echo $user_details->gender == 'Female' ? "selected" : ""; ?>>Female</option>
                                                 </select>
                                             </label> 
-                                        </li>
+                                        </div>
 
-                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <div class="col-sm-6 col-lg-6 inlineformmargin">
 
                                             <label>
                                                 Date of Birth
-                                                <input type="date" class="woocommerce-Input sm-form-control border-form-control tleft required" name="birth_date"  value="<?php echo $user_details->birth_date; ?>">
+                                                <input type="date" class="form-control" name="birth_date"  value="<?php echo $user_details->birth_date; ?>">
                                             </label>
-                                        </li>
+                                        </div>
 
 
-                                        <li class="col-sm-6 col-lg-6" style="padding-top: 20px;">
+                                        <div class="col-sm-6 col-lg-6" style="padding-top: 20px;">
 
-                                            <button name="update_profile" type="submit" class="woocommerce-Button button btn-shop-now-fill">Update Profile</button>
-                                        </li>
+                                            <button name="update_profile" type="submit" class="btn btn-danger">Update Profile</button>
+                                        </div>
 
 
                                         <div style="clear: both"></div>
 
                                     </ul>
                                 </form>
-                            </div>
-
-
-                            <hr/>
-                            <header class="row woocommerce-Address-title title">
+                                
+                                <div class="col-md-12 -title title">
                                 <h3 class="col-xs-12 metro-title">                                
                                     <a href="#." class="changepassword"  data-toggle="modal" data-target="#changePassword" style="    color: #000;
                                        font-size: 13px;
                                        "><i class="fa fa-refresh"></i> Change Password</a>
                                 </h3>
-                            </header>  
+                            </div> 
+                            </div>
+
+
+                            <hr/>
+                             
 
 
 
-                            <!--                                    <div class="col-sm-4">  
-                                                                    <div class="noti-check1">
-                                                                        <h3 style="    color: #fff;"></h3>
-                                                                        <center><img class="media-object img-responsive" src="post_image/user-default.jpg" alt="..." style="height:200px;"></center>
-                                                                        <form method="post" action="#" enctype="multipart/form-data">
-                                                                            <ul class="row">
-                                                                                <li class="col-sm-12">
-                                                                                    <label>
-                                                                                        <input type="file" class="" name="image" style="padding-top: 12px;">
-                                                                                    </label>
-                                                                                </li>
-                                                                                <li class="col-sm-12">
-                                                                                    <label>
-                                                                                        <input type="submit" name="submit1" class="btn btn-inverse" value="Change Profile Image" >
-                                                                                    </label>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>-->
 
                         </div>
                     </div>
@@ -186,17 +159,17 @@ $this->load->view('layout/header');
 
                                 <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
                                     Old Password
-                                    <input type="text" name="old_password"  value="" class=" woocommerce-Input sm-form-control border-form-control tleft required">
+                                    <input type="text" name="old_password"  value="" class=" form-control">
                                 </label>
 
                                 <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
                                     New Password
-                                    <input type="text" name="new_password"  value="" class=" woocommerce-Input sm-form-control border-form-control tleft required">
+                                    <input type="text" name="new_password"  value="" class=" form-control">
                                 </label>
                                 <br/>
                                 <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
                                     Confirm Password
-                                    <input type="text" name="re_password"  value="" class=" woocommerce-Input sm-form-control border-form-control tleft required">
+                                    <input type="text" name="re_password"  value="" class=" form-control">
                                 </label>
                             </div>
                             <div class="modal-footer">
@@ -215,7 +188,7 @@ $this->load->view('layout/header');
             ?>
             <script>
                 $(function () {
-                    $(".woocommerce-MyAccount-navigation-link--dashboard").removeClass("active");
+                    $(".woocommerce-MyAccount-navigation-divnk--dashboard").removeClass("active");
                     $(".profile_page").addClass("active");
                 })
             </script>
