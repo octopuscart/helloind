@@ -43,15 +43,15 @@ class Order extends CI_Controller {
     //orders details
     public function orderdetails($order_key) {
 
-        
+
         $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
-  
 
 
-   
+
+
 
         $order_id = $order_details['order_data']->id;
-      
+
         $this->load->view('Order/orderdetails', $order_details);
     }
 
@@ -86,7 +86,7 @@ class Order extends CI_Controller {
         $this->load->view('Order/orderdetails', $order_details);
     }
 
-     function orderPayment($order_key, $paymenttype) {
+    function orderPayment($order_key, $paymenttype) {
         $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
         $orderquantity = $order_details['order_data']->total_quantity;
         $itemsdescription = "Total Quantity: $orderquantity";
@@ -169,7 +169,9 @@ class Order extends CI_Controller {
                 'description' => "Payment Id#: " . $returndata['order_id'],
                 'order_id' => $order_id
             );
-            $this->db->insert('user_order_status', $productattr);
+            if ($returndata['order_id']) {
+                $this->db->insert('user_order_status', $productattr);
+            }
         }
         redirect(site_url("Order/orderdetails/$order_key"));
     }
