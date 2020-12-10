@@ -59,7 +59,7 @@
                                     <?php
                                 }
                             } else {
-                                echo "Choose Shipping Address";
+                                echo "Choose Delivery Address";
                             }
                             ?>
                         </span> 
