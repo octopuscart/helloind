@@ -9,7 +9,7 @@ $this->load->view('layout/header');
     <div class="container-fluid no-padding page-banner" style="background-position: center;">
         <!-- Container -->
         <div class="container">
-            <h3>Shipping Cart</h3>
+            <h3>Shopping Cart</h3>
         </div><!-- Container /- -->
     </div><!-- Page Banner /- -->
 
@@ -105,8 +105,8 @@ $this->load->view('layout/header');
                                                                font-weight: 800;
                                                                margin-top: 0px;
                                                                padding-top: 12px;">
-                                                                 Shipping Only In Tsim Sha Tsui
-                                                            </p>  SHIPPING 
+                                                                 Delivery Only In Tsim Sha Tsui
+                                                            </p>  DELIVERY 
                                                         </td>
                                                         <td class=" amount">
                                                             {{globleCartData.shipping_price|currency:"<?php echo globle_currency; ?>"}}
