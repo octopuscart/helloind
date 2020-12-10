@@ -134,7 +134,7 @@ $this->load->view('layout/header');
                                                             <ul>
                                                                 <li class="active"><a href="#paypal" data-toggle="tab" aria-expanded="false">PayPal</a></li>
                                                                 <li><a href="#bank" data-toggle="tab" aria-expanded="true">Bank Transfer</a></li>
-
+                                   
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12">

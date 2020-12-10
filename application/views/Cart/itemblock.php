@@ -44,17 +44,20 @@
                         <span class="fa-stack">
                             <i class="fa fa-map-marker fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
-                        </span>   Shipping Address
+                        </span>   Delivery Address
                         <span style="" class="ng-binding shippingtagtext">
-                            <?php
+                             <?php
                             if (count($user_address_details)) {
                                 $value = $user_address_details[0];
-                                ?>
-
-                                <?php echo $value['address1']; ?>,
-                                <?php echo $value['address2']; ?>,
-                                <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
-                                <?php
+                                if ($value['zipcode'] == 'Pickup') {
+                                    echo $value['address1'];
+                                } else {
+                                    ?>
+                                    <?php echo $value['address1']; ?>,
+                                    <?php echo $value['address2']; ?>,
+                                    <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
+                                    <?php
+                                }
                             } else {
                                 echo "Choose Shipping Address";
                             }

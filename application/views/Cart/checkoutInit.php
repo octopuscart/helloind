@@ -75,12 +75,12 @@ $this->load->view('layout/header');
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/cart.css" type="text/css" />
 
 <!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/cart.jpg');   margin-top: -30px;    padding: 55px 0px;    background-position: -237px -135px;" data-center="" data-top-bottom="">
-    <div class="container clearfix">
-        <span class="font-primary ls1 mb-2 color" style="font-size: 14px;">Top Services</span>
-        <h1 class="font-secondary capitalize ls0" style="font-size: 62px;">Shopping Cart</h1>
-    </div>
-</section>
+  <div class="container-fluid no-padding page-banner" style="background-position: center;">
+        <!-- Container -->
+        <div class="container">
+            <h3>Shopping Cart</h3>
+        </div><!-- Container /- -->
+    </div><!-- Page Banner /- -->
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
@@ -153,10 +153,30 @@ $this->load->view('layout/header');
                                                         </td>
                                                         <td></td>
                                                     </tr>
-
                                                     <tr>
                                                         <td colspan="3" class="text_right">
-                                                            SHIPPING 
+                                                            <p style="    
+                                                               float: left;
+                                                               line-height: 11px;
+                                                               color: red;
+                                                               font-size: 14px;
+                                                               font-weight: 800;
+                                                               /* padding-top: 12px; */
+                                                               /* padding-top: 12px; */
+                                                               margin-bottom: 0;
+
+                                                               ">
+                                                                {{globleCartData.discount_note}}
+                                                            </p>     DISCOUNT
+                                                        </td>
+                                                        <td class=" amount numbertext">
+                                                            {{globleCartData.discount|currency:"<?php echo globle_currency; ?>"}}
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="3" class="text_right">
+                                                            DELIVERY 
                                                         </td>
                                                         <td class="text-center amount">
                                                             {{globleCartData.shipping_price|currency:"<?php echo globle_currency; ?>"}}
@@ -178,7 +198,7 @@ $this->load->view('layout/header');
                                                                 <a href=" <?php echo site_url("Cart/details"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> Back To Cart</a>
                                                             </div>
                                                             <div class="proceed-button pull-right ">
-                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Shipping Address <i class="fa fa-arrow-right"></i></a>
+                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Delivery Address <i class="fa fa-arrow-right"></i></a>
                                                             </div>
                                                         </td>
 

@@ -100,7 +100,7 @@
 
                 </tr>
             </table>
-            <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
+          <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
                 <tr>
                     <td style="font-size: 12px;width: 50%;padding: 2px 20px;padding-top: 25px;" >
                         <b>Delivery Address</b><hr/>
@@ -122,10 +122,7 @@
                         <div style="    padding: 5px 0px;font-size: 10px">
                             <?php echo $order_data->address1; ?><br/>
                             <?php echo $order_data->address2; ?><br/>
-                            <?php echo $order_data->state; ?>
-                            <?php echo $order_data->city; ?>
 
-                            <?php echo $order_data->country; ?> <?php echo $order_data->zipcode; ?>
 
                         </div>
                         <table class="gn_table">
@@ -138,6 +135,35 @@
                                 <td>: <?php echo $order_data->contact_no; ?> </td>
                             </tr>
                         </table>
+
+                        <div style="border: 2px solid red;">
+                            <?php
+                         
+                            if ($order_data->zipcode == 'Pickup') { ?>
+                                <table class="gn_table">
+
+                                    <tr>
+                                        <th>Expected Ready Time</th>
+                                        <td>: <?php echo date("h:i a", strtotime("+45 minute")); ?> </td>
+                                    </tr>
+                                </table>
+                                <?php } else {
+                                ?>
+                                <table class="gn_table">
+                                    <tr>
+                                        <th>Delivery Area</th>
+                                        <td>: <?php echo $order_data->zipcode; ?> </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Expected Delivery Date/Time</th>
+                                        <td>: <?php echo date("h:i a", strtotime("+45 minute")); ?> </td>
+                                    </tr>
+                                </table>
+                                <?php
+                            }
+                            ?>
+                        </div>
+
 
 
                     </td>
@@ -245,7 +271,7 @@
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->shipping_price, 2, '.', ''); ?> </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align: right">Coupon Discount</td>
+                    <td colspan="2" style="text-align: right"> Discount</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->credit_price, 2, '.', ''); ?> </td>
                 </tr>
                 <tr>

@@ -85,11 +85,11 @@ $this->load->view('layout/header');
 
 <!-- Inner Page Banner Area Start Here -->
 <div class="container-fluid no-padding page-banner" style="background-position: center;">
-        <!-- Container -->
-        <div class="container">
-            <h3>Shipping Cart</h3>
-        </div><!-- Container /- -->
-    </div><!-- Page Banner /- -->
+    <!-- Container -->
+    <div class="container">
+        <h3>Shopping Cart</h3>
+    </div><!-- Container /- -->
+</div><!-- Page Banner /- -->
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
@@ -131,41 +131,20 @@ $this->load->view('layout/header');
                                     </div>
                                     <!-- Address Details -->
                                     <div class="card-body">
+                                        <?php
+                                        $this->load->view('Cart/carttotal');
+                                        ?>
                                         <div class="order-sheet product-details2-area" style="margin-top: 5px;padding:0">
                                             <form action="#" method="post">
                                                 <div class="product-details-tab-area" style="margin: 0;">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                                             <ul class="nav nav-tabs" role="tablist">
-                                                                <?php
-                                                                if (PAYMENT_MODE_COD == 'on') {
-                                                                    ?>
-                                                                    <li class="nav-item"><a href="#cash" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'active' : ''; ?> " data-toggle="tab" aria-expanded="false">Cash On Delivery</a></li>
-                                                                    <?php
-                                                                }
-                                                                ?>
-                                                                <?php
-                                                                if (PAYMENT_MODE_PAYPAL == 'on') {
-                                                                    ?>
-                                                                    <li class=" nav-item"><a href="#paypal" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'PayPal' ? 'active' : ''; ?>" data-toggle="tab" aria-expanded="false">PayPal</a></li>
-                                                                    <?php
-                                                                }
-                                                                ?>
-                                                                <?php
-                                                                if (PAYMENT_MODE_BANK == 'on') {
-                                                                    ?>
-                                                                    <li class="nav-item"><a href="#bank" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'Bank Transfer' ? 'active' : ''; ?> " data-toggle="tab" aria-expanded="true">Bank Transfer</a></li>
-                                                                    <?php
-                                                                }
-                                                                ?>
 
-                                                                <?php
-                                                                if (PAYMENT_MODE_CHEQUE == 'on') {
-                                                                    ?>
-                                                                    <li class="nav-item"><a href="#cheque" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'Cheque On Delivery' ? 'active' : ''; ?> " data-toggle="tab" aria-expanded="false">Cheque On Delivery</a></li>
-                                                                    <?php
-                                                                }
-                                                                ?>
+                                                                <li class="nav-item active"><a href="#cash" class="nav-link" data-toggle="tab" aria-expanded="false">Cash On Delivery</a></li>
+                                                                <li class="nav-item"><a href="#alipay" class="nav-link " data-toggle="tab" aria-expanded="false">Alipay</a></li>
+                                                                <li class="nav-item"><a href="#wechat" class="nav-link " data-toggle="tab" aria-expanded="false">WeChat</a></li>
+
 
 
                                                             </ul>
@@ -185,7 +164,7 @@ $this->load->view('layout/header');
                                                                                     <tr>
                                                                                         <td colspan="4" class="text_right">
                                                                                             <div class="proceed-button pull-left " >
-                                                                                                <a href=" <?php echo site_url("Cart" . $checkoutmode . "/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                                <a href=" <?php echo site_url("Cart" . $checkoutmode . "/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Delivery Address</a>
                                                                                             </div>
                                                                                             <div class="proceed-button pull-right ">
 
@@ -215,7 +194,7 @@ $this->load->view('layout/header');
                                                                                     <tr>
                                                                                         <td colspan="4" class="text_right">
                                                                                             <div class="proceed-button pull-left " >
-                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Delivery Address</a>
                                                                                             </div>
                                                                                             <div class="proceed-button pull-right ">
                                                                                                 <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Bank Transfer" onclick="confirmOrder()">
@@ -236,7 +215,7 @@ $this->load->view('layout/header');
                                                                 <?php
                                                                 if (PAYMENT_MODE_COD == 'on') {
                                                                     ?>
-                                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'show active in' : ''; ?>" id="cash">
+                                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? ' active in' : ''; ?>" id="cash">
                                                                         <p>
                                                                             <img src="<?php echo base_url(); ?>assets/paymentstatus/cod.png" style="height: 293px;">                
 
@@ -247,7 +226,7 @@ $this->load->view('layout/header');
                                                                                     <tr>
                                                                                         <td colspan="4" class="text_right">
                                                                                             <div class="proceed-button pull-left " >
-                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Delivery Address</a>
                                                                                             </div>
                                                                                             <div class="proceed-button pull-right ">
                                                                                                 <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cash On Delivery">
@@ -279,7 +258,7 @@ $this->load->view('layout/header');
                                                                                     <tr>
                                                                                         <td colspan="4" class="text_right">
                                                                                             <div class="proceed-button pull-left " >
-                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Delivery Address</a>
                                                                                             </div>
                                                                                             <div class="proceed-button pull-right ">
                                                                                                 <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cheque On Delivery">
@@ -297,10 +276,73 @@ $this->load->view('layout/header');
                                                                 }
                                                                 ?>
 
+                                                     <div class="tab-pane fade " id="alipay">
+
+                                                                    <div class='row' style='text-align: center;'>
+                                                                        <div class='col-md-12'>
+                                                                            <p>
+                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" style="height: 100px;">                
+
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="cart-page-top table-responsive">
+                                                                        <table class="table table-hover">
+                                                                            <tbody id="quantity-holder">
+                                                                                <tr>
+                                                                                    <td colspan="4" class="text_right">
+                                                                                        <div class="proceed-button pull-left " >
+                                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Delivery Address</a>
+                                                                                        </div>
+                                                                                        <div class="proceed-button pull-right ">
+                                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Alipay">
+                                                                                                Place Order <i class="fa fa-arrow-right"></i>
+                                                                                            </button>                                                                   
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="tab-pane fade " id="wechat">
+
+                                                                    <div class='row' style='text-align: center;'>
+                                                                        <div class='col-md-12'>
+                                                                            <p>
+                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" style="height: 100px;">                
+
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="cart-page-top table-responsive">
+                                                                        <table class="table table-hover">
+                                                                            <tbody id="quantity-holder">
+                                                                                <tr>
+                                                                                    <td colspan="4" class="text_right">
+                                                                                        <div class="proceed-button pull-left " >
+                                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Delivery Address</a>
+                                                                                        </div>
+                                                                                        <div class="proceed-button pull-right ">
+                                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="WeChat">
+                                                                                                Place Order <i class="fa fa-arrow-right"></i>
+                                                                                            </button>                                                                   
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+
+                                                                    </div>
+                                                                </div>
 
 
-                                
-                                                            
+
+
 
                                                             </div>
                                                         </div>
@@ -337,31 +379,31 @@ $this->load->view('Cart/noproduct');
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
-                                                                                    var avaiblecredits = 0;
-                                                                                    function confirmOrder() {
-                                                                                        swal({
-                                                                                            title: 'Processing Order',
-                                                                                            onOpen: function () {
-                                                                                                swal.showLoading()
-                                                                                            }
-                                                                                        });
-                                                                                    }
+                                                                                                    var avaiblecredits = 0;
+                                                                                                    function confirmOrder() {
+                                                                                                        swal({
+                                                                                                            title: 'Processing Order',
+                                                                                                            onOpen: function () {
+                                                                                                                swal.showLoading()
+                                                                                                            }
+                                                                                                        });
+                                                                                                    }
 
 
-                                                                                    function myFunction() {
-                                                                                        /* Get the text field */
-                                                                                        var copyText = document.getElementById("myInput");
+                                                                                                    function myFunction() {
+                                                                                                        /* Get the text field */
+                                                                                                        var copyText = document.getElementById("myInput");
 
-                                                                                        /* Select the text field */
-                                                                                        copyText.select();
+                                                                                                        /* Select the text field */
+                                                                                                        copyText.select();
 
 
-                                                                                        /* Copy the text inside the text field */
-                                                                                        document.execCommand("copy");
+                                                                                                        /* Copy the text inside the text field */
+                                                                                                        document.execCommand("copy");
 
-                                                                                        /* Alert the copied text */
-                                                                                        alert("Copied the link: " + copyText.value);
-                                                                                    }
+                                                                                                        /* Alert the copied text */
+                                                                                                        alert("Copied the link: " + copyText.value);
+                                                                                                    }
 </script>
 
 <?php

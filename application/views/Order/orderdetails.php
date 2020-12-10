@@ -161,7 +161,7 @@ $paymentstatus = "";
 
                                         <div class="col-md-4">
                                             <article class="order_box">
-                                                <h3 class="headerorder"><i class="fa fa-map"></i> Shipping Address</h3>
+                                                <h3 class="headerorder"><i class="fa fa-map"></i> Delivery Address</h3>
 
                                                 <li>  <?php echo $order_data->address1; ?><br/><?php echo $order_data->address2; ?><br/>
                                                     <?php echo $order_data->state; ?>  <?php echo $order_data->city; ?> <?php echo $order_data->country; ?>, <?php echo $order_data->zipcode; ?></li>
@@ -308,7 +308,7 @@ $paymentstatus = "";
 
 
                                                     <!--end of cart details-->
-                                                    <tr>
+<!--                                                    <tr>
                                                         <td colspan="7">
                                                             <?php
                                                             $laststatus = "";
@@ -325,9 +325,9 @@ $paymentstatus = "";
 
 
 
-<!--                                        <button class="btn btn-button pull-right" type="button" data-toggle="collapse" data-target="#collapseProduct<?php echo $product->id; ?>" aria-expanded="false" aria-controls="collapseProduct<?php echo $product->id; ?>">
+                                        <button class="btn btn-button pull-right" type="button" data-toggle="collapse" data-target="#collapseProduct<?php echo $product->id; ?>" aria-expanded="false" aria-controls="collapseProduct<?php echo $product->id; ?>">
                                             Show More  <i class="fa fa-arrow-down"></i>
-                                        </button>-->
+                                        </button>
 
                                                             <div class="statusdiv">
                                                                 Current Status: <?php echo $laststatus; ?>
@@ -365,10 +365,10 @@ $paymentstatus = "";
 
 
                                                         </td>
-                                                    </tr>
+                                                    </tr>-->
 
                                                     <tr>
-                                                        <td colspan="3"  rowspan="4" style="font-size: 12px">
+                                                        <td colspan="3"  rowspan="5" style="font-size: 12px">
                                                             <b>Total Amount in Words:</b><br/>
                                                             <span style="text-transform: capitalize"> <?php echo $order_data->amount_in_word; ?></span>
                                                         </td>
@@ -378,13 +378,17 @@ $paymentstatus = "";
                                                         <td colspan="2" style="text-align: right">Sub Total</td>
                                                         <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
                                                     </tr>
+                                                   <tr>
+                                                        <td colspan="2" style="text-align: right">Discount</td>
+                                                        <td style="text-align: right;width: 60px">{{<?php echo $order_data->credit_price; ?>|currency:"<?php echo globle_currency; ?> "}}</td>
+                                                    </tr>
                                                     <tr>
-                                                        <td colspan="2" style="text-align: right">Shipping</td>
+                                                        <td colspan="2" style="text-align: right">Delivery</td>
                                                         <td style="text-align: right;width: 60px">{{<?php echo $order_data->shipping_price; ?>|currency:"<?php echo globle_currency; ?> "}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="2" style="text-align: right">Total Amount</td>
-                                                        <td style="text-align: right;width: 60px">{{"<?php echo $order_data->total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
+                                                        <th colspan="2" style="text-align: right">Total Amount</th>
+                                                        <th style="text-align: right;width: 60px">{{"<?php echo $order_data->total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </th>
                                                     </tr>
 
 

@@ -76,7 +76,27 @@ $this->load->view('layout/header');
                                                         </td>
                                                         <td></td>
                                                     </tr>
+ <tr>
+                                                <td colspan="4" class="text_right">
+                                                    <p style="    
+                                                       float: left;
+                                                       line-height: 11px;
+                                                       color: red;
+                                                       font-size: 14px;
+                                                       font-weight: 800;
+                                                       /* padding-top: 12px; */
+                                                       /* padding-top: 12px; */
+                                                       margin-bottom: 0;
 
+                                                       ">
+                                                        {{globleCartData.discount_note}}
+                                                    </p>     DISCOUNT
+                                                </td>
+                                                <td class=" amount numbertext">
+                                                    {{globleCartData.discount|currency:"<?php echo globle_currency; ?>"}}
+                                                </td>
+                                                <td></td>
+                                            </tr>
                                                     <tr>
                                                         <td colspan="4" class="text_right">
                                                             <p style="    float: left;

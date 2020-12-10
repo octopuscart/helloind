@@ -62,62 +62,6 @@ class Cart extends CI_Controller {
         }
     }
 
-    function checkoutSize() {
-        $this->redirectCart();
-
-        $measurement_style = $this->session->userdata('measurement_style');
-        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
-
-        if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
-            $user_details = $this->User_model->user_details($this->user_id);
-            $data['user_details'] = $user_details;
-
-            $user_address_details = $this->User_model->user_address_details($this->user_id);
-            $data['user_address_details'] = $user_address_details;
-        } else {
-            $session_cart = $this->Product_model->cartData();
-        }
-
-        $custome_items = $session_cart['custome_items'];
-
-        $this->db->select("group_concat(measurements) as measurement");
-        $this->db->where_in('id', $custome_items);
-        $query = $this->db->get('custome_items');
-        $custome_measurements = $query->row();
-        $data['customitems'] = $custome_measurements;
-
-        $data['custome_items'] = $custome_items;
-
-
-        $measurementarray = explode(",", $custome_measurements->measurement);
-
-        $this->db->select("*");
-        $this->db->order_by('display_index', 'asc');
-        $this->db->where_in('id', $measurementarray);
-        $query = $this->db->get('measurement');
-        $custome_measurements = $query->result_array();
-        $data['measurements_list'] = $custome_measurements;
-        if (isset($_POST['submit_measurement'])) {
-            $measurement_style = array(
-                'measurement_style' => $this->input->post('measurement_type'),
-                'measurement_dict' => array()
-            );
-            $measurement_title = $this->input->post('measurement_title');
-            $measurement_value = $this->input->post('measurement_value');
-
-            foreach ($measurement_title as $key => $value) {
-                $mvalue = $measurement_value[$key];
-                $mtitle = $value;
-                $measurement_style['measurement_dict'][$mtitle] = $mvalue;
-            }
-
-            $this->session->set_userdata('measurement_style', $measurement_style);
-            redirect('Cart/checkoutShipping');
-        }
-        $this->load->view('Cart/checkoutSize', $data);
-    }
-
     function checkoutShipping() {
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
@@ -135,10 +79,27 @@ class Cart extends CI_Controller {
 
             $user_address_details = $this->User_model->user_address_details($this->user_id);
             $data['user_address_details'] = $user_address_details;
+            
+            
+            if ($user_address_details) {
+                $category_array = array(
+                    'address1' => $this->input->post('address1'),
+                    'address2' => $this->input->post('address2'),
+                    'city' => $this->input->post('city'),
+                    'state' => $this->input->post('state'),
+                    'zipcode' => $this->input->post('zipcode'),
+                    'country' => $this->input->post('country'),
+                    'user_id' => $this->user_id,
+                    'status' => 'default',
+                );
+                $this->session->set_userdata('pickup_shipping_address', $category_array);
+            }
 
             $user_credits = $this->User_model->user_credits($this->user_id);
             $data['user_credits'] = $user_credits;
 
+            
+            
             if (isset($_POST['processtopayment'])) {
                 $delivery_details = array(
                     'delivery_date' => $this->input->post('delivery_date'),
@@ -181,6 +142,31 @@ class Cart extends CI_Controller {
                 $this->db->insert('shipping_address', $category_array);
                 redirect('Cart/checkoutShipping');
             }
+
+            if (isset($_POST['processtopaymentpickup'])) {
+                $category_array = array(
+                    'address1' => "Pickup At Hello India",
+                    'address2' => "",
+                    'city' => "",
+                    'state' => "",
+                    'zipcode' => "Pickup",
+                    'country' => "",
+                    'user_id' => $this->user_id,
+                    'status' => 'default',
+                );
+                $this->session->set_userdata('pickup_shipping_address', $category_array);
+
+                $delivery_details = array(
+                    'delivery_date' => $this->input->post('delivery_date'),
+                    'delivery_time' => $this->input->post('delivery_time'),
+                );
+                $this->session->set_userdata('delivery_details', $delivery_details);
+
+                redirect('Cart/checkoutPayment');
+            }
+
+
+
             $this->load->view('Cart/checkoutShipping', $data);
         } else {
             redirect('Account/login?page=checkoutInit');
@@ -189,8 +175,6 @@ class Cart extends CI_Controller {
 
     function checkoutPayment() {
         $this->redirectCart();
-        $measurement_style = $this->session->userdata('measurement_style');
-        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         $data['checkoutmode'] = '';
         $delivery_details = $this->session->userdata('delivery_details');
@@ -209,10 +193,43 @@ class Cart extends CI_Controller {
             $data['user_credits'] = $user_credits;
 
 
+            $checkaddress = $this->session->userdata('shipping_address');
+            if ($this->checklogin) {
+                $addresscheck2 = $this->session->userdata('pickup_shipping_address');
+                if ($addresscheck2['zipcode'] == 'Pickup') {
+                    $data['user_address_details'] = $addresscheck2 ? [$addresscheck2] : [];
+                    $address = $addresscheck2;
+                }
+            } else {
 
+                if ($checkaddress['zipcode'] == 'Pickup') {
+                    $address = $checkaddress;
+                    $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+                }
+            }
             //place order
             if (isset($_POST['place_order'])) {
                 $address = $user_address_details[0];
+
+                if ($checkaddress['zipcode'] == 'Pickup') {
+                    $address = $checkaddress;
+
+                    $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+                }
+
+                if ($this->checklogin) {
+                    $addresscheck2 = $this->session->userdata('pickup_shipping_address');
+                    if ($addresscheck2['zipcode'] == 'Pickup') {
+                        $data['user_address_details'] = $addresscheck2 ? [$addresscheck2] : [];
+                        $address = $addresscheck2;
+                    }
+                } else {
+
+                    if ($checkaddress['zipcode'] == 'Pickup') {
+                        $address = $checkaddress;
+                        $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+                    }
+                }
 
                 if ($this->checklogin) {
                     $session_cart = $this->Product_model->cartData($this->user_id);
@@ -231,7 +248,7 @@ class Cart extends CI_Controller {
 
                 $user_credits = $this->User_model->user_credits($this->user_id);
                 $data['user_credits'] = $user_credits;
-                $address = $user_address_details[0];
+
 
                 $session_cart['shipping_price'] = 0;
                 if ($session_cart['total_price'] > 399) {
@@ -240,8 +257,26 @@ class Cart extends CI_Controller {
                 if ($address['zipcode'] == 'Tsim Sha Tsui') {
                     $session_cart['shipping_price'] = 0;
                 }
+
+                $discountrate = 20;
+                $discoutamount = 0;
                 $session_cart['shipping_price'] = 25;
+                if ($address['zipcode'] == 'Pickup') {
+                    $discountrate = 30;
+                    $session_cart['shipping_price'] = 0;
+                }
                 $session_cart['sub_total_price'] = $session_cart['total_price'];
+
+                $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+
+                $rawdiscount = round($discoutamount);
+                $expdiscount = explode(".", $rawdiscount);
+
+                $actdiscount = count($expdiscount) > 1 ? ($rawdiscount + 1) : $rawdiscount;
+
+                $session_cart['discount'] = $actdiscount;
+
+                $session_cart['total_price'] = $session_cart['total_price'] - $actdiscount;
 
                 $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 
@@ -262,7 +297,7 @@ class Cart extends CI_Controller {
                     'email' => $user_details->email,
                     'user_id' => $user_details->id,
                     'contact_no' => $user_details->contact_no ? $user_details->contact_no : '---',
-                    'zipcode' => "",
+                    'zipcode' => $address['zipcode'],
                     'address1' => $address['address1'],
                     'address2' => $address['address2'],
                     'city' => $address['city'],
@@ -278,9 +313,9 @@ class Cart extends CI_Controller {
                     'status' => 'Order Confirmed',
                     'payment_mode' => $paymentmathod,
                     'measurement_style' => '',
-                    'credit_price' => $this->input->post('credit_price') || 0,
-                    'delivery_date'=>$delivery_details['delivery_date'],
-                    'delivery_time'=>$delivery_details['delivery_time'],
+                    'credit_price' => $actdiscount,
+                    'delivery_date' => $delivery_details['delivery_date'],
+                    'delivery_time' => $delivery_details['delivery_time'],
                 );
 
                 $this->db->insert('user_order', $order_array);

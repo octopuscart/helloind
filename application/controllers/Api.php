@@ -46,6 +46,11 @@ class Api extends REST_Controller {
         }
 
         $session_cart['shipping_price'] = 25;
+        $session_cart['discount_note'] = "";
+        $discountrate = 20;
+        $discoutamount = 0;
+        $session_cart['discount_note'] = "20% Discount On Delivery";
+        $session_cart['shipping_note'] = "";
 //        if ($session_cart['total_price'] > 399) {
 //            $session_cart['shipping_price'] = 0;
 //        }
@@ -64,8 +69,59 @@ class Api extends REST_Controller {
 //                $session_cart['shipping_price'] = 0;
 //            }
 //        }
+        
+        if ($this->checklogin) {
+            $user_address_details2 = $this->User_model->user_address_details($this->user_id);
+            if ($user_address_details2) {
+                $user_address_details = $user_address_details2[0];
+            } else {
+                $user_address_details = "";
+            }
+        } else {
+            $user_address_details = $this->session->userdata('shipping_address');
+        }
+        
+
+        if ($user_address_details) {
+
+            $addresscheck2 = $this->session->userdata('shipping_address');
+
+           
+
+
+            if ($this->checklogin) {
+
+                $addresscheck2 = $this->session->userdata('pickup_shipping_address');
+                if ($addresscheck2['zipcode'] == 'Pickup') {
+                    $discountrate = 30;
+                    $session_cart['shipping_price'] = 0;
+                    $session_cart['discount_note'] = "30% Discount On Pickup";
+                    $session_cart['shipping_note'] = "";
+                }
+            } else {
+                if ($addresscheck2['zipcode'] == 'Pickup') {
+                    $discountrate = 30;
+                    $session_cart['shipping_price'] = 0;
+                    $session_cart['discount_note'] = "30% Discount On Pickup";
+                    $session_cart['shipping_note'] = "";
+                }
+            }
+        }
+
+        $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+        $rawdiscount = round($discoutamount);
+        $expdiscount = explode(".", $rawdiscount);
+
+        $actdiscount = count($expdiscount) > 1 ? ($rawdiscount + 1) : $rawdiscount;
+
+        $session_cart['discount'] = $actdiscount;
+
 
         $session_cart['sub_total_price'] = $session_cart['total_price'];
+
+        $session_cart['total_price'] = $session_cart['total_price'] - $session_cart['discount'];
+
+
 
         $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 

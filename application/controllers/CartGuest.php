@@ -180,6 +180,37 @@ class CartGuest extends CI_Controller {
 
             redirect('CartGuest/checkoutShipping');
         }
+        
+        if (isset($_POST['processtopaymentpickup'])) {
+            $category_array = array(
+                'address1' => "Pickup At Hello India",
+                'address2' => "",
+                'city' => "",
+                'state' => "",
+                'zipcode' => "Pickup",
+                'country' => "",
+                'user_id' => $this->user_id,
+                'status' => 'default',
+            );
+            $this->session->set_userdata('shipping_address', $category_array);
+            $customer = array(
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'contact_no' => $this->input->post('contact_no'),
+            );
+            $this->session->set_userdata('customer_inforamtion', $customer);
+
+
+            $delivery_details = array(
+                'delivery_date' => $this->input->post('delivery_date'),
+                'delivery_time' => $this->input->post('delivery_time'),
+            );
+            $this->session->set_userdata('delivery_details', $delivery_details);
+
+            redirect('CartGuest/checkoutPayment');
+        }
+        
+        
         $this->load->view('CartGuest/checkoutShipping', $data);
     }
 
@@ -217,12 +248,34 @@ class CartGuest extends CI_Controller {
             }
             
              $session_cart['shipping_price'] = 25;
+             
+             
+             $discountrate = 20;
+            $discoutamount = 0;
             
+            if ($address['zipcode'] == 'Pickup') {
+                $discountrate = 30;
+                $session_cart['shipping_price'] = 0;
+            }
+
             $session_cart['sub_total_price'] = $session_cart['total_price'];
+
+
+            $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+            $rawdiscount = round($discoutamount);
+            $expdiscount = explode(".", $rawdiscount);
+
+            $actdiscount = count($expdiscount) > 1 ? ($rawdiscount + 1) : $rawdiscount;
+
+            $session_cart['discount'] = $actdiscount;
+
+
+            $session_cart['total_price'] = $session_cart['total_price'] - $actdiscount;
 
             $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 
 
+             
             $sub_total_price = $session_cart['sub_total_price'];
             $total_quantity = $session_cart['total_quantity'];
             $total_price = $session_cart['total_price'];
@@ -253,7 +306,7 @@ class CartGuest extends CI_Controller {
                 'status' => 'Order Confirmed',
                 'payment_mode' => $paymentmathod,
                 'measurement_style' => "",
-                'credit_price' => $this->input->post('credit_price') || 0,
+                'credit_price' => $actdiscount,
             );
 
             $this->db->insert('user_order', $order_array);
