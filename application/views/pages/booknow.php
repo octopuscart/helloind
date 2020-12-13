@@ -76,7 +76,7 @@ $this->load->view('layout/header');
                                                                 <!--<input type="date" id="template-contactform-subject" name="select_date" value="" class="form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" ng-model="bookinit.selectdate" ng-change="changeDate()">-->
 
                                                                 <div class="">
-                                                                    <input type="text" class="form-control datepicker" id="selecteddate" value="<?php echo date("Y-m-d") ?>"/>
+                                                                    <input type="text" name="select_date" class="form-control datepicker" id="selecteddate" value="<?php echo date("Y-m-d") ?>"/>
                                                                 </div>
 
                                                             </div>
@@ -190,7 +190,7 @@ $this->load->view('layout/header');
 <script src="<?php echo base_url(); ?>assets/jqlib/jquery-ui.js"></script>
 <script src="<?php echo base_url(); ?>assets/jqlib/moment.js"></script>
 <script>
-var listofbookeddate = <?php echo json_encode($datelist);?>
+                                                                    var listofbookeddate = <?php echo json_encode($datelist); ?>
 </script>
 <?php
 $this->load->view('layout/footer');
