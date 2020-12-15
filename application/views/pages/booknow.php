@@ -110,9 +110,8 @@ $this->load->view('layout/header');
                                                             <div class="col-sm-6 mb-3">
                                                                 <label class='text-left pull-left'>No. Of Persons</label>
                                                                 <select id="template-contactform-people" class="custom-select form-control border-form-control" name="people" required="">
-                                                                    <option value="disabled" disabled="" selected=""  >Person</option>
                                                                     <option value="1">1</option>
-                                                                    <option value="2">2</option>
+                                                                    <option value="2" selected="">2</option>
                                                                     <option value="3">3</option>
                                                                     <option value="4">4</option>
                                                                     <option value="5">5</option>
