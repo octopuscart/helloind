@@ -44,6 +44,7 @@ class Cart extends CI_Controller {
     }
 
     function checkoutInit() {
+        redirect(site_url("cart/checkoutShipping"));
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";

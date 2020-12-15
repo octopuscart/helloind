@@ -51,7 +51,7 @@
 
                        ">
                         {{globleCartData.shipping_note}}
-                    </p>  DELIVERY 
+                    </p>  DELIVERY CHARGES
                 </td>
                 <td class=" amount">
                     {{globleCartData.shipping_price|currency:"<?php echo globle_currency; ?>"}}

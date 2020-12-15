@@ -189,9 +189,8 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                         <!-- Address Details -->
                                         <div class="card-body">
                                             <ul class="nav nav-tabs" role="tablist">
-                                                <li class="nav-item active"><a href="#delivery" class="nav-link" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery</a></li>
-                                                <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup</a></li>
-
+                                                <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab change-color-gradiant2'>20% Discount On Delivery</p></a></li>
+                                                <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup<p class='discountnotetab change-color-gradiant2'>30% Discount On Pickup</p></a></li>
                                             </ul>
                                             <div class="tab-content">
                                                 <div class="tab-pane fade  active in" id="delivery" role="tab" >
@@ -231,8 +230,8 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                             <?php
                                                                             if ($value['zipcode'] == 'Pickup') {
                                                                                 ?>
-                                                                            <h3><?php echo $value['address1']; ?></h3>
-                                                                                    <?php
+                                                                                <h3><?php echo $value['address1']; ?></h3>
+                                                                                <?php
                                                                             } else {
                                                                                 ?>
 
@@ -241,7 +240,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                                     <?php echo $value['address1']; ?>,<br/>
                                                                                     <?php echo $value['address2']; ?>,<br/>
                                                                                     <?php echo $value['city']; ?><br/>
-                                                                                <?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
+                                                                                    <?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
                                                                                 </p>
                                                                                 <?php
                                                                             }
@@ -286,7 +285,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                                                                                     <input type="hidden" name="delivery_time" value="{{shippingInit.delivery_time}}"/>
 
-                                <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                                    <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                                     <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
                                                                                     <?php
                                                                                 }

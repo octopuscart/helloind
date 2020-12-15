@@ -262,3 +262,39 @@ border-radius: 25px;
     background: rgb(255,136,0);
 background: linear-gradient(39deg, rgba(255,136,0,1) 0%, rgba(255,255,255,1) 50%, rgba(51,199,0,1) 100%);
 }
+
+
+.discountnotetab{
+    width: 100%;
+    font-size: 14px;
+  
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+.change-color-gradiant2  {
+    background: linear-gradient(270deg, red, green, blue, yellow, red, green, blue);
+    background-size: 1200% 1200%;
+
+    -webkit-animation: changegradiantcolor 5s ease infinite;
+    -moz-animation: changegradiantcolor 5s ease infinite;
+    animation: changegradiantcolor 5s ease infinite;
+}
+
+@-webkit-keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
