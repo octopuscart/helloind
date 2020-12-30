@@ -84,4 +84,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['sitemap_index\.xml'] = "Sitemap/index";
 
+$route['coupon'] = 'Coupon/index';
+
 $route['paymentresult'] = 'PaymentGatway/paymentResult';
