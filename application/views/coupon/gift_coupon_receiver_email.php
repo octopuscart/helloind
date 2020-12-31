@@ -16,7 +16,7 @@
                         <tr>
                             <td style="vertical-align: top; padding-bottom:30px;" align="center">
                                 <a href="<?php echo site_url("/"); ?>" target="_blank">
-                                    <img src="<?php echo site_mail_logo; ?>" alt="Woodlands Hong Kong" style="border:none;height:100px;"/></a>
+                                    <img src="<?php echo site_mail_logo; ?>" alt="Woodlands Hong Kong" style="border:none;height:100px;margin-top: 20px;"/></a>
                             </td>
                         </tr>
                     </tbody>
@@ -33,7 +33,7 @@
 
                                     <b>Hello <?php echo $coupon['name_receiver']; ?>,</b>
                                     <p>You have gifted a coupon from <b><?php echo $coupon['name']; ?></b> (<?php echo $coupon['email']; ?>), below you can find your coupon code. 
-                                        This coupon code can be used either in Woodlands or in Hello India</p>
+                                        This coupon code can be used either in Hello India or in Woodlands. </p>
                                 </td>
                             </tr>
                             <tr>
@@ -49,16 +49,7 @@
                             </tr>
                             <tr>
                                 <td style="" colspan="2">
-                                    <div style="height: 200px;">Your Favorite Vegetarian Restaurants<br />
-                                        <img src="https://www.woodlandshk.com/assets/images/logo.png" style="    height: 90px; margin: 5px 0px 10px;" />
-                                        <address><span style="float: left; font-size: 12px;"><b>Address </b><br />
-                                                UG Shop 16 &amp; 17, Wing On Plaza,<br />
-                                                62, Mody Road, Tsim Sha Tsui East,<br />
-                                                Kowloon, Hong Kong<br />
-                                                <b>Tel#</b>:&nbsp;+(852) 2369 3718, +(852) 2366 1945<br />
-                                                <b>Email</b>: order@woodlandshk.com, info@woodlandshk.com<br />
-                                                <b>Web</b>: www.woodlandshk.com</span></address>
-                                        <span style="float: left; font-size: 12px;"> </span></div>
+                                    <?php echo EMAIL_FOOTER; ?>
                                 </td>
 
                             </tr>
