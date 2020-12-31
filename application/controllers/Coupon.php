@@ -54,7 +54,7 @@ class Coupon extends CI_Controller {
 
     public function index() {
         if (isset($_POST['submit_now'])) {
-            $requestid = "WOODLAND" . date('Ymd') . date('His');
+            $requestid = "HI" . date('Ymd') . date('His');
             $paymenttype = $this->input->post('payment_type');
             $coupnrequest = array(
                 'request_id' => $requestid,
