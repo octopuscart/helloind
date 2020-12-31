@@ -72,8 +72,9 @@ class Coupon extends CI_Controller {
                 'date' => date('Y-m-d'),
                 'time' => date('H:i:s'),
             );
+            print_r($coupnrequest);
             $this->db->insert('coupon_request', $coupnrequest);
-            redirect("Coupon/orderPayment/" . $requestid);
+//            redirect("Coupon/orderPayment/" . $requestid);
         }
 
         $this->load->view('coupon/gift_coupon');
