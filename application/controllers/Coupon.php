@@ -79,6 +79,33 @@ class Coupon extends CI_Controller {
         $this->load->view('coupon/gift_coupon');
     }
 
+    public function couponTest() {
+        if (isset($_POST['submit_now'])) {
+            $requestid = "HI" . date('Ymd') . date('His');
+            $paymenttype = $this->input->post('payment_type');
+            $coupnrequest = array(
+                'request_id' => $requestid,
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'contact_no' => $this->input->post('contact_no'),
+                'name_receiver' => $this->input->post('name_receiver'),
+                'email_receiver' => $this->input->post('email_receiver'),
+                'contact_no_receiver' => $this->input->post('contact_no_receiver'),
+                'payment_type' => $this->input->post('payment_type'),
+                'message' => $this->input->post('message'),
+                'amount' => '0.01',
+                'status' => 'Payment Init',
+                'remark' => '',
+                'date' => date('Y-m-d'),
+                'time' => date('H:i:s'),
+            );
+            $this->db->insert('coupon_request', $coupnrequest);
+            redirect("Coupon/orderPayment/" . $requestid);
+        }
+
+        $this->load->view('coupon/gift_coupon');
+    }
+
     function orderPayment($order_key) {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");
@@ -123,8 +150,6 @@ class Coupon extends CI_Controller {
         redirect($endurl = $queryLink . "?" . $ganarateurl);
     }
 
-  
-
     function orderPaymentNotify($order_key, $paymenttype) {
         $returndata = $_GET;
         if (isset($returndata['trans_status'])) {
@@ -149,13 +174,13 @@ class Coupon extends CI_Controller {
                 $this->db->set($updatearray);
                 $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
                 $this->db->update("coupon_request");
-                
+
                 $senderemail = site_url("Coupon/couponBuyEmail/$codehas/$order_key");
                 $receiveremail = site_url("Coupon/couponReceiverEmail/$codehas/$order_key");
                 $this->useCurl($senderemail, $headers);
                 $this->useCurl($receiveremail, $headers);
-                
-               redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
+
+                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
             } else {
                 $updatearray = array(
                     "status" => $returndata['trans_status'],
@@ -168,7 +193,7 @@ class Coupon extends CI_Controller {
             }
         }
     }
-    
+
     function orderPaymentNotifyTest($order_key, $paymenttype) {
         $returndata = $_GET;
         print_r($returndata);
@@ -194,12 +219,12 @@ class Coupon extends CI_Controller {
                 $this->db->set($updatearray);
                 $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
                 $this->db->update("coupon_request");
-                
+
                 $senderemail = site_url("Coupon/couponBuyEmail/$codehas/$order_key");
                 $receiveremail = site_url("Coupon/couponReceiverEmail/$codehas/$order_key");
                 $this->useCurl($senderemail, $headers);
                 $this->useCurl($receiveremail, $headers);
-                
+
                 //redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
             } else {
                 $updatearray = array(
@@ -213,8 +238,6 @@ class Coupon extends CI_Controller {
             }
         }
     }
-    
-    
 
     function yourCode($couponhas, $order_key) {
         $this->db->where("request_id", $order_key);
@@ -283,7 +306,7 @@ class Coupon extends CI_Controller {
         $this->email->from(email_bcc, $sendername);
         $this->email->to($requestdata['email_receiver']);
 //            $this->email->bcc(email_bcc);
-        $subjectt = "You have gifted a coupon from ".$requestdata['name'];
+        $subjectt = "You have gifted a coupon from " . $requestdata['name'];
         $subject = $subjectt;
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view('coupon/gift_coupon_receiver_email', $data, true);
