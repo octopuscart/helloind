@@ -127,6 +127,51 @@ class Coupon extends CI_Controller {
 
     function orderPaymentNotify($order_key, $paymenttype) {
         $returndata = $_GET;
+        print_r($returndata);
+        if (isset($returndata['trans_status'])) {
+            if ($returndata['trans_status'] == 'SUCCESS') {
+                $this->db->where("request_id", $order_key);
+                $query = $this->db->get("coupon_request");
+                $requestdata = $query->row_array();
+                $requestdata['txn_no'] = $returndata['order_id'];
+                $requestdata['coupon_for'] = "helloindia";
+                $requestdata['prefix'] = "HI";
+                $requestdata['payment_status'] = "SUCCESS";
+                $headers = array(
+                    'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+                    'Content-Type: application/json'
+                );
+                $url = $this->couponApiUrl . 'Api/generateCoupon';
+                $curldata = $this->useCurl($url, $headers, json_encode($requestdata));
+                $codehas = json_decode($curldata);
+                $updatearray = array(
+                    "remark" => $codehas
+                );
+                $this->db->set($updatearray);
+                $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
+                $this->db->update("coupon_request");
+                
+                $senderemail = site_url("Coupon/couponBuyEmail/$codehas/$order_key");
+                $receiveremail = site_url("Coupon/couponReceiverEmail/$codehas/$order_key");
+                $this->useCurl($senderemail, $headers);
+                $this->useCurl($receiveremail, $headers);
+                
+               // redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
+            } else {
+                $updatearray = array(
+                    "status" => $returndata['trans_status'],
+                    "remark" => "Txn_id:" . $returndata['order_id']
+                );
+                $this->db->set($updatearray);
+                $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
+                $this->db->update("coupon_request");
+                //redirect(site_url("Coupon/orderPaymentFailed/$order_key"));
+            }
+        }
+    }
+    
+    function orderPaymentNotifyTest($order_key, $paymenttype) {
+        $returndata = $_GET;
         if (isset($returndata['trans_status'])) {
             if ($returndata['trans_status'] == 'SUCCESS') {
                 $this->db->where("request_id", $order_key);
@@ -168,6 +213,8 @@ class Coupon extends CI_Controller {
             }
         }
     }
+    
+    
 
     function yourCode($couponhas, $order_key) {
         $this->db->where("request_id", $order_key);
