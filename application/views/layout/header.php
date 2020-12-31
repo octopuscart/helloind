@@ -170,6 +170,8 @@
                                     <li><a href="" title="About">LOYALTY PROGRAM </a></li>
                                 </ul>
                             </li>
+                
+                             <li><a href="<?php echo site_url("coupon"); ?>" title="coupon">GIFT COUPON</a></li>
                             <li><a href="<?php echo site_url("menu/0/0"); ?>" title="Order Now">ORDER NOW</a></li>
                             <li><a href="<?php echo site_url("book-now"); ?>" title="Book Now">BOOK NOW</a></li>
                             <li><a href="<?php echo site_url("book-cake"); ?>" title="Book Now">BOOK CAKE</a></li>
