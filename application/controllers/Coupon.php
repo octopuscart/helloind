@@ -97,8 +97,8 @@ class Coupon extends CI_Controller {
         $seckey = hash("sha256", $hsakeystr);
         $ganarateurl = "&return_url=$returnUrl&goods_subject=Hello India Coupon&app_pay=WEB&goods_body=$itemsdescription&api_version=2.8&lang=en&reuse=Y&active_time=300&wallet=HK";
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
-//        echo $endurl = $salesLink . "?" . $ganarateurl;
-        redirect($endurl = $salesLink . "?" . $ganarateurl);
+        echo $endurl = $salesLink . "?" . $ganarateurl;
+//        redirect($endurl = $salesLink . "?" . $ganarateurl);
     }
 
     function orderPaymentResult($order_key) {
