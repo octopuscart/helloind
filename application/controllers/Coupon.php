@@ -9,7 +9,7 @@ class Coupon extends CI_Controller {
         $this->load->model('Product_model');
         $this->load->library('session');
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
-        $this->db->where_in('attr_key', ["EOPGMid", "EOPGSecretCode", "EOPGSalesLink", "EOPGQueryLink"]);
+        $this->db->where_in('attr_key', ["EOPGMid", "EOPGSecretCode", "EOPGSalesLink", "EOPGQueryLink", "CouponLink"]);
         $query = $this->db->get('configuration_attr');
         $paymentattr = $query->result_array();
         $paymentconf = array();
@@ -20,18 +20,52 @@ class Coupon extends CI_Controller {
         $this->secret_code = $paymentconf['EOPGSecretCode'];
         $this->salesLink = $paymentconf['EOPGSalesLink'];
         $this->queryLink = $paymentconf['EOPGQueryLink'];
+        $this->couponApiUrl = $paymentconf['CouponLink'];
+    }
+
+    private function useCurl($url, $headers, $fields = null) {
+        // Open connection
+        $ch = curl_init();
+        if ($url) {
+            // Set the url, number of POST vars, POST data
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            // Disabling SSL Certificate support temporarly
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            if ($fields) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+            }
+
+            // Execute post
+            $result = curl_exec($ch);
+            if ($result === FALSE) {
+                die('Curl failed: ' . curl_error($ch));
+            }
+
+            // Close connection
+            curl_close($ch);
+
+            return $result;
+        }
     }
 
     public function index() {
         if (isset($_POST['submit_now'])) {
-            $requestid = "HELLOINDIA" . date('Ymd') . date('His');
+            $requestid = "WOODLAND" . date('Ymd') . date('His');
             $paymenttype = $this->input->post('payment_type');
             $coupnrequest = array(
                 'request_id' => $requestid,
                 'name' => $this->input->post('name'),
                 'email' => $this->input->post('email'),
                 'contact_no' => $this->input->post('contact_no'),
+                'name_receiver' => $this->input->post('name_receiver'),
+                'email_receiver' => $this->input->post('email_receiver'),
+                'contact_no_receiver' => $this->input->post('contact_no_receiver'),
                 'payment_type' => $this->input->post('payment_type'),
+                'message' => $this->input->post('message'),
                 'amount' => '100.00',
                 'status' => 'Payment Init',
                 'remark' => '',
@@ -39,20 +73,22 @@ class Coupon extends CI_Controller {
                 'time' => date('H:i:s'),
             );
             $this->db->insert('coupon_request', $coupnrequest);
-            redirect("Coupon/orderPayment/".$requestid."/".$paymenttype);
-            
+            redirect("Coupon/orderPayment/" . $requestid);
         }
 
         $this->load->view('coupon/gift_coupon');
     }
 
-    function orderPayment($order_key, $paymenttype) {
-
-        $itemsdescription = "Hello India $100.00 Coupon Purchase";
-        $paymenttypeg = $paymenttype;
-        $amt = "100.00";
+    function orderPayment($order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row();
+        $amount = $requestdata->amount;
+        $itemsdescription = "Hello India $$amount Coupon Purchase";
+        $paymenttypeg = $requestdata->payment_type;
+        $amt = $requestdata->amount;
         $marchentref = $order_key;
-        $returnUrl = site_url("Coupon/orderPaymentResult/$order_key/$paymenttype");
+        $returnUrl = site_url("Coupon/orderPaymentResult/$order_key");
         $mid = $this->mid;
         $secret_code = $this->secret_code;
         $salesLink = $this->salesLink;
@@ -65,19 +101,20 @@ class Coupon extends CI_Controller {
         redirect($endurl = $salesLink . "?" . $ganarateurl);
     }
 
-    function orderPaymentResult($order_key, $paymenttype) {
-        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
-        $marchentref = $order_details['order_data']->order_no;
-
-        $amt = $order_details['order_data']->total_price;
-        $marchentref = $order_details['order_data']->order_no;
-        $returnUrl = site_url("Order/orderPaymentResult/$order_key");
+    function orderPaymentResult($order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row();
+        $marchentref = $order_key;
+        $amt = $requestdata->amount;
+        $paymenttype = $requestdata->payment_type;
+        $marchentref = $order_key;
         $mid = $this->mid;
         $secret_code = $this->secret_code;
         $salesLink = $this->salesLink;
         $queryLink = $this->queryLink;
         $paymenttypeg = $paymenttype;
-        $notifyUrl = site_url("Order/orderPaymentNotify/$order_key/$paymenttype");
+        $notifyUrl = site_url("Coupon/orderPaymentNotify/$order_key/$paymenttype");
         $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=$paymenttypeg&service=QUERY&trans_amount=$amt";
         $hsakeystr = $secret_code . $urlset;
         $seckey = hash("sha256", $hsakeystr);
@@ -86,51 +123,135 @@ class Coupon extends CI_Controller {
         redirect($endurl = $queryLink . "?" . $ganarateurl);
     }
 
+  
+
     function orderPaymentNotify($order_key, $paymenttype) {
-        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
         $returndata = $_GET;
-        $order_id = $order_details['order_data']->id;
-        if ($returndata['trans_status'] == 'SUCCESS') {
-            $productattr = array(
-                'c_date' => date('Y-m-d'),
-                'c_time' => date('H:i:s'),
-                'status' => "Payment Confirmed",
-                'remark' => "Payment completed using $paymenttype",
-                'description' => "Payment Id#: " . $returndata['order_id'],
-                'order_id' => $order_id
-            );
-            $this->db->insert('user_order_status', $productattr);
-            $orderlog = array(
-                'log_type' => "Payment Confirmed",
-                'log_datetime' => date('Y-m-d H:i:s'),
-                'user_id' => "",
-                'order_id' => $order_id,
-                'log_detail' => "Payment completed using $paymenttype " . "Payment Id#: " . $returndata['order_id'],
-            );
-            $this->db->insert('system_log', $orderlog);
-            $productattr = array(
-                'status' => "Payment completed using $paymenttype ",
-                'remark' => $this->input->post('remark'),
-                'txn_no' => $returndata['order_id'],
-                'c_date' => date('Y-m-d'),
-                'c_time ' => date('H:i:s'),
-                'description' => "Payment Id#: " . $returndata['order_id'],
-                'order_id' => $order_id
-            );
-            $this->db->insert('paypal_status', $productattr);
+        if (isset($returndata['trans_status'])) {
+            if ($returndata['trans_status'] == 'SUCCESS') {
+                $this->db->where("request_id", $order_key);
+                $query = $this->db->get("coupon_request");
+                $requestdata = $query->row_array();
+                $requestdata['txn_no'] = $returndata['order_id'];
+                $requestdata['coupon_for'] = "helloindia";
+                $requestdata['prefix'] = "HI";
+                $requestdata['payment_status'] = "SUCCESS";
+                $headers = array(
+                    'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+                    'Content-Type: application/json'
+                );
+                $url = $this->couponApiUrl . 'Api/generateCoupon';
+                $curldata = $this->useCurl($url, $headers, json_encode($requestdata));
+                $codehas = json_decode($curldata);
+                $updatearray = array(
+                    "remark" => $codehas
+                );
+                $this->db->set($updatearray);
+                $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
+                $this->db->update("coupon_request");
+                
+                $senderemail = site_url("Coupon/couponBuyEmail/$codehas/$order_key");
+                $receiveremail = site_url("Coupon/couponReceiverEmail/$codehas/$order_key");
+                $this->useCurl($senderemail, $headers);
+                $this->useCurl($receiveremail, $headers);
+                
+                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
+            } else {
+                $updatearray = array(
+                    "status" => $returndata['trans_status'],
+                    "remark" => "Txn_id:" . $returndata['order_id']
+                );
+                $this->db->set($updatearray);
+                $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
+                $this->db->update("coupon_request");
+                redirect(site_url("Coupon/orderPaymentFailed/$order_key"));
+            }
         }
-        if ($returndata['trans_status'] != 'SUCCESS') {
-            $productattr = array(
-                'c_date' => date('Y-m-d'),
-                'c_time' => date('H:i:s'),
-                'status' => "Payment Failure",
-                'remark' => "Payment failure using $paymenttype",
-                'description' => "Payment Id#: " . $returndata['order_id'],
-                'order_id' => $order_id
-            );
-            $this->db->insert('user_order_status', $productattr);
+    }
+
+    function yourCode($couponhas, $order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row();
+        $data = array("coupon" => $requestdata);
+        $urlimage = $this->couponApiUrl . "Api/getCouponImage/$couponhas";
+        $data['couponimage'] = $urlimage;
+        $this->load->view('coupon/gift_coupon_get', $data);
+    }
+
+    function orderPaymentFailed($order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row();
+        $data = array("coupon" => $requestdata);
+        $this->load->view('coupon/gift_coupon_failed', $data);
+    }
+
+    function couponBuyEmail($couponhas, $order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row_array();
+        $data = array("coupon" => $requestdata);
+        $urlimage = $this->couponApiUrl . "Api/getCouponImage/$couponhas";
+        $data['couponimage'] = $urlimage;
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
+
+        $this->email->set_newline("\r\n");
+        $this->email->from(email_bcc, $sendername);
+        $this->email->to($requestdata['email']);
+//            $this->email->bcc(email_bcc);
+        $subjectt = "Thank you for buying gift coupon";
+        $subject = $subjectt;
+        $this->email->subject($subject);
+        $htmlsmessage = $this->load->view('coupon/gift_coupon_buy_email', $data, true);
+        if (REPORT_MODE == 1) {
+            $this->email->message($htmlsmessage);
+            $this->email->print_debugger();
+            $send = $this->email->send();
+            if ($send) {
+                
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+            }
+        } else {
+            echo $htmlsmessage;
         }
-        redirect(site_url("Order/orderdetails/$order_key"));
+    }
+
+    function couponReceiverEmail($couponhas, $order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row_array();
+        $data = array("coupon" => $requestdata);
+        $urlimage = $this->couponApiUrl . "Api/getCouponImage/$couponhas";
+        $data['couponimage'] = $urlimage;
+
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
+
+        $this->email->set_newline("\r\n");
+        $this->email->from(email_bcc, $sendername);
+        $this->email->to($requestdata['email_receiver']);
+//            $this->email->bcc(email_bcc);
+        $subjectt = "You have gifted a coupon from ".$requestdata['name'];
+        $subject = $subjectt;
+        $this->email->subject($subject);
+        $htmlsmessage = $this->load->view('coupon/gift_coupon_receiver_email', $data, true);
+        if (REPORT_MODE == 1) {
+            $this->email->message($htmlsmessage);
+            $this->email->print_debugger();
+            $send = $this->email->send();
+            if ($send) {
+                
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+            }
+        } else {
+            echo $htmlsmessage;
+        }
     }
 
 }
