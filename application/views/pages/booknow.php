@@ -89,14 +89,14 @@ $this->load->view('layout/header');
 
                                                             <div class="col-sm-6 mb-3">
                                                                 <label class='text-left pull-left'>Select Time</label>
-                                                                <select id="template-contactform-time" class="custom-select form-control border-form-control" name="select_time" required="" ng-if="bookinit.selectdate == '2020-11-14'">
+                                                                <select id="template-contactform-time" class="custom-select form-control border-form-control" name="select_time" required="" ng-if="bookinit.lockdown == '1'">
                                                                     <option value="disabled" disabled="" selected="">Select Time</option>
                                                                     <option value="12:00">12:00 - 13:00</option>
                                                                     <option value="13:00">13:00 - 14:00</option>
                                                                     <option value="14:00">14:00 - 15:00</option>
 
                                                                 </select>
-                                                                <select id="template-contactform-time" class="custom-select form-control border-form-control" name="select_time" required="" ng-if="bookinit.selectdate != '2020-11-14'">
+                                                                <select id="template-contactform-time" class="custom-select form-control border-form-control" name="select_time" required="" ng-if="bookinit.lockdown != '1'">
                                                                     <option value="disabled" disabled="" selected="">Select Time</option>
                                                                     <option value="12:00">12:00 - 13:00</option>
                                                                     <option value="13:00">13:00 - 14:00</option>

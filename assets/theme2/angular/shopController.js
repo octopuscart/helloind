@@ -421,7 +421,7 @@ App.controller('cakeController', function ($scope, $http, $timeout, $interval, $
 
 App.controller('bookController', function ($scope, $http, $timeout, $interval, $filter) {
 
-    $scope.bookinit = {"selectdate": "", "predate": "", "defaultdate": ""};
+    $scope.bookinit = {"selectdate": "", "predate": "", "defaultdate": "", "lockdown":"1"};
     $timeout(function () {
         $scope.bookinit.selectdate = $scope.bookinit.predate;
 
