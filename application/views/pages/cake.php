@@ -16,7 +16,7 @@ $this->load->view('layout/header');
 
         <div class="container">
             <h3>Halal Cake</h3>
-            <h3 style="font-size: 25px;line-height: 25px;">Booking </h3>
+            <h3 style="font-size: 25px;line-height: 25px;">Order Cake </h3>
         </div>
     </div>
 
@@ -103,7 +103,9 @@ $this->load->view('layout/header');
                                                         <input type="date" id="template-contactform-subject" name="select_date" class="form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" value="<?php echo date("Y-m-d") ?>">
                                                     </div>
                                                     <div class="clear"></div>
-                                                    <h2 style="font-size: 15px;background: red;color:white;padding: 5px;">
+                                                    <h2 style="font-size: 15px;background: red;color:white;padding: 5px;width: 100%;
+    height: 30px;
+    float: left;">
                                                         Order 1 Day Before 11:00 AM & Pickup Next Day After 2:00 PM
                                                     </h2>
                                                     <div class="clear"></div>

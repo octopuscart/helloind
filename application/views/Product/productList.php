@@ -53,7 +53,7 @@ $this->load->view('layout/header');
     <div class="container-fluid no-padding page-banner" style="background-position: center;">
         <!-- Container -->
         <div class="container">
-            <h3>ORDER NOW</h3>
+            <h3>ORDER FOOD</h3>
         </div><!-- Container /- -->
     </div><!-- Page Banner /- -->
 
