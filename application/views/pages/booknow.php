@@ -93,7 +93,8 @@ $this->load->view('layout/header');
                                                                     <option value="disabled" disabled="" selected="">Select Time</option>
                                                                     <option value="12:00">12:00 - 13:00</option>
                                                                     <option value="13:00">13:00 - 14:00</option>
-                                                                    <option value="14:00">14:00 - 15:00</option>
+                                                                    <option value="14:00">14:00-14:30</option>
+                                                                    
 
                                                                 </select>
                                                                 <select id="template-contactform-time" class="custom-select form-control border-form-control" name="select_time" required="" ng-if="bookinit.lockdown != '1'">
