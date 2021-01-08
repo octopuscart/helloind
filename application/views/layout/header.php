@@ -157,7 +157,7 @@
 
                     </div><!-- Menu Icon /- -->
                     <div class="navbar-collapse collapse navbar-right" id="navbar">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav headernavigation">
 
                             <li><a href="<?php echo site_url("about-us"); ?>" title="About">INSIGHTS</a></li>
                             <li><a href="<?php echo site_url("gallery"); ?>" title="Gallery">GALLERY</a></li>
@@ -170,11 +170,27 @@
                                     <li><a href="" title="About">LOYALTY PROGRAM </a></li>
                                 </ul>
                             </li>
-                
-                             <li><a href="<?php echo site_url("coupon"); ?>" title="coupon">GIFT COUPON</a></li>
-                            <li><a href="<?php echo site_url("menu/0/0"); ?>" title="Order Now">ORDER NOW</a></li>
-                            <li><a href="<?php echo site_url("book-now"); ?>" title="Book Now">BOOK NOW</a></li>
-                            <li><a href="<?php echo site_url("book-cake"); ?>" title="Book Now">BOOK CAKE</a></li>
+
+                            <li><a href="<?php echo site_url("coupon"); ?>" title="Cash Voucher " class="highlightbutton">CASH VOUCHER</a></li>
+
+                            <?php
+                            $currenttime = date("h:i A");
+//                                $currenttime = "02:30 PM";
+                            $checktime = $this->Utils->checkTime($currenttime);
+                            if ($checktime['code']) {
+                                ?>
+                                <li><a href="<?php echo site_url("menu/0/0"); ?>" title="Order Food" class="highlightbutton">ORDER FOOD</a></li>
+                                <?php
+                            } else {
+                                ?>
+                                <li><a href="#" title="Order Food" class="disabled disableheaderbutton highlightbutton">ORDER FOOD</a></li>
+
+                                <?php
+                            }
+                            ?>
+
+                            <li><a href="<?php echo site_url("book-now"); ?>" title="Reserve Table" class="highlightbutton">RESERVE TABLE</a></li>
+                            <li><a href="<?php echo site_url("book-cake"); ?>" title="Order Cake" class="highlightbutton">ORDER CAKE</a></li>
                             <li><a href="<?php echo site_url("contact"); ?>" title="Contact Us">CONTACT US</a></li>
                             <li>
                                 <a href="<?php echo site_url("cart") ?>" class="cartheadericon">

@@ -19,7 +19,7 @@
     }
 
     .ow-navigation.navbar-default .navbar-nav > li > a {
-        padding: 30px 0 30px;
+        padding: 20px 0 20px;
     }
     .ow-navigation.navbar-default .navbar-nav > li > a::before {
         background-color: #e2b13c;
@@ -30,7 +30,7 @@
         height: 2px;
         left: 0;
         right: 0;
-        bottom: 25px;
+        bottom: 17px;
         opacity: 0;
         position: absolute;
         width: 0;
@@ -40,10 +40,11 @@
         transition: all 1s ease 0s;
     }
     .ow-navigation .navbar-brand > img {
-    display: inline-block;
-    margin-right: 10px;
-    height: 78px;
-}
+        isplay: inline-block;
+        margin-right: 10px;
+        height: 55px;
+        margin-top: 5px;
+    }
 }
 
 
@@ -118,7 +119,7 @@
 
 
 .bookingpage{
-    
+
 }
 
 .bookingpage .form-control{
@@ -133,7 +134,7 @@
 }
 
 .booknowblock button{
-   background: orange;
+    background: orange;
 }
 
 
@@ -202,11 +203,11 @@
 
 .page-banner h3 {
     color: #2a2a2a;
-     font-family: 'Kaushan Script', cursive!important;
+    font-family: 'Kaushan Script', cursive!important;
 }
 
 .page-banner {
-  
+
     padding: 50px 0 50px;
 }
 
@@ -222,7 +223,7 @@
 
 .menuitem a{
     width: 100%;
-    
+
 }
 
 .menuitem a {
@@ -232,8 +233,8 @@
 }
 
 .menuitem.active a{
-background-color: #FF9800!important;
-border-radius: 25px;
+    background-color: #FF9800!important;
+    border-radius: 25px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -253,21 +254,21 @@ border-radius: 25px;
 }
 
 .menuimagecontainer img{
-   height: 800px!important;
+    height: 800px!important;
     display: inline-block!important;
 }
 
 
 .indianflaggradient{
     background: rgb(255,136,0);
-background: linear-gradient(39deg, rgba(255,136,0,1) 0%, rgba(255,255,255,1) 50%, rgba(51,199,0,1) 100%);
+    background: linear-gradient(39deg, rgba(255,136,0,1) 0%, rgba(255,255,255,1) 50%, rgba(51,199,0,1) 100%);
 }
 
 
 .discountnotetab{
     width: 100%;
     font-size: 14px;
-  
+
     color: white;
     padding: 5px 10px;
     border-radius: 10px;
@@ -303,9 +304,9 @@ background: linear-gradient(39deg, rgba(255,136,0,1) 0%, rgba(255,255,255,1) 50%
 
 .medialinkdesing{
     height:250px;
-        background: #f29638;
-          display: flex;
- 
+    background: #f29638;
+    display: flex;
+
 }
 .media-item-block{
     height: 170px;
@@ -325,7 +326,7 @@ background: linear-gradient(39deg, rgba(255,136,0,1) 0%, rgba(255,255,255,1) 50%
 }
 
 .media-item-block:hover{
-     border-top-right-radius: 25px;
+    border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
 }
 
@@ -339,7 +340,7 @@ background: linear-gradient(39deg, rgba(255,136,0,1) 0%, rgba(255,255,255,1) 50%
     font-size: 17px;
     /* line-height: 1.3; */
     position: absolute;
-   
+
     bottom: 15px;
     color: white;
     font-weight: 400;
@@ -363,4 +364,30 @@ background: linear-gradient(39deg, rgba(255,136,0,1) 0%, rgba(255,255,255,1) 50%
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
+}
+
+.disableheaderbutton{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.headernavigation a {
+    padding: 20px 3px!important;
+    border-bottom: 3px solid #fff;
+}
+
+.headernavigation a.highlightbutton{
+    color:#000!important;
+    border-bottom: 3px solid #000;
+    color: #fff!important;
+    border-bottom: 3px solid #3d8040;
+    background: #4CAF50;
+}
+
+.headernavigation a.highlightbutton:hover {
+    color: #000!important;
+    border-bottom: 3px solid #000;
+    color: #fff!important;
+    border-bottom: 3px solid #2a2a2a!important;
+    background: #2a2a2a!important;
 }
