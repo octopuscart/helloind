@@ -183,7 +183,13 @@
                                 <?php
                             } else {
                                 ?>
-                                <li><a href="#" title="Order Food" class="disabled disableheaderbutton highlightbutton">ORDER FOOD</a></li>
+                                <li>
+                                    <a href="#" title="Order Food" class="disabled disableheaderbutton highlightbutton">
+                                        ORDER FOOD
+                                        
+                                    </a>
+                                    <?php echo "<span class='smallmessage'>" . $checktime['message'] . "</span>";?>
+                                </li>
 
                                 <?php
                             }

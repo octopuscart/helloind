@@ -391,3 +391,12 @@
     border-bottom: 3px solid #2a2a2a!important;
     background: #2a2a2a!important;
 }
+
+.smallmessage{
+    font-size: 8.5px;
+    position: absolute;
+    width: 88px;
+    /* left: -14px; */
+    top: 37px;
+    text-align: center;
+}
