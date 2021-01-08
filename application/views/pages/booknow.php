@@ -93,7 +93,7 @@ $this->load->view('layout/header');
                                                                     <option value="disabled" disabled="" selected="">Select Time</option>
                                                                     <option value="12:00">12:00 - 13:00</option>
                                                                     <option value="13:00">13:00 - 14:00</option>
-                                                                    <option value="14:00">14:00-14:30</option>
+                                                                    <option value="14:00">14:00 - 14:30</option>
                                                                     
 
                                                                 </select>
