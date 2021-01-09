@@ -47,7 +47,7 @@ $this->load->view('layout/header');
     <div class="container-fluid no-padding page-banner" style="    padding: 30px 0 30px;">
 
         <div class="container">
-            <h3>Gift Coupon</h3>
+            <h3>Cash Voucher</h3>
             <h3 style="font-size: 25px;line-height: 25px;"> </h3>
         </div>
     </div>

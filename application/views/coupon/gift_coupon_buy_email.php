@@ -29,8 +29,8 @@
                                 <td>
 
                                     <b>Hello <?php echo $coupon['name']; ?>,</b>
-                                    <p>Thank you for buying Gift Coupon, below you can find your coupon code. 
-This coupon code can be used either in Hello India or in Woodlands.</p>
+                                    <p>Thank you for buying Cash Voucher, below you can find your Cash Voucher code. 
+This Cash Voucher code can be used either in Hello India or in Woodlands.</p>
                                 </td>
                             </tr>
                             <tr>
