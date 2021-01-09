@@ -46,7 +46,7 @@ class Utils extends CI_Model {
         switch ($checktime_o) {
             case $checktime_o > $timeo4:
                 $interval = date_diff($checktime_o, $timeo3);
-                $message = "Closed! Opens Tomorrow";
+                $message = "Closed! Opens tomorrow at 12 AM";
                 $status = "Closed";
                 $code = 0;
                 break;
