@@ -239,7 +239,7 @@ $this->load->view('layout/footer');
         $scope.couponinit = {'quantity': 1, "showreceiver": false, "amount": 100, "amountinit": 100, "basepercent": 10};
         $scope.calculation = function () {
             $scope.couponinit.amountbase = $scope.couponinit.quantity * $scope.couponinit.amountinit;
-
+            $scope.couponinit.basepercent = 10;
             if ($scope.couponinit.quantity > 4 && $scope.couponinit.quantity < 10) {
                 $scope.couponinit.basepercent = 15;
             }
