@@ -129,7 +129,7 @@ $this->load->view('layout/header');
                                                 <div class="checkbox">
                                                     <label>
                                                         <input type="hidden" name="check_receiver" value="{{couponinit.showreceiver}}">
-                                                        <input type="checkbox"  ng-model="couponinit.showreceiver"> Check here if you want to send cash voucher to other.
+                                                        <input type="checkbox"  ng-model="couponinit.showreceiver">  Tick here, if you want to send cash voucher to someone.
                                                     </label>
                                                 </div>
 
