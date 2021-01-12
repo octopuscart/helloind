@@ -20,7 +20,10 @@ class Coupon extends CI_Controller {
         $this->secret_code = $paymentconf['EOPGSecretCode'];
         $this->salesLink = $paymentconf['EOPGSalesLink'];
         $this->queryLink = $paymentconf['EOPGQueryLink'];
+        
         $this->couponApiUrl = $paymentconf['CouponLink'];
+        
+        $this->couponApiUrl = "http://localhost/woodlandcoupon/index.php";
     }
 
     private function useCurl($url, $headers, $fields = null) {
@@ -128,8 +131,8 @@ class Coupon extends CI_Controller {
         $seckey = hash("sha256", $hsakeystr);
         $ganarateurl = "&return_url=$returnUrl&goods_subject=Hello India Coupon&app_pay=WEB&goods_body=$itemsdescription&api_version=2.8&lang=en&reuse=Y&active_time=300&wallet=HK";
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
-//        echo $endurl = $salesLink . "?" . $ganarateurl;
-        redirect($endurl = $salesLink . "?" . $ganarateurl);
+        echo $endurl = $salesLink . "?" . $ganarateurl;
+        // redirect($endurl = $salesLink . "?" . $ganarateurl);
     }
 
     function orderPaymentResult($order_key) {
@@ -151,11 +154,13 @@ class Coupon extends CI_Controller {
         $seckey = hash("sha256", $hsakeystr);
         $ganarateurl = "&return_url=$notifyUrl&api_version=2.9&redirect=Y";
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
-        redirect($endurl = $queryLink . "?" . $ganarateurl);
+        echo $endurl = $queryLink . "?" . $ganarateurl;
+       // redirect($endurl);
     }
 
     function orderPaymentNotify($order_key, $paymenttype) {
         $returndata = $_GET;
+        print_r($returndata);
         if (isset($returndata['trans_status'])) {
             if ($returndata['trans_status'] == 'SUCCESS') {
                 $this->db->where("request_id", $order_key);
@@ -172,6 +177,7 @@ class Coupon extends CI_Controller {
                 $url = $this->couponApiUrl . 'Api/generateCoupon';
                 $curldata = $this->useCurl($url, $headers, json_encode($requestdata));
                 $codehas = json_decode($curldata);
+                print_r($codehas);
                 $updatearray = array(
                     "remark" => $codehas
                 );
@@ -181,10 +187,10 @@ class Coupon extends CI_Controller {
 
                 $senderemail = site_url("Coupon/couponBuyEmail/$codehas/$order_key");
                 $receiveremail = site_url("Coupon/couponReceiverEmail/$codehas/$order_key");
-                $this->useCurl($senderemail, $headers);
-                $this->useCurl($receiveremail, $headers);
+                //$this->useCurl($senderemail, $headers);
+                //$this->useCurl($receiveremail, $headers);
 
-                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
+               // redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
             } else {
                 $updatearray = array(
                     "status" => $returndata['trans_status'],
@@ -193,7 +199,7 @@ class Coupon extends CI_Controller {
                 $this->db->set($updatearray);
                 $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
                 $this->db->update("coupon_request");
-                redirect(site_url("Coupon/orderPaymentFailed/$order_key"));
+               // redirect(site_url("Coupon/orderPaymentFailed/$order_key"));
             }
         }
     }
