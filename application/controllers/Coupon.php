@@ -23,7 +23,7 @@ class Coupon extends CI_Controller {
 
         $this->couponApiUrl = $paymentconf['CouponLink'];
 
-        $this->couponApiUrl = "http://localhost/woodlandcoupon/index.php/";
+//        $this->couponApiUrl = "http://localhost/woodlandcoupon/index.php/";
     }
 
     private function useCurl($url, $headers, $fields = null) {
