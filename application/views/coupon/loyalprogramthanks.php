@@ -62,7 +62,6 @@ $this->load->view('layout/header');
                     <h3 class="font-secondary text-white text-center    " style="font-size: 30px;font-family: 'Kaushan Script', cursive!important;">
                         Thanks you for joining our loyalty program.
                     </h3> 
-                    <img src="<?php echo $couponimage; ?>" style="height: 300px;margin-top: 20px;">
 
 
 
