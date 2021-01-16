@@ -40,54 +40,52 @@ $this->load->view('layout/header');
 
 </style>
 
+<main ng-controller="cakeController" style="background: url(<?php echo base_url(); ?>assets/theme2/images/onview-bg.jpg);background-size: cover;">
+    <!-- Page Banner -->
+    <div class="container-fluid no-padding page-banner" style="    padding: 30px 0 30px;">
 
-
-<!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall2.jpg');   margin-top: -30px;    padding: 50px 0px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
-    <div class="container clearfix">
-        <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 62px;">Thank you</h1>
+        <div class="container">
+            <h3>Thank you</h3>
+            <h3 style="font-size: 25px;line-height: 25px;"> </h3>
+        </div>
     </div>
-</section>
-<!-- Inner Page Banner Area End Here -->
+
+    <!-- Welcome Section -->
+    <div class="container-fluid no-padding welcome-section2" style="background: #fff;">
+        <!-- Container -->
+        <div class="container">
+
+            <div class="row clearfix">
+                <div  style="    width: 100%;text-align: center;">
 
 
-<section id="content" style="overflow: visible; margin-bottom: 192px!important;">
-    <div class="content-wrap1 charity-block">
-        <div class="section nomargin clearfix" style="padding: 10px 0; background: #fcb316;border-top:none;">
-            <div class="container clearfix">
-
-                <div class="row clearfix">
-                    <div  style="    width: 100%;text-align: center;">
+                    <h3 class="font-secondary text-white text-center    " style="font-size: 30px;font-family: 'Kaushan Script', cursive!important;">
+                        Thanks you for joining our loyalty program.
+                    </h3> 
+                    <img src="<?php echo $couponimage; ?>" style="height: 300px;margin-top: 20px;">
 
 
-                        <h3 class="font-secondary text-white text-center    " style="font-size: 30px">
-                            Thanks you for joining our loyalty program.
-                        </h3> 
-                       
-                    </div>
+
                 </div>
             </div>
+
         </div>
-
     </div>
-
-    <!-- Content -->
-
-    <section style="overflow: visible;">
+</main>
 
 
-        <?php
-        $this->load->view('layout/contactfooter');
-        ?>
-    </section>
 
-    <?php
-    $this->load->view('layout/footer');
-    ?>
+
+
+
+<?php
+$this->load->view('layout/footer');
+?>
+
 <script>
-$(function(){
-    setTimeout(function(){
-        window.location = "<?php echo $redirectlink;?>";
-    },3000)
-})
+    $(function () {
+        setTimeout(function () {
+            window.location = "<?php echo $redirectlink; ?>";
+        }, 3000)
+    })
 </script>
