@@ -138,6 +138,7 @@ $this->load->view('layout/header');
                                                         <h1 class="font-secondary nott">Welcome to the Hello India Loyalty program </h1>
                                                         <p style="    font-size: 15px;
                                                            text-transform: uppercase;" >Join our customer loyalty program and earn cash vouchers based on numbers of visits to Hello India !</p>
+                                                    <div style="text-align: center"><img src="<?php echo base_url(); ?>assets/images/hlqr.png" style="height: 300px;width: 300px;display: inline;"/></div>
 
 
                                                     </div>
