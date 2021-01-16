@@ -76,7 +76,9 @@ $route['book-cake'] = 'Shop/cake';
 
 $route['gallery'] = 'Shop/gallery';
 
-$route['loyalty-program'] = 'Shop/loyalprogram';
+$route['loyalty-program'] = 'Coupon/joinLoyaltiProgram';
+
+$route['loyalty-program-thanks/(:any)'] = 'Coupon/loyalProgramThanks/$1';
 
 $route['blog'] = 'Shop/blog/$1';
 
