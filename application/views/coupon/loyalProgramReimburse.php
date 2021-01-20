@@ -24,7 +24,7 @@
                 <div style="padding: 40px; background: #fff;">
                     <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
                         <tbody>
-                            tr>
+                            <tr>
 
                                 <td>
 
