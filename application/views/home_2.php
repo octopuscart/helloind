@@ -10,13 +10,13 @@ $this->load->view('layout/header');
             <div id="home-slider1" class="rev_slider" data-version="5.0">
                 <ul> 
 
-                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
+                      <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
                         <img src="<?php echo base_url(); ?>assets/theme2/images/slider/offerslider.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
 
-
+                      
 
 
 
@@ -168,14 +168,13 @@ $this->load->view('layout/header');
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <div class="col-md-6 col-sm-6 content-block " style="font-size: 20px;">
-                                <p class="whilecolor ">
-                                    Indian cuisine consists of a wide variety of regional dishes that are native to the Indian subcontinent. Indian cuisine uses spices, herbs, vegetables, and dairy in the food to make a perfectly balanced meal. 
+                            <div class="col-md-6 col-sm-6 content-block ">
+                                <p class="whilecolor ">Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent. Given the diversity in soil, climate, culture, ethnic groups, and occupations, these cuisines vary substantially and use locally available spices, herbs, vegetables, and fruits. </p>
+                                <p class="whilecolor">Hello India Welcomes you to a world of delicious Indian food. Signature dishes coming from our grand Indian heritage. 
+                                    We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
 
-                                </p>
-                                <p class="whilecolor ">
-                                    Hello India Welcomes you to a world of delicious Indian cuisine, especially from North India.  Our chefs have perfected the recipes over decades and offering the rich Indian traditional food to be enjoyed and appreciated by our diners. 
-                                </p>
+                                    In Hello India you can experience the especially rich flavours of so many Regional Indian recipes that have evolved over the centuries. 
+                                    They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices.</p>
                                 <a class="whilecolor"  href="#" title="Read More">Read More</a>
                             </div>
                             <div class="col-md-6 col-sm-6 img-block">
@@ -195,7 +194,7 @@ $this->load->view('layout/header');
     <div class="container-fluid no-padding onview-section" style="    padding: 20px;;background:#fff">
         <!-- Container -->
         <div class="container">
-
+           
             <div class="col-md-12 col-sm-12 col-xs-12 onview-content" style='padding: 30px;'>
 
                 <iframe width="100%" height="630" src="https://www.youtube.com/embed/oWDEpOUGSR8" frameborder="5" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>

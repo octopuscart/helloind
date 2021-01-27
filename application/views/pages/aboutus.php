@@ -27,13 +27,9 @@ $this->load->view('layout/header');
                         <span>Welcome to</span>
                         <h2>HELLO INDIA</h2>
                     </div><!-- Section Header /- -->
- <p>
-                    Hello India Welcomes you to a world of delicious Indian food. Signature dishes coming from our grand Indian heritage. 
-We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
- </p><p>
-In Hello India you can experience the especially rich flavours of so many Regional Indian recipes that have evolved over the centuries. 
-They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices.
-                </p>          
+                    <p>
+                        Indian cuisine consists of a wide variety of regional dishes that are native to the Indian subcontinent. Indian cuisine uses spices, herbs, vegetables, and dairy in the food to make a perfectly balanced meal. </p>
+                    <p>Hello India Welcomes you to a world of delicious Indian cuisine, especially from North India.  Our chefs have perfected the recipes over decades and offering the rich Indian traditional food to be enjoyed and appreciated by our diners.    </p>      
                 </div>
             </div><!-- Row /- -->
         </div><!-- Container /- -->
