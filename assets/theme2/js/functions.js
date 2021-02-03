@@ -182,7 +182,7 @@
 			$("#home-slider1").revolution({
 				sliderType:"standard",
 				sliderLayout:"auto",
-				delay:6000,
+				delay:3000,
 				navigation: {
 					arrows:{
 						enable:true,
@@ -190,7 +190,7 @@
 					}
 				},
 				gridwidth:1900,
-				gridheight:980 ,
+				gridheight:880 ,
 			
 			}); 
 			$("#home-slider2").revolution({
