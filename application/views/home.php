@@ -238,7 +238,7 @@ $this->load->view('layout/header');
                 <!-- Section Header -->
                 <div class="section-header">
                     <div class="section-title-border">
-                        <span style="color:black">About us</span>
+                        <span style="color:black">Indian Heritage</span>
                         <h2 >On View</h2>
                     </div>
                 </div><!-- Section Header /- -->
