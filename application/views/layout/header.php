@@ -162,14 +162,18 @@
                             <li><a href="<?php echo site_url("about-us"); ?>" title="About">INSIGHTS</a></li>
                             <li><a href="<?php echo site_url("gallery"); ?>" title="Gallery">GALLERY</a></li>
 
-                            <li class="dropdown">
-                                <a href="" title="EVENTS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">MEMBERSHIP</a>
-                                <i class="ddl-switch fa fa-angle-down"></i>
-                                <ul class="dropdown-menu">				
-                                    <li><a href="" title="Club Member">CLUB MEMBER</a></li>
-                                    <li><a href="" title="About">LOYALTY PROGRAM </a></li>
-                                </ul>
-                            </li>
+                            <li><a href="<?php echo site_url("loyalty-program"); ?>" title="Gallery">MEMBERSHIP</a></li>
+
+
+
+                            <!--                            <li class="dropdown">
+                                                            <a href="" title="EVENTS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">MEMBERSHIP</a>
+                                                            <i class="ddl-switch fa fa-angle-down"></i>
+                                                            <ul class="dropdown-menu">				
+                                                                <li><a href="" title="Club Member">CLUB MEMBER</a></li>
+                                                                <li><a href="" title="About">LOYALTY PROGRAM </a></li>
+                                                            </ul>
+                                                        </li>-->
 
                             <li><a href="<?php echo site_url("coupon"); ?>" title="Cash Voucher " class="highlightbutton">CASH VOUCHER</a></li>
 
@@ -186,9 +190,9 @@
                                 <li>
                                     <a href="#" title="Order Food" class="disabled disableheaderbutton highlightbutton">
                                         ORDER FOOD
-                                        
+
                                     </a>
-                                    <?php echo "<span class='smallmessage'>" . $checktime['message'] . "</span>";?>
+                                    <?php echo "<span class='smallmessage'>" . $checktime['message'] . "</span>"; ?>
                                 </li>
 
                                 <?php
