@@ -177,8 +177,27 @@
 
                             <li><a href="<?php echo site_url("coupon"); ?>" title="Cash Voucher " class="highlightbutton">CASH VOUCHER</a></li>
 
-                            <li><a href="<?php echo site_url("menu/0/0"); ?>" title="Order Food" class="highlightbutton">ORDER FOOD</a></li>
+                            <?php
+                            $currenttime = date("h:i A");
+//                                $currenttime = "02:30 PM";
+                            $checktime = $this->Utils->checkTime($currenttime);
+                            if ($checktime['code']) {
+                                ?>
+                                <li><a href="<?php echo site_url("menu/0/0"); ?>" title="Order Food" class="highlightbutton">ORDER FOOD</a></li>
+                                <?php
+                            } else {
+                                ?>
+                                <li>
+                                    <a href="#" title="Order Food" class="disabled disableheaderbutton highlightbutton">
+                                        ORDER FOOD
 
+                                    </a>
+                                    <?php echo "<span class='smallmessage'>" . $checktime['message'] . "</span>"; ?>
+                                </li>
+
+                                <?php
+                            }
+                            ?>
 
                             <li><a href="<?php echo site_url("book-now"); ?>" title="Reserve Table" class="highlightbutton">RESERVE TABLE</a></li>
                             <li><a href="<?php echo site_url("book-cake"); ?>" title="Order Cake" class="highlightbutton">ORDER CAKE</a></li>
