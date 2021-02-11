@@ -29,47 +29,20 @@
                                 <td>
 
                                     <b>Hello <?php echo $memberdata->name; ?>,</b>
-                                    <p>Thank you for visiting our restaurants. 
-                                        You have rewarded from our loyalty program membership, below you can view your rewarded reimbursement. 
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="    text-align: center;font-size: 12px;" colspan="2">
-                                    <hr/>
-                                    <table>
-                                        <tr>
-                                            <td class="leftaling">Order No.</td>
-                                            <td class="leftaling"><?php echo $reimbursement->order_no; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="leftaling">Order Amount</td>
-                                            <td class="leftaling"><?php echo globle_currency . number_format($reimbursement->order_amount_act, 2, '.', '') ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="leftaling">Reimbursement</td>
-                                            <td class="leftaling"><b><?php echo globle_currency . number_format($reimbursement->amount, 2, '.', '') ?></b></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="leftaling">Total Amount</td>
-                                            <td class="leftaling"><?php echo globle_currency . number_format($reimbursement->order_amount, 2, '.', ''); ?></td>
-                                        </tr>
-
-                                    </table>
-
-                                    <hr/>
-
+                                    <p>Thank you for joining your loyalty program. 
+                                        You can earn exclusive offers and cash vouchers based on numbers of visits to Woodlands or in Hello India.</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="    text-align: center;font-size: 18px;" colspan="2">
-                                    <hr/>
-                                    <p>   <img src="<?php echo $image; ?>" style="height: 300px;"/></p>
+
+                                    <img src="<?php echo $image; ?>" style="height: 300px;"/>
 
                                     <hr/>
 
                                 </td>
                             </tr>
+                          
                             <tr>
                                 <td style="" colspan="2">
                                     <?php echo EMAIL_FOOTER; ?>
