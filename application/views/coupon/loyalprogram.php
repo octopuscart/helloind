@@ -114,6 +114,10 @@ $this->load->view('layout/header');
                                             <label >Email</label>
                                             <input type="email" id="template-contactform-email" name="email" value="" class="required email form-control border-form-control" placeholder="Email Address" required="">
                                         </div>
+                                        <div class="col-sm-12">
+                                            <label >Retype Email</label>
+                                            <input type="email" id="template-contactform-email" name="reemail" value="" class="required email form-control border-form-control" placeholder="Retype Email Address" required="">
+                                        </div>
 
                                         <div class="clear"></div>
                                         <hr/>
