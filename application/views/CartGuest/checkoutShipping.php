@@ -189,7 +189,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                         <!-- Address Details -->
                                         <div class="card-body">
                                             <ul class="nav nav-tabs" role="tablist">
-                                                <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab change-color-gradiant2'>20% Discount On Delivery</p></a></li>
+                                                <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab change-color-gradiant2'></p></a></li>
                                                 <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup<p class='discountnotetab change-color-gradiant2'>30% Discount On Pickup</p></a></li>
                                             </ul>
                                             <div class="tab-content">

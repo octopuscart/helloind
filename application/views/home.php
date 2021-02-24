@@ -38,11 +38,13 @@ $this->load->view('layout/header');
 
 
 
-                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
-                        <!-- MAIN IMAGE -->
+<!--                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
+                         MAIN IMAGE 
                         <img src="<?php echo base_url(); ?>assets/theme2/images/slider/offerslider.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                        <!-- LAYERS -->
-                    </li>
+                         LAYERS 
+                    </li>-->
+                    
+                    
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
                         <img src="<?php echo base_url(); ?>assets/theme2/images/slider/1.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
