@@ -292,9 +292,7 @@ $this->load->view('layout/header');
             <?php
             $gallary = array(
                 "culture" => [
-                    "IMG_3429.jpg",
-                    "IMG_3435.jpg",
-                    "IMG_3437.jpg",
+                    
                     "IMG_4170.jpg",
                 ],
                 "regional" => [
@@ -303,9 +301,7 @@ $this->load->view('layout/header');
                     "IMG_4174.jpg"
                 ],
                 "restaurant" => [
-                    "IMG_3393.jpg",
-                    "IMG_3395.jpg",
-                    "IMG_3411.jpg",
+                   
                     "IMG_3426.jpg",
                     "IMG_4171.jpg",
                 ],
