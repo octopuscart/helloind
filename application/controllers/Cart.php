@@ -73,6 +73,10 @@ class Cart extends CI_Controller {
         $delivery_details = $this->session->userdata('delivery_details');
         $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
 
+        $deliverytimelist = $this->Product_model->getDeliveryTime();
+        $data['deliverytimelist'] = $deliverytimelist;
+
+  
 
         if ($session_data) {
             $user_details = $this->User_model->user_details($this->user_id);
@@ -80,8 +84,8 @@ class Cart extends CI_Controller {
 
             $user_address_details = $this->User_model->user_address_details($this->user_id);
             $data['user_address_details'] = $user_address_details;
-            
-            
+
+
             if ($user_address_details) {
                 $category_array = array(
                     'address1' => $this->input->post('address1'),
@@ -99,8 +103,8 @@ class Cart extends CI_Controller {
             $user_credits = $this->User_model->user_credits($this->user_id);
             $data['user_credits'] = $user_credits;
 
-            
-            
+
+
             if (isset($_POST['processtopayment'])) {
                 $delivery_details = array(
                     'delivery_date' => $this->input->post('delivery_date'),

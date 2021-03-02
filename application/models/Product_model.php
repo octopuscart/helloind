@@ -150,12 +150,12 @@ where pa.product_id = $product_id group by attribute_value_id";
         $this->db->where('variant_product_of', $product_id);
         $query = $this->db->get('products');
         $product_veriant = $query->result_array();
-        
+
         $returnArray = array();
-        if($product_veriant){
+        if ($product_veriant) {
             $returnArray[$product_main['id']] = $product_main;
             foreach ($product_veriant as $key => $value) {
-                $returnArray[$value['id']] =  $value;
+                $returnArray[$value['id']] = $value;
             }
         }
         return $returnArray;
@@ -321,8 +321,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where('order_id', $order_details->id);
             $query = $this->db->get('cart');
             $cart_items = $query->result();
-         
-            
+
+
 
 
             $this->db->order_by('display_index', 'asc');
@@ -332,7 +332,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
             $order_data['measurements_items'] = $custom_measurement;
 
-   
+
             $order_data['payment_details'] = $payment_details;
             $order_data['cart_data'] = $cart_items;
             $order_data['amount_in_word'] = $this->convert_num_word($order_data['order_data']->total_price);
@@ -358,7 +358,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'sku' => $product_details['sku'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
-                'total_price' => $product_details['price']*$quantity,
+                'total_price' => $product_details['price'] * $quantity,
                 'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                 'quantity' => $quantity,
                 'user_id' => $user_id,
@@ -407,7 +407,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'sku' => $product_details['sku'],
                     'attrs' => "",
                     'vendor_id' => $product_details['user_id'],
-                    'total_price' => $product_details['price']*$quantity,
+                    'total_price' => $product_details['price'] * $quantity,
                     'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                     'quantity' => $quantity,
                     'product_id' => $product_id,
@@ -777,7 +777,6 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                 'quantity' => $quantity,
                 'user_id' => $user_id,
-          
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
                 'product_id' => $product_id,
                 'op_date_time' => date('Y-m-d H:i:s'),
@@ -829,6 +828,107 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $last_id = $this->db->insert_id();
             $display_index = 1;
         }
+    }
+
+    function getNextSelectTime($timelisttemp, $selectedhour, $selectminut) {
+        $assmtime = $selectedhour . ":" . $selectminut;
+        $indexarray = array_search($assmtime, $timelisttemp);
+        if ($indexarray > 0) {
+            return $indexarray;
+        } else {
+            $assmtime = $selectedhour . ":" . $selectminut;
+            $timestamp = strtotime($assmtime);
+            $timestamp_one_hour_later = $timestamp + 3600;
+            $nexthour = strftime('%H', $timestamp_one_hour_later);
+            $assmtime2 = $nexthour . ":" . $selectminut;
+            $indexarray = array_search($assmtime2, $timelisttemp);
+            if ($indexarray > 0) {
+                return $indexarray;
+            } else {
+                return $this->getNextSelectTime($timelisttemp, $nexthour, $selectminut);
+            }
+        }
+    }
+
+    function getDeliveryTime() {
+
+        $deliverytimeselection = [
+            array("ttype" => "half", "timelist" => ["11:30", "11:45"]),
+            array("ttype" => "full", "timelist" => [12, 13, 14]),
+            array("ttype" => "half", "timelist" => ["15:00"]),
+            array("ttype" => "half", "timelist" => ["18:30", "18:45"]),
+            array("ttype" => "full", "timelist" => [19, 20]),
+            array("ttype" => "half", "timelist" => ["21:00", "21:15", "21:30"]),
+        ];
+
+        $timelist = array();
+        $currenttime_h = $ctime = date('H');
+        $currenttime_m = $ctime = date('m');
+
+
+        $currenttime_h2 = date('H', strtotime('1 hour'));
+        $currenttime_h2 = "23";
+//
+//$currenttime_m = "10";
+
+        $selecttimec = "15";
+        if ($currenttime_m > 0) {
+            $selecttimec = "15";
+        }
+        if ($currenttime_m > 15) {
+            $selecttimec = "30";
+        }
+        if ($currenttime_m > 30) {
+            $selecttimec = "45";
+        }
+        if ($currenttime_m > 45) {
+            $selecttimec = "00";
+            $currenttime_h2 = date('H', strtotime('2 hour'));
+        }
+        $currenttime_h . ":" . $currenttime_m;
+
+        $assumetime = $currenttime_h2 . ":" . $selecttimec;
+
+        $timelisth = array();
+        $timelisth;
+
+
+        foreach ($deliverytimeselection as $key => $datevalue) {
+            if ($datevalue["ttype"] == "half") {
+                foreach ($datevalue["timelist"] as $key => $value) {
+                    array_push($timelist, $value);
+                    $timestamp = strtotime($value);
+                    $nexthour = strftime('%H', $timestamp);
+                    if ($key == 0) {
+                        $timelisth[$nexthour] = $value;
+                    }
+                }
+            }
+            if ($datevalue["ttype"] == "full") {
+                foreach ($datevalue["timelist"] as $key => $value) {
+                    $timelisth[$value] = $value . ":00";
+                    array_push($timelist, $value . ":00");
+                    array_push($timelist, $value . ":15");
+                    array_push($timelist, $value . ":30");
+                    array_push($timelist, $value . ":45");
+                }
+            }
+        }
+
+
+        $returntime = $this->getNextSelectTime($timelist, $currenttime_h2, $selecttimec);
+
+//        $returntime2 = getNextSelectTime2($timelisth, $currenttime_h2, $selecttimec);
+
+        $assumetime2 = $timelist[$returntime];
+
+        $indexarray = array_search($assumetime2, $timelist);
+        $finaltimelist = $timelist;
+        if ($indexarray) {
+            $returnarray = array_slice($timelist, $indexarray);
+            $finaltimelist = $returnarray;
+        }
+        return $finaltimelist;
     }
 
 }

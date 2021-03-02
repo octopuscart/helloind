@@ -269,33 +269,66 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                                                     </div>
                                                     <div class="cart-page-top table-responsive">
-                                                        <table class="table table-hover">
-                                                            <tbody id="quantity-holder">
-                                                                <tr>
-                                                                    <td colspan="4" class="text_right">
-                                                                        <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                        </div>
-                                                                        <div class="proceed-button pull-right ">
-                                                                            <form action="#" method="post">
+                                                        <form action="#" method="post">
+                                                            <table class="table table-hover">
+                                                                <tbody id="quantity-holder">
+                                                                    <tr>
+
+                                                                        <td style="width:50%;vertical-align: middle;">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <h3 style="    line-height: 4px;">
+                                                                                        Select Delivery Time
+                                                                                    </h3>
+
+
+
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <select class="form-control" name="delivery_time">
+                                                                                        <?php
+                                                                                        foreach ($deliverytimelist as $key => $value) {
+                                                                                            ?>
+                                                                                            <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+                                                                                            <?php
+                                                                                        }
+                                                                                        ?>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div style="clear:both"></div>
+
+                                                                            </div>   
+                                                                            <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
+
+                                                                        </td>
+                                                                        <td colspan="1" class="text_right">
+                                                                            <!--                                                                        <div class="proceed-button pull-left " >
+                                                                                                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                                                                                                    </div>-->
+                                                                            <div class="proceed-button pull-right ">
+                                                                                <!--<a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+
                                                                                 <?php
                                                                                 if (count($user_address_details)) {
                                                                                     ?>
-                                                                                    <input type="hidden" name="delivery_date" value="{{shippingInit.delivery_date}}"/>
 
-                                                                                    <input type="hidden" name="delivery_time" value="{{shippingInit.delivery_time}}"/>
 
-                                    <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+
+                                                                                                                                                                                                            <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                                     <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
                                                                                     <?php
                                                                                 }
                                                                                 ?>
-                                                                            </form>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+
+
+                                                                            </div>
+
+                                                                        </td>
+
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </form>
 
                                                     </div>
                                                 </div>
@@ -336,16 +369,36 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                     <table class="table table-hover">
                                                                         <tbody id="quantity-holder">
                                                                             <tr>
+                                                                                <td colspan="3" style="width:50%;vertical-align: middle;">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <h3 style="line-height: 4px;">
+                                                                                                Select Pickup Time
+                                                                                            </h3>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <select class="form-control" name="delivery_time">
+                                                                                                <?php
+                                                                                                foreach ($deliverytimelist as $key => $value) {
+                                                                                                    ?>
+                                                                                                    <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+                                                                                                    <?php
+                                                                                                }
+                                                                                                ?>
+                                                                                            </select>
+                                                                                        </div>
+
+                                                                                    </div>   
+                                                                                    <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
+
+                                                                                </td>
                                                                                 <td colspan="4" class="text_right">
-                                                                                    <div class="proceed-button pull-left " >
-                                                                                        <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                                    </div>
+                                                                                  
                                                                                     <div class="proceed-button pull-right ">
 
 
                                                                                         <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
 
-                                                                                        <input type="hidden" name="delivery_time" value="<?php echo date("h:i a"); ?>"/>
 
                                                                                         <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopaymentpickup">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
 

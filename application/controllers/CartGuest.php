@@ -61,15 +61,16 @@ class CartGuest extends CI_Controller {
         $this->load->view('CartGuest/checkoutInit', $data);
     }
 
-
     function checkoutShipping() {
-        
+
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         $data['checkoutmode'] = 'Guest';
 
+        $deliverytimelist = $this->Product_model->getDeliveryTime();
+        $data['deliverytimelist'] = $deliverytimelist;
 
         $address = $this->session->userdata('shipping_address');
         $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
@@ -128,7 +129,7 @@ class CartGuest extends CI_Controller {
 
             redirect('CartGuest/checkoutShipping');
         }
-        
+
         if (isset($_POST['processtopaymentpickup'])) {
             $category_array = array(
                 'address1' => "Pickup At Hello India",
@@ -157,8 +158,8 @@ class CartGuest extends CI_Controller {
 
             redirect('CartGuest/checkoutPayment');
         }
-        
-        
+
+
         $this->load->view('CartGuest/checkoutShipping', $data);
     }
 
@@ -174,7 +175,10 @@ class CartGuest extends CI_Controller {
         $data['user_details'] = $user_details ? $this->session->userdata('customer_inforamtion') : array();
 
         $data['checkoutmode'] = 'Guest';
-
+        $delivery_details = $this->session->userdata('delivery_details');
+        
+//        print_r($delivery_details);
+        $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
 
 //place order
         if (isset($_POST['place_order'])) {
@@ -194,13 +198,13 @@ class CartGuest extends CI_Controller {
             if ($address['zipcode'] == 'Tsim Sha Tsui') {
                 $session_cart['shipping_price'] = 0;
             }
-            
-             $session_cart['shipping_price'] = 25;
-             
-             
-             $discountrate = 0;
+
+            $session_cart['shipping_price'] = 25;
+
+
+            $discountrate = 0;
             $discoutamount = 0;
-            
+
             if ($address['zipcode'] == 'Pickup') {
                 $discountrate = 30;
                 $session_cart['shipping_price'] = 0;
@@ -223,7 +227,7 @@ class CartGuest extends CI_Controller {
             $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 
 
-             
+
             $sub_total_price = $session_cart['sub_total_price'];
             $total_quantity = $session_cart['total_quantity'];
             $total_price = $session_cart['total_price'];
@@ -254,6 +258,8 @@ class CartGuest extends CI_Controller {
                 'status' => 'Order Confirmed',
                 'payment_mode' => $paymentmathod,
                 'measurement_style' => "",
+                'delivery_date' => $delivery_details['delivery_date'],
+                'delivery_time' => $delivery_details['delivery_time'],
                 'credit_price' => $actdiscount,
             );
 
@@ -318,10 +324,10 @@ class CartGuest extends CI_Controller {
 
             switch ($paymentmathod) {
                 case 'Alipay':
-                    redirect('Order/orderPayment/' . $orderkey."/ALIPAY");
+                    redirect('Order/orderPayment/' . $orderkey . "/ALIPAY");
                     break;
                 case 'WeChat':
-                    redirect('Order/orderPayment/' . $orderkey."/WECHAT");
+                    redirect('Order/orderPayment/' . $orderkey . "/WECHAT");
                     break;
                 default:
                     redirect('Order/orderdetailsguest/' . $orderkey);
