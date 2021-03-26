@@ -174,7 +174,10 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                                     <ul class="nav nav-tabs" role="tablist">
                                                 <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab change-color-gradiant2'></p></a></li>
-                                                <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup<p class='discountnotetab change-color-gradiant2'>30% Discount On Pickup</p></a></li>
+                                                <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup
+                                                        <!--<p class='discountnotetab change-color-gradiant2'>30% Discount On Pickup</p>-->
+                                                        <p class='discountnotetab change-color-gradiant2'></p>
+                                                    </a></li>
                                             </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade  active in" id="delivery" role="tab" >

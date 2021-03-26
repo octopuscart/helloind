@@ -267,7 +267,8 @@ class Cart extends CI_Controller {
                 $discoutamount = 0;
                 $session_cart['shipping_price'] = 25;
                 if ($address['zipcode'] == 'Pickup') {
-                    $discountrate = 30;
+//                    $discountrate = 30;
+                    $discountrate = 0;
                     $session_cart['shipping_price'] = 0;
                 }
                 $session_cart['sub_total_price'] = $session_cart['total_price'];

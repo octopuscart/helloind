@@ -206,7 +206,8 @@ class CartGuest extends CI_Controller {
             $discoutamount = 0;
 
             if ($address['zipcode'] == 'Pickup') {
-                $discountrate = 30;
+//                $discountrate = 30;
+                 $discountrate = 0;
                 $session_cart['shipping_price'] = 0;
             }
 

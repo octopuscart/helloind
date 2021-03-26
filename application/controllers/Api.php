@@ -69,7 +69,7 @@ class Api extends REST_Controller {
 //                $session_cart['shipping_price'] = 0;
 //            }
 //        }
-        
+
         if ($this->checklogin) {
             $user_address_details2 = $this->User_model->user_address_details($this->user_id);
             if ($user_address_details2) {
@@ -80,28 +80,32 @@ class Api extends REST_Controller {
         } else {
             $user_address_details = $this->session->userdata('shipping_address');
         }
-        
+
 
         if (1) {
 
             $addresscheck2 = $this->session->userdata('shipping_address');
 
-           
+
 
             if ($this->checklogin) {
 
                 $addresscheck2 = $this->session->userdata('pickup_shipping_address');
                 if ($addresscheck2['zipcode'] == 'Pickup') {
-                    $discountrate = 30;
+//                    $discountrate = 30;
+                    $discountrate = 0;
                     $session_cart['shipping_price'] = 0;
-                    $session_cart['discount_note'] = "30% Discount On Pickup";
+//                    $session_cart['discount_note'] = "30% Discount On Pickup";
+                    $session_cart['discount_note'] = "";
                     $session_cart['shipping_note'] = "";
                 }
             } else {
                 if ($addresscheck2['zipcode'] == 'Pickup') {
-                    $discountrate = 30;
+//                    $discountrate = 30;
+                    $discountrate = 0;
                     $session_cart['shipping_price'] = 0;
-                    $session_cart['discount_note'] = "30% Discount On Pickup";
+//                    $session_cart['discount_note'] = "30% Discount On Pickup";
+                    $session_cart['discount_note'] = "";
                     $session_cart['shipping_note'] = "";
                 }
             }
@@ -110,18 +114,10 @@ class Api extends REST_Controller {
         $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
         $rawdiscount = round($discoutamount);
         $expdiscount = explode(".", $rawdiscount);
-
         $actdiscount = count($expdiscount) > 1 ? ($rawdiscount + 1) : $rawdiscount;
-
         $session_cart['discount'] = $actdiscount;
-
-
         $session_cart['sub_total_price'] = $session_cart['total_price'];
-
         $session_cart['total_price'] = $session_cart['total_price'] - $session_cart['discount'];
-
-
-
         $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 
 
