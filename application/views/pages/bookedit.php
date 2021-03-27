@@ -1,0 +1,275 @@
+<?php
+$this->load->view('layout/header');
+?>
+
+<style>
+    .datepicker-days .day{
+        cursor: pointer;
+    }
+</style>
+
+<main style="background: url(<?php echo base_url(); ?>assets/theme2/images/onview-bg.jpg);background-size: cover;" ng-controller="bookControllerEdit">
+    <!-- Page Banner -->
+    <!--    <div class="container-fluid no-padding page-banner" style="    padding: 30px 0 30px;">
+             Container 
+            <div class="container">
+                <h3>Book Now</h3>
+            </div> Container /- 
+        </div> Page Banner /- -->
+
+    <!-- Welcome Section -->
+    <input type="hidden" ng-model="bookinit.predate" ng-init="bookinit.predate = '<?php echo date("Y-m-d") ?>'">
+    <div class="container-fluid no-padding welcome-section2">
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row">			
+                <div class="col-md-6 col-sm-6 img-block">
+                </div>
+                <div class="col-md-6 col-sm-6 content-block">
+
+
+
+
+                    <div class="tab-container mt-4 booknowblock" >
+
+                        <div>
+
+
+
+                            <!-- Tab panes -->
+                            <div class="">
+                                <div class="tab-content clearfix" id="tabs-restaurant">
+                                    <center style="width:100%;">
+                                        <div class="row clearfix" style="    width: fit-content;">
+
+                                            <div class="p-5 reservation-form1 rounded bg-white" style="width: 500px;">
+
+                                                <div class="section-header2">
+                                                    <span>Book At Restaurants</span>
+                                                    <h2></h2>
+                                                </div>
+
+                                                <div class="form-widget mt-4 mt-lg-0 bookingpage" data-loader="button">
+                                                    <div class="form-result"></div>
+                                                    <form class="mb-0 row"  action="#" method="post" >
+                                                        <div class="form-process"></div>
+                                                        <div class="col-sm-6 mb-3">
+                                                            <label class='text-left pull-left'>Name</label>
+                                                            <input type="text" id="name" name="name" value="" class="form-control border-form-control required" placeholder="Name" readonly="">
+                                                        </div>
+                                                        <div class="col-sm-6 mb-3">
+                                                            <label class='text-left pull-left'>Email</label>
+
+                                                            <input type="email" id="email" name="email" value="" class="required email form-control border-form-control" placeholder="Email Address" readonly="">
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="col-sm-6 mb-3">
+                                                            <label class='text-left pull-left'>Contact No.</label>
+
+                                                            <input type="text" id="contact" name="contact" value="" class="form-control border-form-control required" placeholder="Contact No." readonly="">
+                                                        </div>
+                                                        <div class="col-sm-6 mb-3  travel-date-group">
+                                                            <!--<input type="date" id="template-contactform-subject" name="select_date" value="" class="form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" ng-model="bookinit.selectdate" ng-change="changeDate()">-->
+                                                            <label class='text-left pull-left'>Select Date</label>
+                                                            <div class="">
+                                                                <input type="text" name="select_date" class="form-control datepicker" id="select_date" value="<?php echo date("Y-m-d") ?>"/>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="clear"></div>
+
+                                                        <div class="col-sm-6 mb-3">
+                                                            <label class='text-left pull-left'>Select Time</label>
+
+                                                            <select id="select_time" class="custom-select form-control border-form-control" name="select_time" required="">
+                                                                <option value="disabled" disabled="" selected="">Select Time</option>
+                                                                <optgroup label="Lunch">
+                                                                    <option value="<?php echo "11:30"; ?>"><?php echo "11:30"; ?></option>
+                                                                    <option value="<?php echo "11:45"; ?>"><?php echo "11:45"; ?></option>
+
+                                                                    <?php
+                                                                    $timelist = [12, 13, 14];
+                                                                    foreach ($timelist as $key => $value) {
+                                                                        ?>
+                                                                        <option value="<?php echo $value . ":00" ?>"><?php echo $value . ":00" ?></option>
+                                                                        <option value="<?php echo $value . ":15" ?>"><?php echo $value . ":15" ?></option>
+                                                                        <option value="<?php echo $value . ":30" ?>"><?php echo $value . ":30" ?></option>
+                                                                        <option value="<?php echo $value . ":45" ?>"><?php echo $value . ":45" ?></option>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                    <option value="<?php echo "15:00"; ?>"><?php echo "15:00"; ?></option>
+
+                                                                </optgroup>
+                                                                <optgroup label="Dinner">
+
+                                                                    <option value="18:30">18:30</option>
+                                                                    <option value="18:45">18:45</option>
+
+                                                                    <?php
+                                                                    $timelist = [19, 20];
+                                                                    foreach ($timelist as $key => $value) {
+                                                                        ?>
+                                                                        <option value="<?php echo $value . ":00" ?>"><?php echo $value . ":00" ?></option>
+                                                                        <option value="<?php echo $value . ":15" ?>"><?php echo $value . ":15" ?></option>
+                                                                        <option value="<?php echo $value . ":30" ?>"><?php echo $value . ":30" ?></option>
+                                                                        <option value="<?php echo $value . ":45" ?>"><?php echo $value . ":45" ?></option>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+
+                                                                    <option value="21:00">21:00</option>
+                                                                    <option value="21:15">21:15</option>
+                                                                    <option value="21:30">21:30</option>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-6 mb-3">
+                                                            <label class='text-left pull-left'>No. Of Persons</label>
+                                                            <select id="people" class="custom-select form-control border-form-control" name="people" required="">
+                                                                <option value="1">1</option>
+                                                                <option value="2" selected="">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6+</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="col-12 nobottommargin">
+                                                            <button class="button btn btn-lg btn btn-danger button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="booknow" value="submit">Update Booking</button>
+                                                            <button class="button btn btn-lg btn btn-danger button-circle button-large text-white ml-0 mt-3 " type="submit" name="cancel" value="submit" style="background:#d9534f">Cancel Booking</button>
+
+                                                        </div>
+                                                        <div class="clear"></div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div><!-- Row /- -->
+        </div><!-- Container /- -->
+
+
+
+    </div><!-- Welcome Section /- -->
+
+    <!-- Client Section -->
+</main>
+<!-- Container -->
+<div class="container" style="margin-top: 50px">
+    <div class="contact-info">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <i><img src="<?php echo base_url(); ?>assets/theme2/images/contact-info1.png" alt="Contact Info" /></i>
+            <h3>Our Location</h3>
+            <p>Hanyee Building, Shop A & E, 1/F, </p>
+            <p>19-21 Hankow Rd, Tsim Sha Tsui, Hong Kong </p>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <i><img src="<?php echo base_url(); ?>assets/theme2/images/contact-info2.png" alt="Contact Info" /></i>
+            <h3>Contact Us</h3>
+            <p><a href="tel:+(852) 2367 7489">Contact No.: +(852) 2367 7489</a></p>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <i><img src="<?php echo base_url(); ?>assets/theme2/images/contact-info3.png" alt="Contact Info" /></i>
+            <h3>Write some words</h3>
+            <p><a href="mailto:hello@helloindia.com.hk">hello@helloindia.com.hk</a></p>
+            <p><a href="mailto:support@historymuseum.com">info@helloindia.com.hk</a></p>
+        </div>
+    </div>
+</div>
+<!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+
+<script src="<?php echo base_url(); ?>assets/jqlib/jquery-3.4.1.slim.min.js"></script>
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jqlib/jquery-ui.css">
+
+<script src="<?php echo base_url(); ?>assets/jqlib/jquery-1.12.4.js"></script>
+<script src="<?php echo base_url(); ?>assets/jqlib/jquery-ui.js"></script>
+<script src="<?php echo base_url(); ?>assets/jqlib/moment.js"></script>
+
+<script>
+        var listofbookeddate = <?php echo json_encode($datelist); ?>;
+        var editOptions = <?php echo json_encode($bookingdata); ?>;
+</script>
+<?php
+$this->load->view('layout/footer');
+?>
+
+<script>
+
+<?php
+$redirecturl = site_url("book-now");
+
+
+if (isset($_POST["booknow"])) {
+    ?>
+
+        swal({
+            title: 'Your booking has been modified',
+            type: 'success',
+            imageWidth: 100,
+            timer: 2500,
+            showConfirmButton: false,
+            animation: true
+
+        }).then(
+                function () {
+                    window.location = "<?php echo $redirecturl; ?>";
+                },
+                function (dismiss) {
+                    if (dismiss === 'timer') {
+                        window.location = "<?php echo $redirecturl; ?>";
+                    }
+                }
+        );
+    <?php
+}
+if (isset($_POST["cancel"])) {
+    ?>
+
+        swal({
+            title: 'Your booking has been cancelled',
+            type: 'success',
+            imageWidth: 100,
+            timer: 2500,
+            showConfirmButton: false,
+            animation: true
+
+        }).then(
+                function () {
+                    window.location = "<?php echo $redirecturl; ?>";
+                },
+                function (dismiss) {
+                    if (dismiss === 'timer') {
+                        window.location = "<?php echo $redirecturl; ?>";
+                    }
+                }
+        );
+    <?php
+}
+?>
+
+
+</script>

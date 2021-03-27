@@ -30,8 +30,7 @@
 
 
                                     <b>Dear <?php echo $appointment['name']; ?>,</b>
-                                    <p>Thank you for your reservation which is now a confirmed booking as follows:</p>
-
+                                    <p><?php echo $appointment["reason"]; ?></p>
                                     <table style="font-size: 12px;    font-size: 12px;
                                            text-align: center;
                                            /* width: 300px; */
@@ -83,7 +82,6 @@
 
                      color: black;
                      padding: 10px;">
-                    <p><a href="<?php echo site_url("Shop/booking_edit/" . $orderid . "?email=" . $appointment['email']); ?>" target="_blank" style="color:black">Click here</a> to cancel or update this reservation..</p>
 
                     <b>- Thanks -</b> 
                     <br/>
