@@ -83,7 +83,7 @@
 
                      color: black;
                      padding: 10px;">
-                    <p><a href="<?php echo site_url("Shop/booking_edit/" . $orderid . "?email=" . $appointment['email']); ?>" target="_blank" style="color:black">Click here</a> to cancel or update this reservation..</p>
+                    <p><a href="<?php echo site_url("Shop/booking_edit/" . $orderid . "?email=" . $appointment['email']); ?>" target="_blank" style="color:black">Click here</a> to update or cancel this reservation..</p>
 
                     <b>- Thanks -</b> 
                     <br/>
