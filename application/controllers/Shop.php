@@ -74,14 +74,14 @@ class Shop extends CI_Controller {
                 if ($this->input->post('email')) {
                     $this->email->message($htmlsmessage);
 
-                    $this->email->print_debugger();
-                    $send = $this->email->send();
-                    if ($send) {
-                        echo json_encode("send");
-                    } else {
-                        $error = $this->email->print_debugger(array('headers'));
-                        echo json_encode($error);
-                    }
+//                    $this->email->print_debugger();
+//                    $send = $this->email->send();
+//                    if ($send) {
+//                        echo json_encode("send");
+//                    } else {
+//                        $error = $this->email->print_debugger(array('headers'));
+//                        echo json_encode($error);
+//                    }
                 } else {
                     echo $htmlsmessage;
                 }
