@@ -177,11 +177,27 @@
 
                             <li><a href="<?php echo site_url("coupon"); ?>" title="Cash Voucher " class="highlightbutton">CASH VOUCHER</a></li>
 
-                            <li><a href="<?php echo site_url("menu/0/0"); ?>" title="Order Food" class="highlightbutton">ORDER FOOD</a></li>
+
+                            <li class="dropdown">
+                                <a href="<?php echo site_url("menu/0/0"); ?>" title="Order Food" class="dropdown-toggle highlightbutton" role="button" aria-haspopup="true" aria-expanded="false">ORDER FOOD</a>
+                                <i class="ddl-switch fa fa-angle-down"></i>
+                                <ul class="dropdown-menu">				
+                                    <li><a href="<?php echo site_url("menu/0/0"); ?>">Tsim Sha Tsui</a></li>
+                                    <li><a href="https://helloindia.oddle.me/en_HK" target="_blank">Other Location</a></li>
+
+                                </ul>
+                            </li>
 
 
-                            <li><a href="<?php echo site_url("book-now"); ?>" title="Reserve Table" class="highlightbutton">RESERVE TABLE</a></li>
-                            <li><a href="<?php echo site_url("book-cake"); ?>" title="Order Cake" class="highlightbutton">ORDER CAKE</a></li>
+                            <li><a href="<?php echo site_url("book-now"); ?>" title="Reserve Table" 
+                                   class="highlightbutton">RESERVE TABLE</a>
+
+                            </li>
+                            <li><a href="<?php echo site_url("book-cake"); ?>" title="Order Cake" 
+                                   class="highlightbutton"   >ORDER CAKE</a>
+
+                            </li>
+
                             <li><a href="<?php echo site_url("contact"); ?>" title="Contact Us">CONTACT US</a></li>
                             <li>
                                 <a href="<?php echo site_url("cart") ?>" class="cartheadericon">

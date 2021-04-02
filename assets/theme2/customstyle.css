@@ -381,7 +381,7 @@
     border-bottom: 3px solid #000;
     color: #fff!important;
     border-bottom: 3px solid #3d8040;
-    background: #4CAF50;
+    background: #4CAF50!important;
 }
 
 .headernavigation a.highlightbutton:hover {
