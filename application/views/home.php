@@ -10,7 +10,11 @@ $this->load->view('layout/header');
             <div id="home-slider1" class="rev_slider" data-version="5.0">
                 <ul> 
 
-
+                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
+                        <!-- MAIN IMAGE -->
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider/oddle.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+                    </li>
 
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
@@ -38,13 +42,13 @@ $this->load->view('layout/header');
 
 
 
-<!--                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
-                         MAIN IMAGE 
-                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider/offerslider.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                         LAYERS 
-                    </li>-->
-                    
-                    
+                    <!--                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
+                                             MAIN IMAGE 
+                                            <img src="<?php echo base_url(); ?>assets/theme2/images/slider/offerslider.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                             LAYERS 
+                                        </li>-->
+
+
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
                         <img src="<?php echo base_url(); ?>assets/theme2/images/slider/1.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
@@ -292,7 +296,6 @@ $this->load->view('layout/header');
             <?php
             $gallary = array(
                 "culture" => [
-                    
                     "IMG_4170.jpg",
                 ],
                 "regional" => [
@@ -301,7 +304,6 @@ $this->load->view('layout/header');
                     "IMG_4174.jpg"
                 ],
                 "restaurant" => [
-                   
                     "IMG_3426.jpg",
                     "IMG_4171.jpg",
                 ],
@@ -319,10 +321,10 @@ $this->load->view('layout/header');
                             </div>
                         </a>
                     </div>
-                    <?php
-                }
-            }
-            ?>
+        <?php
+    }
+}
+?>
 
 
 
