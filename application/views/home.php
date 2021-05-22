@@ -357,3 +357,32 @@ $this->load->view('layout/header');
 <?php
 $this->load->view('layout/footer');
 ?>
+
+
+<div class="modal fade" id="adModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog " role="document">
+        <div class="modal-content" style="border:none">
+
+            <div class="modal-body" style="padding: 0px;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;
+                        right: 6px;
+                        "><span aria-hidden="true">&times;</span></button>
+
+                <img src="<?php echo base_url(); ?>assets/adimages/ordernow.jpg" style="width: 100%; ">
+                <div class="col-md-12" style="    background: #ff3859;
+                     border: none;padding-bottom: 20px;
+                     text-align: center;width:100%;">
+                    <a  href="<?php echo site_url("menu/0/0"); ?>" class="btn btn btn-success " >Tsim Sha Tsui</a>
+                    &nbsp;&nbsp; <a  href="https://helloindia.oddle.me/en_HK" target="_blank" class="btn btn btn-success "  >Other Location</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#adModal2").modal("show");
+    })
+</script>
