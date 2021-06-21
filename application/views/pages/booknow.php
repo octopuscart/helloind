@@ -37,19 +37,23 @@ $this->load->view('layout/header');
 
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#helloindia" aria-controls="helloindia" role="tab" data-toggle="tab">
-                                        <img src="<?php echo base_url(); ?>assets/images/logo.png" style="height:50px;"/>
+                                <!--                                <li role="presentation" class="active"><a href="#helloindia" aria-controls="helloindia" role="tab" data-toggle="tab">
+                                                                        <img src="<?php echo base_url(); ?>assets/images/logo.png" style="height:50px;"/>
+                                                                    </a></li>-->
+
+                                <li role="presentation" class="active">
+                                    <a href="#bistrochat" aria-controls="bistrochat" role="tab" data-toggle="tab">
+                                        <img src="<?php echo base_url(); ?>assets/images/bistrochat.png" style="    height: 34px;    margin-top: 13px;" />
                                     </a></li>
+
                                 <li role="presentation"><a href="#quandoo" aria-controls="quandoo" role="tab" data-toggle="tab">
                                         <img src="<?php echo base_url(); ?>assets/images/quandoo.png" style="    height: 34px;    margin-top: 13px;" /></a></li>
-                                <li role="presentation"><a href="#bistrochat" aria-controls="bistrochat" role="tab" data-toggle="tab">
-                                        <img src="<?php echo base_url(); ?>assets/images/bistrochat.png" style="    height: 34px;    margin-top: 13px;" /></a></li>
-                          
+
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="helloindia">
+<!--                                <div role="tabpanel" class="tab-pane active" id="helloindia">
                                     <div class="tab-content clearfix" id="tabs-restaurant">
                                         <center style="width:100%;">
                                             <div class="row clearfix" style="    width: fit-content;">
@@ -81,7 +85,7 @@ $this->load->view('layout/header');
                                                                 <input type="text" id="template-contactform-phone" name="contact" value="" class="form-control border-form-control required" placeholder="Contact No." required="">
                                                             </div>
                                                             <div class="col-sm-6 mb-3  travel-date-group">
-                                                                <!--<input type="date" id="template-contactform-subject" name="select_date" value="" class="form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" ng-model="bookinit.selectdate" ng-change="changeDate()">-->
+                                                                <input type="date" id="template-contactform-subject" name="select_date" value="" class="form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" ng-model="bookinit.selectdate" ng-change="changeDate()">
                                                                 <label class='text-left pull-left'>Select Date</label>
                                                                 <div class="">
                                                                     <input type="text" name="select_date" class="form-control datepicker" id="selecteddate" value="<?php echo date("Y-m-d") ?>"/>
@@ -159,8 +163,8 @@ $this->load->view('layout/header');
                                             </div>
                                         </center>
                                     </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="quandoo">
+                                </div>-->
+                                <div role="tabpanel" class="tab-pane active" id="quandoo">
                                     <center>
                                         <iframe src="https://booking-widget.quandoo.com.au/iframe.html?agentId=2&merchantId=71001&origin=https%3A%2F%2Fadmin.quandoo.com&path=https%3A%2F%2Fbooking-widget.quandoo.com%2F&theme=brand " style="    height: 666px;
 
