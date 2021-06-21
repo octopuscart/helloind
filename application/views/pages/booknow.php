@@ -24,9 +24,9 @@ $this->load->view('layout/header');
         <div class="container">
             <!-- Row -->
             <div class="row">			
-                <div class="col-md-6 col-sm-6 img-block">
+                <div class="col-md-4 col-sm-4 img-block">
                 </div>
-                <div class="col-md-6 col-sm-6 content-block">
+                <div class="col-md-8 col-sm-8 content-block">
 
 
 
@@ -42,6 +42,9 @@ $this->load->view('layout/header');
                                     </a></li>
                                 <li role="presentation"><a href="#quandoo" aria-controls="quandoo" role="tab" data-toggle="tab">
                                         <img src="<?php echo base_url(); ?>assets/images/quandoo.png" style="    height: 34px;    margin-top: 13px;" /></a></li>
+                                <li role="presentation"><a href="#bistrochat" aria-controls="bistrochat" role="tab" data-toggle="tab">
+                                        <img src="<?php echo base_url(); ?>assets/images/bistrochat.png" style="    height: 34px;    margin-top: 13px;" /></a></li>
+                          
                             </ul>
 
                             <!-- Tab panes -->
@@ -160,6 +163,13 @@ $this->load->view('layout/header');
                                 <div role="tabpanel" class="tab-pane" id="quandoo">
                                     <center>
                                         <iframe src="https://booking-widget.quandoo.com.au/iframe.html?agentId=2&merchantId=71001&origin=https%3A%2F%2Fadmin.quandoo.com&path=https%3A%2F%2Fbooking-widget.quandoo.com%2F&theme=brand " style="    height: 666px;
+
+                                                border: none;"></iframe>
+                                    </center>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="bistrochat">
+                                    <center>
+                                        <iframe src="https://book.bistrochat.com/helloindia" style="    height: 666px;width:100%;
 
                                                 border: none;"></iframe>
                                     </center>
