@@ -189,10 +189,16 @@
                             </li>
 
 
-                            <li><a href="<?php echo site_url("book-now"); ?>" title="Reserve Table" 
+<!--                            <li><a href="<?php echo site_url("book-now"); ?>" title="Reserve Table" 
+                                   class="highlightbutton">RESERVE TABLE</a>
+
+                            </li>-->
+                            
+                            <li><a href="https://book.bistrochat.com/helloindia" target="_blank" title="Reserve Table" 
                                    class="highlightbutton">RESERVE TABLE</a>
 
                             </li>
+                            
                             <li><a href="<?php echo site_url("book-cake"); ?>" title="Order Cake" 
                                    class="highlightbutton"   >ORDER CAKE</a>
 
