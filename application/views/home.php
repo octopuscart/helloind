@@ -9,8 +9,12 @@ $this->load->view('layout/header');
         <div class="rev_slider_wrapper">
             <div id="home-slider1" class="rev_slider" data-version="5.0">
                 <ul> 
-
-                     <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
+                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
+                        <!-- MAIN IMAGE -->
+                        <img src="<?php echo base_url(); ?>assets/theme2/images/slider/consumption_vouc.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+                    </li>
+                    <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="1000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
                         <!-- MAIN IMAGE -->
                         <img src="<?php echo base_url(); ?>assets/theme2/images/slider/coupon2.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
