@@ -243,7 +243,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                                     <?php echo $value['address1']; ?>,<br/>
                                                                                     <?php echo $value['address2']; ?>,<br/>
                                                                                     <?php echo $value['city']; ?><br/>
-                                                                                    <?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
+                                                                                    <!--<span><?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?></span>-->
                                                                                 </p>
                                                                                 <?php
                                                                             }
