@@ -192,7 +192,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                 <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab change-color-gradiant2'></p></a></li>
                                                 <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup
                                                         <!--<p class='discountnotetab change-color-gradiant2'>30% Discount On Pickup</p>-->
-                                                         <p class='discountnotetab change-color-gradiant2'></p>
+                                                        <p class='discountnotetab change-color-gradiant2'></p>
                                                     </a></li>
                                             </ul>
                                             <div class="tab-content">
@@ -291,9 +291,11 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                                     <select class="form-control" name="delivery_time">
                                                                                         <?php
                                                                                         foreach ($deliverytimelist as $key => $value) {
-                                                                                            ?>
-                                                                                            <option value="<?php echo $value; ?>"><?php echo $value ?></option>
-                                                                                            <?php
+                                                                                            if (time() < strtotime($value)) {
+                                                                                                ?>
+                                                                                                <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+                                                                                                <?php
+                                                                                            }
                                                                                         }
                                                                                         ?>
                                                                                     </select>
@@ -317,7 +319,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
 
 
-                                                                                                                                                                                                            <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                                                                                                                                                                                                                <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                                     <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
                                                                                     <?php
                                                                                 }
@@ -383,11 +385,14 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                                             <select class="form-control" name="delivery_time">
                                                                                                 <?php
                                                                                                 foreach ($deliverytimelist as $key => $value) {
-                                                                                                    ?>
-                                                                                                    <option value="<?php echo $value; ?>"><?php echo $value ?></option>
-                                                                                                    <?php
+                                                                                                    if (time() < strtotime($value)) {
+                                                                                                        ?>
+                                                                                                        <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+                                                                                                        <?php
+                                                                                                    }
                                                                                                 }
                                                                                                 ?>
+
                                                                                             </select>
                                                                                         </div>
 
@@ -396,7 +401,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                                                                                 </td>
                                                                                 <td colspan="4" class="text_right">
-                                                                                  
+
                                                                                     <div class="proceed-button pull-right ">
 
 

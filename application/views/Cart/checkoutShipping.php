@@ -143,12 +143,12 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/cart.css" type="text/css" />
 
 <!-- Inner Page Banner Area Start Here -->
-  <div class="container-fluid no-padding page-banner" style="background-position: center;">
-        <!-- Container -->
-        <div class="container">
-            <h3>Shopping Cart</h3>
-        </div><!-- Container /- -->
-    </div><!-- Page Banner /- -->
+<div class="container-fluid no-padding page-banner" style="background-position: center;">
+    <!-- Container -->
+    <div class="container">
+        <h3>Shopping Cart</h3>
+    </div><!-- Container /- -->
+</div><!-- Page Banner /- -->
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
@@ -173,12 +173,12 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                     <ul class="nav nav-tabs" role="tablist">
-                                                <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab change-color-gradiant2'></p></a></li>
-                                                <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup
-                                                        <!--<p class='discountnotetab change-color-gradiant2'>30% Discount On Pickup</p>-->
-                                                        <p class='discountnotetab change-color-gradiant2'></p>
-                                                    </a></li>
-                                            </ul>
+                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab change-color-gradiant2'></p></a></li>
+                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup
+                                                <!--<p class='discountnotetab change-color-gradiant2'>30% Discount On Pickup</p>-->
+                                                <p class='discountnotetab change-color-gradiant2'></p>
+                                            </a></li>
+                                    </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade  active in" id="delivery" role="tab" >
 
@@ -249,30 +249,32 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                 <tbody id="quantity-holder">
                                                                     <tr>
                                                                         <td colspan="3" style="width:50%;vertical-align: middle;">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-6">
-                                                                                            <h3 style="line-height: 4px;">
-                                                                                                Select Pickup Time
-                                                                                            </h3>
-                                                                                        </div>
-                                                                                        <div class="col-md-6">
-                                                                                            <select class="form-control" name="delivery_time">
-                                                                                                <?php
-                                                                                                foreach ($deliverytimelist as $key => $value) {
-                                                                                                    ?>
-                                                                                                    <option value="<?php echo $value; ?>"><?php echo $value ?></option>
-                                                                                                    <?php
-                                                                                                }
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <h3 style="line-height: 4px;">
+                                                                                        Select Pickup Time
+                                                                                    </h3>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <select class="form-control" name="delivery_time">
+                                                                                        <?php
+                                                                                        foreach ($deliverytimelist as $key => $value) {
+                                                                                            if (time() < strtotime($value)) {
                                                                                                 ?>
-                                                                                            </select>
-                                                                                        </div>
+                                                                                                <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+                                                                                                <?php
+                                                                                            }
+                                                                                        }
+                                                                                        ?>
+                                                                                    </select>
+                                                                                </div>
 
-                                                                                    </div>   
-                                                                                    <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
+                                                                            </div>   
+                                                                            <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
 
-                                                                                </td>
+                                                                        </td>
                                                                         <td colspan="4" class="text_right">
-                                                                          
+
                                                                             <div class="proceed-button pull-right ">
                                                                                 <!--<a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                                 <form action="#" method="post">
@@ -283,7 +285,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                                                                                         <input type="hidden" name="delivery_time" value="{{shippingInit.delivery_time}}"/>
 
-                    <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                        <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                                         <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
                                                                                         <?php
                                                                                     }
@@ -302,10 +304,10 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                             </div>
                                         </div>
                                         <div class="tab-pane fade " id="pickup" role="tab" >
-                                                <form action="#" method="post" style="margin-bottom: 0;">
+                                            <form action="#" method="post" style="margin-bottom: 0;">
                                                 <div class="card card-default">
                                                     <div class="card-body">
-                                                     
+
                                                         <h3>
                                                             <?php
                                                             echo "Your order will be ready in 45 minute, Expected time is " . date("h:i a", strtotime("+45 minute"));
@@ -316,30 +318,32 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                 <tbody id="quantity-holder">
                                                                     <tr>
                                                                         <td colspan="3" style="width:50%;vertical-align: middle;">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-6">
-                                                                                            <h3 style="line-height: 4px;">
-                                                                                                Select Pickup Time
-                                                                                            </h3>
-                                                                                        </div>
-                                                                                        <div class="col-md-6">
-                                                                                            <select class="form-control" name="delivery_time">
-                                                                                                <?php
-                                                                                                foreach ($deliverytimelist as $key => $value) {
-                                                                                                    ?>
-                                                                                                    <option value="<?php echo $value; ?>"><?php echo $value ?></option>
-                                                                                                    <?php
-                                                                                                }
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <h3 style="line-height: 4px;">
+                                                                                        Select Pickup Time
+                                                                                    </h3>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <select class="form-control" name="delivery_time">
+                                                                                        <?php
+                                                                                        foreach ($deliverytimelist as $key => $value) {
+                                                                                            if (time() < strtotime($value)) {
                                                                                                 ?>
-                                                                                            </select>
-                                                                                        </div>
+                                                                                                <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+                                                                                                <?php
+                                                                                            }
+                                                                                        }
+                                                                                        ?>
+                                                                                    </select>
+                                                                                </div>
 
-                                                                                    </div>   
-                                                                                    <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
+                                                                            </div>   
+                                                                            <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
 
-                                                                                </td>
+                                                                        </td>
                                                                         <td colspan="4" class="text_right">
-                                                                         
+
                                                                             <div class="proceed-button pull-right ">
 
 
