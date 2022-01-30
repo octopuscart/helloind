@@ -88,7 +88,7 @@ $this->load->view('layout/header');
 
                                 <p class="coupontextp">Get More For Your Bucks!!</p>
                                 <p class="coupontextp">Get More | Pay Less</p>
-                                <p class="coupontextp">Buy 4 GET 1 Free</p> 
+                                <p class="coupontextp">*Discounts upto 20%</p> 
 
                                 <p class="coupontextp" >Group Dining? <br/ >
                                         Get Cash Vouchers</p>
@@ -173,9 +173,9 @@ $this->load->view('layout/header');
                                                     <button type="button" class="btn btn-secondary"  ng-click="updateCoupon('sub')"><i class="fa fa-minus" aria-hidden="true" ></i></button>
                                                 </div>
                                                 <p class="text-right pull-right couponamt">
-                                                     Total Amount: &nbsp;<b>{{couponinit.amount| currency:"<?php echo globle_currency; ?>"}}</b>
+                                                    Amount:{{couponinit.amountbase| currency:"<?php echo globle_currency; ?>"}} - {{couponinit.peramount| currency:"<?php echo globle_currency; ?>"}} ({{couponinit.basepercent}}% Off)   Total Amount: &nbsp;<b>{{couponinit.amount| currency:"<?php echo globle_currency; ?>"}}</b>
                                                 </p>
-                                                <input type="hidden" name="quantity" value="{{couponinit.quantity+couponinit.extraquantity}}">
+                                                <input type="hidden" name="quantity" value="{{couponinit.quantity}}">
                                                 <input type="hidden" name="amount" value="{{couponinit.amount}}">
                                                 <input type="hidden" name="base_amount" value="{{couponinit.amountbase}}">
                                                 <input type="hidden" name="percent" value="{{couponinit.basepercent}}">
@@ -183,9 +183,6 @@ $this->load->view('layout/header');
 
                                             </div>
                                         </div>
-                                        <h4 class="text-center">
-                                            {{couponinit.message}}
-                                        </h4>
 
                                         <div class="clear"></div>
                                         <div class="col-sm-3 mb-3"></div>
@@ -239,14 +236,7 @@ $this->load->view('layout/footer');
 <script>
 
     App.controller('couponController', function ($scope, $http, $timeout, $interval, $filter) {
-        $scope.couponinit = {
-            'quantity': 1, 
-            "showreceiver": false,
-            "amount": 100, 
-            "amountinit": 100,
-            "extraquantity":0,
-            "message":"",
-            "basepercent": 10};
+        $scope.couponinit = {'quantity': 1, "showreceiver": false, "amount": 100, "amountinit": 100, "basepercent": 10};
         $scope.calculation = function () {
             $scope.couponinit.amountbase = $scope.couponinit.quantity * $scope.couponinit.amountinit;
             $scope.couponinit.basepercent = 10;
@@ -257,16 +247,9 @@ $this->load->view('layout/footer');
                 $scope.couponinit.basepercent = 20;
             }
 
-            var extraquantity = $scope.couponinit.quantity /4;
-            var fextraquantity =  parseInt((extraquantity + "").split(".")[0]);
-            
-            if(fextraquantity){
-                $scope.couponinit.extraquantity  = fextraquantity;
-                $scope.couponinit.message = "You are buying "+($scope.couponinit.quantity)+" coupons, You will get "+fextraquantity+" coupon(s) free."
-            }
 
-      
-            $scope.couponinit.amount = $scope.couponinit.amountbase;
+            $scope.couponinit.peramount = ($scope.couponinit.amountbase * $scope.couponinit.basepercent) / 100;
+            $scope.couponinit.amount = $scope.couponinit.amountbase - $scope.couponinit.peramount;
         }
 
         $scope.updateCoupon = function (oper) {
