@@ -34,7 +34,7 @@
                                     <b>Hello <?php echo $coupon['name_receiver']; ?>,</b>
                                      <p>Message: <?php echo $coupon['message']; ?></p>
                                     <p>You have gifted a Cash Voucher from <b><?php echo $coupon['name']; ?></b> (<?php echo $coupon['email']; ?>), below you can find your cash voucher code(s). 
-                                         </p>
+                                        This cash voucher can be used either in Hello India or in Woodlands. </p>
                                 </td>
                             </tr>
                             <tr>
