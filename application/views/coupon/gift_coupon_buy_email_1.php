@@ -30,7 +30,7 @@
 
                                     <b>Hello <?php echo $coupon['name']; ?>,</b>
                                     <p>Thank you for buying Cash Voucher, below you can find your cash voucher code(s). 
-</p>
+This cash voucher can be used either in Hello India or in Woodlands.</p>
                                 </td>
                             </tr>
                             <tr>
