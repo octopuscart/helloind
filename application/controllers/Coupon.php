@@ -224,7 +224,7 @@ class Coupon extends CI_Controller {
             'Content-Type: application/json'
         );
         $senderemail = "https://helloindia.com.hk/Coupon/couponBuyEmail/62d5e2d734ac0823f173548ba3431d7f/HI20220204164320";
-        $this->useCurl($senderemail, $headers);
+      echo   $this->useCurl($senderemail, $headers);
     }
 
     function orderPaymentFailed($order_key) {
