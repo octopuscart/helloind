@@ -218,6 +218,15 @@ class Coupon extends CI_Controller {
         $this->load->view('coupon/gift_coupon_get', $data);
     }
 
+    function couponTestMail() {
+        $headers = array(
+            'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+            'Content-Type: application/json'
+        );
+        $senderemail = "https://helloindia.com.hk/Coupon/couponBuyEmail/62d5e2d734ac0823f173548ba3431d7f/HI20220204164320";
+        $this->useCurl($senderemail, $headers);
+    }
+
     function orderPaymentFailed($order_key) {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");
@@ -323,8 +332,7 @@ class Coupon extends CI_Controller {
                     $this->useCurl($senderemail, $headers);
                     redirect("loyalty-program-thanks/" . $codehas->join_code_hash);
                 }
-            }
-            else{
+            } else {
                 $data['join_msg'] = "Email not matched.";
                 $data["join_status"] = 100;
             }
