@@ -192,10 +192,9 @@ class Coupon extends CI_Controller {
                 $receiveremail = site_url("Coupon/couponReceiverEmail/$codehas/$order_key");
                 $this->useCurl($senderemail, $headers);
                 if ($requestdata['check_receiver'] == 'true') {
-                    redirect($receiveremail);
-                } else {
-                    redirect($senderemail);
+                    $this->useCurl($receiveremail, $headers);
                 }
+                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
             } else {
                 $updatearray = array(
                     "status" => $returndata['trans_status'],
@@ -225,7 +224,7 @@ class Coupon extends CI_Controller {
             'Content-Type: application/json'
         );
         $senderemail = "https://helloindia.com.hk/Coupon/couponBuyEmail/62d5e2d734ac0823f173548ba3431d7f/HI20220204164320";
-        echo $this->useCurl($senderemail, $headers);
+      echo   $this->useCurl($senderemail, $headers);
     }
 
     function orderPaymentFailed($order_key) {
@@ -260,10 +259,9 @@ class Coupon extends CI_Controller {
             $this->email->print_debugger();
             $send = $this->email->send();
             if ($send) {
-                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
+                
             } else {
                 $error = $this->email->print_debugger(array('headers'));
-                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
             }
         } else {
             echo $htmlsmessage;
@@ -295,10 +293,9 @@ class Coupon extends CI_Controller {
             $this->email->print_debugger();
             $send = $this->email->send();
             if ($send) {
-                redirect("Coupon/couponBuyEmail/" . $codehas . "/" . $order_key);
+                
             } else {
                 $error = $this->email->print_debugger(array('headers'));
-                redirect("Coupon/couponBuyEmail/" . $codehas . "/" . $order_key);
             }
         } else {
             echo $htmlsmessage;
