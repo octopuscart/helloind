@@ -295,10 +295,10 @@ class Coupon extends CI_Controller {
             $this->email->print_debugger();
             $send = $this->email->send();
             if ($send) {
-                redirect("Coupon/couponBuyEmail/" . $codehas . "/" . $order_key);
+                redirect("Coupon/couponBuyEmail/" . $couponhas . "/" . $order_key);
             } else {
                 $error = $this->email->print_debugger(array('headers'));
-                redirect("Coupon/couponBuyEmail/" . $codehas . "/" . $order_key);
+                redirect("Coupon/couponBuyEmail/" . $couponhas . "/" . $order_key);
             }
         } else {
             echo $htmlsmessage;
