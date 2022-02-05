@@ -224,7 +224,7 @@ class Coupon extends CI_Controller {
             'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
             'Content-Type: application/json'
         );
-        $senderemail = "https://helloindia.com.hk/Coupon/couponBuyEmail/62d5e2d734ac0823f173548ba3431d7f/HI20220204164320";
+        $senderemail = "https://helloindia.com.hk/Coupon/orderPaymentNotify/62d5e2d734ac0823f173548ba3431d7f/HI20220204164320";
         echo $this->useCurl($senderemail, $headers);
     }
 
@@ -260,10 +260,10 @@ class Coupon extends CI_Controller {
             $this->email->print_debugger();
             $send = $this->email->send();
             if ($send) {
-                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
+                redirect("Coupon/yourCode/" . $couponhas . "/" . $order_key);
             } else {
                 $error = $this->email->print_debugger(array('headers'));
-                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
+                redirect("Coupon/yourCode/" . $couponhas . "/" . $order_key);
             }
         } else {
             echo $htmlsmessage;
