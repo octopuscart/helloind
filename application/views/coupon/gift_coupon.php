@@ -82,7 +82,7 @@ $this->load->view('layout/header');
 
 
                         <div class='col-md-4'>
-                            <img src="https://manager2.woodlandshk.com/assets/images/coupon100.jpg"/>
+                            <img src="https://manager2.woodlandshk.com/assets/images/coupon100HL.jpg"/>
                             <h3 class="font-secondary text-white" style="font-size: 20px;color:white;font-family: 'Kaushan Script', cursive!important;">
 
 
