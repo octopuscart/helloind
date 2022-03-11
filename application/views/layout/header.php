@@ -75,6 +75,16 @@
     </noscript>
     <!-- End Facebook Pixel Code -->
 
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-208618479-1"></script>
+    <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'UA-208618479-1');
+    </script>
+
 </head>
 
 <style>
@@ -193,12 +203,12 @@
                                    class="highlightbutton">RESERVE TABLE</a>
 
                             </li>-->
-                            
+
                             <li><a href="https://book.bistrochat.com/helloindia" target="_blank" title="Reserve Table" 
                                    class="highlightbutton">RESERVE TABLE</a>
 
                             </li>
-                            
+
                             <li><a href="<?php echo site_url("book-cake"); ?>" title="Order Cake" 
                                    class="highlightbutton"   >ORDER CAKE</a>
 
