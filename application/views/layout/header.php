@@ -209,10 +209,10 @@
 
                             </li>
 
-                            <li><a href="<?php echo site_url("book-cake"); ?>" title="Order Cake" 
+                            <!-- <li><a href="<?php echo site_url("book-cake"); ?>" title="Order Cake" 
                                    class="highlightbutton"   >ORDER CAKE</a>
 
-                            </li>
+                            </li> -->
 
                             <li><a href="<?php echo site_url("contact"); ?>" title="Contact Us">CONTACT US</a></li>
                             <li>

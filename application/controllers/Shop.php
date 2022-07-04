@@ -93,7 +93,7 @@ class Shop extends CI_Controller {
     }
 
     public function cake() {
-
+        redirect(site_url("/"));
         if (isset($_POST['booknow'])) {
             $web_enquiry = array(
                 'cake_shape' => $this->input->post('cake_shape'),
@@ -109,12 +109,12 @@ class Shop extends CI_Controller {
                 'booking_datetime' => date("Y-m-d H:i:s a"),
             );
 
-            $this->db->insert('cake_booking', $web_enquiry);
+            // $this->db->insert('cake_booking', $web_enquiry);
             $emailsender = email_sender;
             $sendername = email_sender_name;
             $email_bcc = email_bcc;
             $sendernameeq = $this->input->post('name');
-            if ($this->input->post('email')) {
+            if ($this->input->post('email_checkcostco')) {
                 $this->email->set_newline("\r\n");
                 $this->email->from($emailsender, $sendername);
                 $this->email->to(email_bcc);
@@ -141,13 +141,13 @@ class Shop extends CI_Controller {
                         $this->email->message($htmlsmessage);
 
                         $this->email->print_debugger();
-                        $send = $this->email->send();
-                        if ($send) {
-                            //echo json_encode("send");
-                        } else {
-                            $error = $this->email->print_debugger(array('headers'));
-                          //  echo json_encode($error);
-                        }
+                        // $send = $this->email->send();
+                        // if ($send) {
+                        //     //echo json_encode("send");
+                        // } else {
+                        //     $error = $this->email->print_debugger(array('headers'));
+                        //   //  echo json_encode($error);
+                        // }
                     } else {
                         echo $htmlsmessage;
                     }
