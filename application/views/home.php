@@ -280,7 +280,7 @@ $this->load->view('layout/header');
                 </div><!-- Section Header /- -->
                 <p>
                     Hello India Welcomes you to a world of delicious Indian food. Signature dishes coming from our grand Indian heritage. 
-                    We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
+                    We are multi-cuisine restaurant which believes in quality standards which are never compromised.
                 </p><p>
                     In Hello India you can experience the especially rich flavours of so many Regional Indian recipes that have evolved over the centuries. 
                     They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices.
