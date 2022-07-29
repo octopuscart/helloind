@@ -36,7 +36,8 @@ $this->load->view('layout/header');
         padding: 0px 10px;
         border: 1px solid #f49738;
         color: white;
-        border-radius: 10px;;
+        border-radius: 10px;
+        ;
     }
     .coupontextp{
         margin-bottom: 0px;
@@ -56,6 +57,11 @@ $this->load->view('layout/header');
         float: right;
     }
 
+    .wanrning-text  h3{
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: red;
+    }
 
 </style>
 
@@ -91,7 +97,7 @@ $this->load->view('layout/header');
                                 <p class="coupontextp">Buy 4 GET 1 Free</p> 
 
                                 <p class="coupontextp" >Group Dining? <br/ >
-                                        Get Cash Vouchers</p>
+                                    Get Cash Vouchers</p>
                             </h3> 
 
 
@@ -173,9 +179,9 @@ $this->load->view('layout/header');
                                                     <button type="button" class="btn btn-secondary"  ng-click="updateCoupon('sub')"><i class="fa fa-minus" aria-hidden="true" ></i></button>
                                                 </div>
                                                 <p class="text-right pull-right couponamt">
-                                                     Total Amount: &nbsp;<b>{{couponinit.amount| currency:"<?php echo globle_currency; ?>"}}</b>
+                                                    Total Amount: &nbsp;<b>{{couponinit.amount| currency:"<?php echo globle_currency; ?>"}}</b>
                                                 </p>
-                                                <input type="hidden" name="quantity" value="{{couponinit.quantity+couponinit.extraquantity}}">
+                                                <input type="hidden" name="quantity" value="{{couponinit.quantity + couponinit.extraquantity}}">
                                                 <input type="hidden" name="amount" value="{{couponinit.amount}}">
                                                 <input type="hidden" name="base_amount" value="{{couponinit.amountbase}}">
                                                 <input type="hidden" name="percent" value="{{couponinit.basepercent}}">
@@ -210,6 +216,10 @@ $this->load->view('layout/header');
 
                                         <div class="clear"></div>
                                         <div class="col-md-12 nobottommargin" style='    text-align: center;margin-top: 20px;'>
+                                            <div class="wanrning-text">
+
+                                                <h3>Your coupon code(s) must be used after 7 days from the purchased date.</h3>
+                                            </div>
                                             <button class="button btn btn-lg btn btn-danger button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit">Buy Now</button>
                                         </div>
                                         <div class="clear"></div>
@@ -240,12 +250,12 @@ $this->load->view('layout/footer');
 
     App.controller('couponController', function ($scope, $http, $timeout, $interval, $filter) {
         $scope.couponinit = {
-            'quantity': 1, 
+            'quantity': 1,
             "showreceiver": false,
-            "amount": 100, 
+            "amount": 100,
             "amountinit": 100,
-            "extraquantity":0,
-            "message":"",
+            "extraquantity": 0,
+            "message": "",
             "basepercent": 10};
         $scope.calculation = function () {
             $scope.couponinit.amountbase = $scope.couponinit.quantity * $scope.couponinit.amountinit;
@@ -257,15 +267,15 @@ $this->load->view('layout/footer');
                 $scope.couponinit.basepercent = 20;
             }
 
-            var extraquantity = $scope.couponinit.quantity /4;
-            var fextraquantity =  parseInt((extraquantity + "").split(".")[0]);
-            
-            if(fextraquantity){
-                $scope.couponinit.extraquantity  = fextraquantity;
-                $scope.couponinit.message = "You are buying "+($scope.couponinit.quantity)+" coupons, You will get "+fextraquantity+" coupon(s) free."
+            var extraquantity = $scope.couponinit.quantity / 4;
+            var fextraquantity = parseInt((extraquantity + "").split(".")[0]);
+
+            if (fextraquantity) {
+                $scope.couponinit.extraquantity = fextraquantity;
+                $scope.couponinit.message = "You are buying " + ($scope.couponinit.quantity) + " coupons, You will get " + fextraquantity + " coupon(s) free."
             }
 
-      
+
             $scope.couponinit.amount = $scope.couponinit.amountbase;
         }
 
