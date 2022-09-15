@@ -182,6 +182,7 @@ class Shop extends CI_Controller {
     }
 
     public function booknow() {
+        redirect("https://book.bistrochat.com/helloindia");
         $cdate = date("Y-m-d");
         $this->db->where('select_date >=', $cdate);
         $this->db->order_by("select_date");
