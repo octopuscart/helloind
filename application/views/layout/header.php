@@ -185,7 +185,7 @@
                                                             </ul>
                                                         </li>-->
 
-                            <li><a href="<?php echo site_url("coupon"); ?>" title="Cash Voucher " class="highlightbutton">CASH VOUCHER</a></li>
+                            <!--<li><a href="<?php echo site_url("coupon"); ?>" title="Cash Voucher " class="highlightbutton">CASH VOUCHER</a></li>-->
 
 
                             <li class="dropdown">
